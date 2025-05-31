@@ -26,11 +26,9 @@
     ./scripts/scripts.nix             # personal scripts
     ./ssh.nix                         # ssh config
     ./superfile/superfile.nix         # terminal file manager
-    ./swaylock.nix                    # lock screen
     ./swayosd.nix                     # brightness / volume wiget
     ./swaync/swaync.nix               # notification deamon
     # ./viewnior.nix                    # image viewer
-    ./vscodium                        # vscode fork
     ./waybar                          # status bar
     ./waypaper.nix                    # GUI wallpaper picker
     ./xdg-mimes.nix                   # xdg config
