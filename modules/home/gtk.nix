@@ -9,30 +9,25 @@
     twemoji-color-font
     noto-fonts-emoji
     fantasque-sans-mono
-    maple-mono.truetype-autohint
+    maple-mono.NF-unhinted
   ];
 
   gtk = {
     enable = true;
     font = {
-      name = "Maple Mono";
+      name = "Maple Mono NF";
       size = 12;
     };
     theme = {
-      name = "Colloid-Green-Dark-Gruvbox";
-      package = pkgs.colloid-gtk-theme.override {
-        colorVariants = [ "dark" ];
-        themeVariants = [ "green" ];
-        tweaks = [
-          "gruvbox"
-          "rimless"
-          "float"
-        ];
+      name = "Catppuccin";
+      package = pkgs.catppuccin-gtk.override {
+        colorVariants = [ "mocha" ];
+        themeVariants = [ "mauve" ];
       };
     };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme.override { color = "black"; };
+      name = "Catppuccin";
+      package = pkgs.catppuccin-papirus-folders.override { color = "black"; };
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
