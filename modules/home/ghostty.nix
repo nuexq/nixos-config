@@ -12,7 +12,7 @@ in
 
   xdg.configFile."ghostty/config".text = ''
     # Font
-    font-family = "Maple Mono"
+    font-family = "Maple Mono NF"
     font-size = 9
     font-thicken = true
 
