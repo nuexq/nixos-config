@@ -1,10 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # discord
-    # (discord.override {
-    #  withVencord = true;
-    # })
-    webcord-vencord
+    discord
+    (discord.override {
+      withVencord = true;
+    })
   ];
 }
