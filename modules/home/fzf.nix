@@ -16,13 +16,14 @@
 
     ## Theme
     defaultOptions = [
-      "--color=fg:-1,fg+:#FBF1C7,bg:-1,bg+:#282828"
-      "--color=hl:#98971A,hl+:#B8BB26,info:#928374,marker:#D65D0E"
-      "--color=prompt:#CC241D,spinner:#689D6A,pointer:#D65D0E,header:#458588"
-      "--color=border:#665C54,label:#aeaeae,query:#FBF1C7"
+      "--color=fg:#cad3f5,fg+:#b7bdf8,bg:#24273a,bg+:#363a4f"
+      "--color=hl:#8aadf4,hl+:#91d7e3,info:#a6da95,marker:#ed8796"
+      "--color=prompt:#f5a97f,spinner:#8bd5ca,pointer:#ed8796,header:#c6a0f6"
+      "--color=border:#363a4f,label:#b7bdf8,query:#cad3f5"
       "--border='double' --border-label='' --preview-window='border-sharp' --prompt='> '"
       "--marker='>' --pointer='>' --separator='─' --scrollbar='│'"
       "--info='right'"
     ];
+
   };
 }
