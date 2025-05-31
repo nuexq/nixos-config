@@ -22,7 +22,6 @@
     ./obsidian.nix
     ./p10k/p10k.nix
     ./packages                        # other packages
-    ./retroarch.nix  
     ./rofi.nix                        # launcher
     ./scripts/scripts.nix             # personal scripts
     ./ssh.nix                         # ssh config
