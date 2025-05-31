@@ -13,14 +13,14 @@
         gradient = 1;
         gradient_count = 8;
 
-        gradient_color_1 = "'#99991a'";
-        gradient_color_2 = "'#a28e00'";
-        gradient_color_3 = "'#ab8200'";
-        gradient_color_4 = "'#b37400'";
-        gradient_color_5 = "'#bb6600'";
-        gradient_color_6 = "'#c25400'";
-        gradient_color_7 = "'#c8400d'";
-        gradient_color_8 = "'#cd231d'";
+        gradient_color_1 = "#94e2d5";
+        gradient_color_2 = "#89dceb":
+        gradient_color_3 = "#74c7ec";
+        gradient_color_4 = "#89b4fa";
+        gradient_color_5 = "#cba6f7";
+        gradient_color_6 = "#f5c2e7";
+        gradient_color_7 = "#eba0ac";
+        gradient_color_8 = "#f38ba8";     
       };
     };
   };
