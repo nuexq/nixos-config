@@ -83,6 +83,7 @@ in
 
       decoration = {
         rounding = 0;
+	dim_special = 0.3;
 
         blur = {
           enabled = true;
@@ -91,6 +92,7 @@ in
           ignore_opacity = true;
           new_optimizations = true;
           xray = true;
+          special = true;
         };
 
         shadow = {
@@ -273,12 +275,6 @@ in
         "opacity 1.0 override 1.0 override, class:(Aseprite)"
         "opacity 1.0 override 1.0 override, class:(zen)"
         "opacity 1.0 override 1.0 override, class:(evince)"
-        "workspace 1, class:^(${browser})$"
-        "workspace 3, class:^(evince)$"
-        "workspace 5, class:^(Audacious)$"
-        "workspace 5, class:^(Spotify)$"
-        "workspace 8, class:^(com.obsproject.Studio)$"
-        "workspace 10, class:^(discord)$"
         "idleinhibit focus, class:^(mpv)$"
         "float,class:^(org.gnome.Calculator)$"
         "float,class:^(waypaper)$"
