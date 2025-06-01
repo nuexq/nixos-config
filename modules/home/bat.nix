@@ -4,7 +4,7 @@
     enable = true;
     config = {
       pager = "less -FR";
-      theme = "catppuccin-mocha";
+      theme = "gruvbox-dark";
     };
     extraPackages = with pkgs.bat-extras; [
       batman
