@@ -20,7 +20,7 @@
     ./nemo.nix                        # file manager
     ./nvim.nix                        # neovim editor
     ./obsidian.nix
-    ./p10k/p10k.nix
+    #./p10k/p10k.nix
     ./packages                        # other packages
     ./rofi.nix                        # launcher
     ./scripts/scripts.nix             # personal scripts
@@ -32,5 +32,6 @@
     ./xdg-mimes.nix                   # xdg config
     ./zsh                             # shell
     ./yazi.nix                        # tui file-manager
+    ./starship.nix
   ];
 }
