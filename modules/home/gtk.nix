@@ -9,7 +9,7 @@
     twemoji-color-font
     noto-fonts-emoji
     fantasque-sans-mono
-    maple-mono.NF-unhinted
+    maple-mono.truetype-autohint
   ];
 
   gtk = {
@@ -19,15 +19,20 @@
       size = 12;
     };
     theme = {
-      name = "Catppuccin";
-      package = pkgs.catppuccin-gtk.override {
-        colorVariants = [ "mocha" ];
-        themeVariants = [ "mauve" ];
+      name = "Colloid-Purple-Dark-Catppuccin";
+      package = pkgs.colloid-gtk-theme.override {
+        colorVariants = [ "dark" ];
+        themeVariants = [ "purple" ];
+        tweaks = [
+          "catppuccin"
+          "rimless"
+          "float"
+        ];
       };
     };
     iconTheme = {
-      name = "Catppuccin";
-      package = pkgs.catppuccin-papirus-folders.override { color = "black"; };
+      name = "catppuccin-papirus-folders-unstable";
+      package = pkgs.catppuccin-papirus-folders;
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
