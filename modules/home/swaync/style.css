@@ -142,7 +142,7 @@ label {
     /* background: transparent; */
     background: @crust;
     /* background: @theme_bg_color; */
-    border: 2px solid #A89984;
+    border: 2px solid @text;
     border-radius: 0px;
     box-shadow: 0px 0px 2px black;
 }
