@@ -28,7 +28,6 @@
     ./superfile/superfile.nix         # terminal file manager
     ./swayosd.nix                     # brightness / volume wiget
     ./swaync/swaync.nix               # notification deamon
-    # ./viewnior.nix                    # image viewer
     ./waybar                          # status bar
     ./waypaper.nix                    # GUI wallpaper picker
     ./xdg-mimes.nix                   # xdg config
