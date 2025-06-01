@@ -12,7 +12,6 @@
     lowfi
     man-pages                         # extra man pages
     mpv                               # video player
-    duh                               # disk space
     nitch                             # systhem fetch util
     openssl
     onefetch                          # fetch utility for git repo
