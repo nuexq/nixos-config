@@ -1,176 +1,275 @@
 { host, ... }:
-let
-  custom = {
-    font = "Maple Mono";
-    font_size = "18px";
-    font_weight = "bold";
-    text_color = "#FBF1C7";
-    background_0 = "#1D2021";
-    background_1 = "#282828";
-    border_color = "#928374";
-    red = "#CC241D";
-    green = "#98971A";
-    yellow = "#FABD2F";
-    blue = "#458588";
-    magenta = "#B16286";
-    cyan = "#689D6A";
-    orange = "#D65D0E";
-    opacity = "1";
-    indicator_height = "2px";
-  };
-in
+ 
 {
-  programs.waybar.settings.mainBar = with custom; {
-    position = "bottom";
+  programs.waybar.settings.mainBar = {
+    position = "top";
     layer = "top";
     height = 28;
-    margin-top = 0;
-    margin-bottom = 0;
-    margin-left = 0;
-    margin-right = 0;
+    passthrough = false;
+    gtk-layer-shell = true;
+
     modules-left = [
-      "custom/launcher"
-      "hyprland/workspaces"
-      "tray"
-    ];
-    modules-center = [ "clock" ];
-    modules-right = [
+      "custom/padd"
+      "custom/l_end"
       "cpu"
       "memory"
-      (if (host == "desktop") then "disk" else "")
-      "pulseaudio"
-      "network"
-      "battery"
-      "hyprland/language"
-      "custom/notification"
+      "custom/r_end"
+      "custom/l_end"
+      "idle_inhibitor"
+      "clock"
+      "custom/r_end"
+      "custom/l_end"
+      "hyprland/workspaces"
+      "custom/r_end"
+      "custom/padd"  
     ];
-    clock = {
-      calendar = {
-        format = {
-          today = "<span color='#98971A'><b>{}</b></span>";
-        };
+    modules-center = [ 
+      "custom/padd"
+      "custom/l_end"
+      "hyprland/window"
+      "custom/r_end"
+      "custom/padd" 
+    ];
+    modules-right = [
+      "custom/padd"
+      "custom/l_end"
+      "backlight"
+      "network"
+      "pulseaudio"
+      "custom/notification"
+      "custom/r_end"
+      "custom/l_end"
+      "tray"
+      "battery"
+      "custom/r_end"
+      "custom/l_end"
+      "custom/power"
+      "custom/r_end"
+      "custom/padd"
+    ];
+
+   cpu = {
+    interval = 10;
+    format = "󰍛 {usage}%";
+    rotate = 0;
+    format-alt = "{icon0}{icon1}{icon2}{icon3}";
+    format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+  };
+
+  memory = {
+    states = {
+      c = 90; # critical
+      h = 60; # high
+      m = 30; # medium
+    };
+    interval = 30;
+    format = "󰾆 {used}GB";
+    rotate = 0;
+    format-m = "󰾅 {used}GB";
+    format-h = "󰓅 {used}GB";
+    format-c = " {used}GB";
+    format-alt = "󰾆 {percentage}%";
+    ma-length = 10;
+    tooltip = true;
+    tooltip-format = "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1}GB";
+  };
+
+  idle_inhibitor = {
+    format = "{icon}";
+    rotate = 0;
+    format-icons = {
+      activated = "󰥔";
+      deactivated = "";
+    };
+  };
+
+  clock = {
+    format = "{:%I:%M %p}";
+    rotate = 0;
+    format-alt = "{:%R 󰃭 %d·%m·%y}";
+    tooltip-format = "<tt>{calendar}</tt>";
+    calendar = {
+      mode = "month";
+      mode-mon-col = 3;
+      on-scroll = 1;
+      on-click-right = "mode";
+      format = {
+        months = "<span color='#ffead3'><b>{}</b></span>";
+        weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+        today = "<span color='#ff6699'><b>{}</b></span>";
       };
-      format = "  {:%H:%M}";
-      tooltip = "true";
-      tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-      format-alt = "  {:%d/%m}";
     };
-    "hyprland/workspaces" = {
-      active-only = false;
-      disable-scroll = true;
-      format = "{icon}";
-      on-click = "activate";
-      format-icons = {
-        "1" = "I";
-        "2" = "II";
-        "3" = "III";
-        "4" = "IV";
-        "5" = "V";
-        "6" = "VI";
-        "7" = "VII";
-        "8" = "VIII";
-        "9" = "IX";
-        "10" = "X";
-        sort-by-number = true;
-      };
-      persistent-workspaces = {
-        "1" = [ ];
-        "2" = [ ];
-        "3" = [ ];
-        "4" = [ ];
-        "5" = [ ];
-      };
+    actions = {
+      on-click-right = "mode";
+      on-click-forward = "tz_up";
+      on-click-backward = "tz_down";
+      on-scroll-up = "shift_up";
+      on-scroll-down = "shift_down";
     };
-    cpu = {
-      format = "<span foreground='${green}'> </span> {usage}%";
-      format-alt = "<span foreground='${green}'> </span> {avg_frequency} GHz";
-      interval = 2;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'";
+  };
+
+  "hyprland/workspaces" = {
+    disable-scroll = true;
+    rotate = 0;
+    all-outputs = true;
+    active-only = false;
+    on-click = "activate";
+    persistent-workspaces = {};
+  };
+
+  "hyprland/window" = {
+    format = "  {}";
+     rotate = 0;
+    separate-outputs = true;
+    rewrite = {
+      "nuexq@Laptop:(.*)" = "$1 ";
+      "(.*) — Mozilla Firefox" = "$1 󰈹";
+      "(.*)Mozilla Firefox" = "Firefox 󰈹";
+      "(.*) - Visual Studio Code" = "$1 󰨞";
+      "(.*)Visual Studio Code" = "Code 󰨞";
+      "(.*) — Dolphin" = "$1 󰉋";
+      "(.*)Spotify" = "Spotify 󰓇";
+      "(.*)Steam" = "Steam 󰓓";
     };
-    memory = {
-      format = "<span foreground='${cyan}'>󰟜 </span>{}%";
-      format-alt = "<span foreground='${cyan}'>󰟜 </span>{used} GiB"; # 
-      interval = 2;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'";
+    max-length = 1000;
+  };
+
+  backlight = {
+    device = "intel_backlight";
+    rotate = 0;
+    format = "{icon} {percent}%";
+    format-icons = ["" "" "" "" "" "" "" "" ""];
+    on-scroll-up = "brightnessctl set 1%+";
+    on-scroll-down = "brightnessctl set 1%-";
+    min-length = 6;
+  };
+
+   network = {
+    tooltip = true;
+    format-wifi = " ";
+    rotate = 0;
+    format-ethernet = "󰈀 ";
+    tooltip-format = "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>";
+    format-linked = "󰈀 {ifname} (No IP)";
+    format-disconnected = "󰖪 ";
+    tooltip-format-disconnected = "Disconnected";
+    format-alt = "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>";
+    interval = 2;
+  };
+
+  pulseaudio = {
+    format = "{icon} {volume}";
+    rotate = 0;
+    format-muted = "婢";
+    on-click = "hyprctl dispatch exec '[float; center]' pavucontrol -t 3";
+    on-scroll-up = "swayosd-client --output-volume +2 --max-volume=100";
+    on-scroll-down = "swayosd-client --output-volume -2";
+    tooltip-format = "{icon} {desc} // {volume}%";
+    scroll-step = 5;
+    format-icons = {
+      headphone = "";
+      hands-free = "";
+      headset = "";
+      phone = "";
+      portable = "";
+      car = "";
+      default = ["" "" ""];
     };
-    disk = {
-      # path = "/";
-      format = "<span foreground='${orange}'>󰋊 </span>{percentage_used}%";
-      interval = 60;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'";
+  };
+
+  "custom/notification" = {
+     tooltip = false;
+     format = "{icon}";
+     format-icons = {
+       notification = "<span foreground='#f38ba8'><small><sup>⬤</sup></small></span>";
+       none = " ";
+       dnd-notification = "<span foreground='#f38ba8'><small><sup>⬤</sup></small></span>";
+       dn-none = " ";
+       inhibited-notification = "<span foreground='#f38ba8'><sup></sup></span>  <span foreground='#f38ba8'></span>";
+       inhibited-none = "  <span foreground='#f38ba8'></span>";
+       dnd-inhibited-notification = "<span foreground='#f38ba8'><sup></sup></span>  <span foreground='#f38ba8'></span>";
+       dnd-inhibited-none = "  <span foreground='#f38ba8'></span>";
+     };
+     return-type = "json";
+     exec-if = "which swaync-client";
+     exec = "swaync-client -swb";
+     on-click = "swaync-client -t -sw";
+     on-click-right = "swaync-client -d -sw";
+     escape = true;
+   }; 
+
+  tray = {
+    icon-size = 16;
+    rotate = 0;
+    spacing = 5;
+  };
+
+  battery = {
+    states = {
+      good = 95;
+      warning = 30;
+      critical = 20;
     };
-    network = {
-      format-wifi = "<span foreground='${magenta}'> </span> {signalStrength}%";
-      format-ethernet = "<span foreground='${magenta}'>󰀂 </span>";
-      tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
-      format-linked = "{ifname} (No IP)";
-      format-disconnected = "<span foreground='${magenta}'>󰖪 </span>";
-    };
-    tray = {
-      icon-size = 20;
-      spacing = 8;
-    };
-    pulseaudio = {
-      format = "{icon} {volume}%";
-      format-muted = "<span foreground='${blue}'> </span> {volume}%";
-      format-icons = {
-        default = [ "<span foreground='${blue}'> </span>" ];
-      };
-      scroll-step = 2;
-      on-click = "pamixer -t";
-      on-click-right = "pavucontrol";
-    };
-    battery = {
-      format = "<span foreground='${yellow}'>{icon}</span> {capacity}%";
-      format-icons = [
-        " "
-        " "
-        " "
-        " "
-        " "
-      ];
-      format-charging = "<span foreground='${yellow}'> </span>{capacity}%";
-      format-full = "<span foreground='${yellow}'> </span>{capacity}%";
-      format-warning = "<span foreground='${yellow}'> </span>{capacity}%";
-      interval = 5;
-      states = {
-        warning = 20;
-      };
-      format-time = "{H}h{M}m";
-      tooltip = true;
-      tooltip-format = "{time}";
-    };
-    "hyprland/language" = {
-      format = "<span foreground='#FABD2F'> </span> {}";
-      format-fr = "FR";
-      format-en = "US";
-    };
-    "custom/launcher" = {
-      format = "";
-      on-click = "random-wallpaper";
-      on-click-right = "rofi -show drun";
-      tooltip = "true";
-      tooltip-format = "Random Wallpaper";
-    };
-    "custom/notification" = {
-      tooltip = false;
-      format = "{icon} ";
-      format-icons = {
-        notification = "<span foreground='red'><sup></sup></span>  <span foreground='${red}'></span>";
-        none = "  <span foreground='${red}'></span>";
-        dnd-notification = "<span foreground='red'><sup></sup></span>  <span foreground='${red}'></span>";
-        dnd-none = "  <span foreground='${red}'></span>";
-        inhibited-notification = "<span foreground='red'><sup></sup></span>  <span foreground='${red}'></span>";
-        inhibited-none = "  <span foreground='${red}'></span>";
-        dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>  <span foreground='${red}'></span>";
-        dnd-inhibited-none = "  <span foreground='${red}'></span>";
-      };
-      return-type = "json";
-      exec-if = "which swaync-client";
-      exec = "swaync-client -swb";
-      on-click = "swaync-client -t -sw";
-      on-click-right = "swaync-client -d -sw";
-      escape = true;
-    };
+    format = "{icon} {capacity}%";
+    rotate = 0;
+    format-charging = " {capacity}%";
+    format-plugged = " {capacity}%";
+    format-alt = "{time} {icon}";
+    format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+  };
+
+  "custom/power" = {
+    format = "{}";
+    rotate = 0;
+    exec = "echo ; echo  logout";
+    on-click = "rofi-power-menu";
+    interval = 86400; # once every da;
+    tooltip = true;
+  };
+
+  # modules for padding
+
+  "custom/l_end" = {
+    format = " ";
+    interval = "once";
+    tooltip = false;
+  };
+
+  "custom/r_end" = {
+    format = " ";
+    interval = "once";
+    tooltip = false;
+  };
+
+  "custom/sl_end" = {
+    format = " ";
+    interval = "once";
+    tooltip = false;
+  };
+
+  "custom/sr_end" = {
+    format = " ";
+    interval = "once";
+    tooltip = false;
+  };
+
+  "custom/rl_end" = {
+    format = " ";
+    interval = "once";
+    tooltip = false;
+  };
+
+  "custom/rr_end" = {
+    format = " ";
+    interval = "once";
+    tooltip = false;
+  };
+
+  "custom/padd" = {
+    format = "  ";
+    interval = "once";
+    tooltip = false;
+  };
+    
   };
 }
