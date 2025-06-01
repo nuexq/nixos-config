@@ -40,8 +40,8 @@ tooltip {
   background: #a6adc8;
   color: #1e1e2e;
   margin-left: 3px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
   margin-right: 3px;
     animation: ws_active 20s ease-in-out 1;
     transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
