@@ -5,24 +5,20 @@
       # Utils
       c = "clear";
       cd = "z";
-      tt = "gtrash put";
       cat = "bat";
-      nano = "micro";
-      code = "codium";
       diff = "delta --diff-so-fancy --side-by-side";
       less = "bat";
-      py = "python";
-      ipy = "ipython";
-      icat = "kitten icat";
-      dsize = "du -hs";
       pdf = "tdf";
       open = "xdg-open";
-      space = "ncdu";
-      man = "BAT_THEME='default' batman";
+      man = "BAT_THEME="default" batman";
 
-      l = "eza --icons  -a --group-directories-first -1"; # EZA_ICON_SPACING=2
-      ll = "eza --icons  -a --group-directories-first -1 --no-user --long";
-      tree = "eza --icons --tree --group-directories-first";
+      c="clear" # clear terminal
+      l="eza -lh  --icons=auto" # long list
+      ls="eza -1   --icons=auto" # short list
+      ll="eza -lha --icons=auto --sort=name --group-directories-first" # long list all
+      ld="eza -lhD --icons=auto" # long list dirs
+      pl="$aurhelper -Qs" # list installed package
+      nv="nvim" # nvim
 
       # Nixos
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
@@ -35,9 +31,12 @@
       nix-search = "nh search";
       nix-test = "nh os test";
 
-      # python
-      piv = "python -m venv .venv";
-      psv = "source .venv/bin/activate";
+      # Handy change dir shortcuts
+      ..="cd .."
+      ...="cd ../.."
+      .3="cd ../../.."
+      .4="cd ../../../.."
+      .5="cd ../../../../.."
     };
   };
 }
