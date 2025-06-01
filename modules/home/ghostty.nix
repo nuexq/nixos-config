@@ -35,7 +35,7 @@ in
     clipboard-paste-protection = false
     unfocused-split-opacity = 1.0
 
-    gtk-tabs-location = hidde
+    gtk-tabs-location = hidden
     window-decoration = false
 
     background-opacity = 1
