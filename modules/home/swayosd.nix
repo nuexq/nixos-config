@@ -18,8 +18,8 @@
         ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume +2 --max-volume=100"
         ",XF86AudioLowerVolume, exec, swayosd-client --output-volume -2"
 
-        "$mainMod, f11, exec, swayosd-client --output-volume +2 --max-volume=100"
-        "$mainMod, f12, exec, swayosd-client --output-volume -2"
+        "$mainMod, F3, exec, swayosd-client --output-volume +2 --max-volume=100"
+        "$mainMod, F2, exec, swayosd-client --output-volume -2"
       ];
       bindr = [
         "CAPS,Caps_Lock,exec,swayosd-client --caps-lock"
@@ -34,7 +34,7 @@
         padding: 0px 10px;
         border-radius: 25px;
         border: 10px;
-        background: alpha(#282828, 0.99);
+        background: alpha(#1e1e2e, 0.99);
     }
 
     #container {
@@ -42,7 +42,7 @@
     }
 
     image, label {
-        color: #FBF1C7;
+        color: #cdd6f4;
     }
 
     progressbar:disabled,
@@ -60,13 +60,13 @@
         min-height: inherit;
         border-radius: inherit;
         border: none;
-        background: alpha(#DDDDDD, 0.2);
+        background: alpha(#a6adc8, 0.2);
     }
     progress {
         min-height: inherit;
         border-radius: inherit;
         border: none;
-        background: #FBF1C7;
+        background: #a6adc8;
     }
   '';
 }
