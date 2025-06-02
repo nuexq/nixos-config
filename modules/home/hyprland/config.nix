@@ -20,6 +20,7 @@ in
         "swaync &"
         "hyprctl setcursor Whitesur-Cursors 18 &"
         "swww-daemon &"
+	"hypridle &"
 
         "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         "[workspace 1 silent] ${browser}"
