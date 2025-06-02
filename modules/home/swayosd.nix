@@ -34,7 +34,7 @@
         padding: 0px 10px;
         border-radius: 25px;
         border: 10px;
-        background: alpha(#1e1e2e, 0.99);
+        background: alpha(#313244, 0.99);
     }
 
     #container {
@@ -66,7 +66,7 @@
         min-height: inherit;
         border-radius: inherit;
         border: none;
-        background: #a6adc8;
+        background: #cdd6f4;
     }
   '';
 }
