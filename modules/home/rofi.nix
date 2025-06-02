@@ -68,21 +68,21 @@
 
     element normal active {
       text-color: @accent-color;
-      text-color: @bg0;
+      text-color: @fg0;
     }
 
     element alternate active {
       text-color: @accent-color;
-      text-color: @bg0;
+      text-color: @fg0;
     }
 
     element selected {
-      text-color: @bg0;
+      text-color: @fg0;
     }
 
     element selected normal, element selected active {
       background-color: @accent-color;
-      text-color: @bg0;
+      text-color: @fg0;
     }
 
     element selected urgent {
