@@ -27,5 +27,7 @@
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "Colloid-Purple-Dark-Catppuccin";
     GRIMBLAST_HIDE_CURSOR = 0;
+    XCURSOR_THEME = "Apple-Cursor";
+    XCURSOR_SIZE ="20";
   };
 }

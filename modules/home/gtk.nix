@@ -31,15 +31,15 @@
       package = pkgs.catppuccin-papirus-folders;
     };
     cursorTheme = {
-      name = "Whitesur-Cursors";
-      package = pkgs.whitesur-cursors;
-      size = 18;
+      name = "Apple-Cursor";
+      package = pkgs.apple-cursor;
+      size = 20;
     };
   };
 
   home.pointerCursor = {
-    name = "Whitesur-Cursors";
-    package = pkgs.whitesur-cursors;
-    size = 18;
+    name = "Apple-Cursor";
+    package = pkgs.apple-cursor;
+    size = 20;
   };
 }

@@ -18,7 +18,7 @@ in
         "wl-paste --watch cliphist store &"
         "waybar &"
         "swaync &"
-        "hyprctl setcursor Whitesur-Cursors 18 &"
+        "hyprctl setcursor 'Apple-Cursor' 20 &"
         "swww-daemon &"
 	"hypridle &"
 
