@@ -122,7 +122,7 @@
      rotate = 0;
     separate-outputs = true;
     rewrite = {
-      "nuexq@Laptop:(.*)" = "$1 ";
+      "nuexq@NoPc:(.*)" = "$1 ";
       "(.*) — Mozilla Firefox" = "$1 󰈹";
       "(.*)Mozilla Firefox" = "Firefox 󰈹";
       "(.*) - Visual Studio Code" = "$1 󰨞";
