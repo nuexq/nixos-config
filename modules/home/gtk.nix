@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
@@ -14,14 +14,15 @@
       name = "JetBrain Nerd Font";
       size = 12;
     };
-    theme = {
-      name = "Catppuccin-Mocha-Compact-Mauve-dark";
-      package = pkgs.catppuccin-gtk.override {
-        size = "compact";
-        accents = ["mauve"];
-        variant = "mocha";
-      };
+
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      accent = "mauve";
+      size = "standard";
+      tweaks = [ "normal" ];
     };
+
     iconTheme = {
       name = "catppuccin-papirus-folders-unstable";
       package = pkgs.catppuccin-papirus-folders;

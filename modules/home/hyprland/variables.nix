@@ -25,7 +25,7 @@
     XDG_SESSION_DESKTOP = "Hyprland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
-    GTK_THEME = "Catppuccin-Mocha-Compact-Mauve-dark";
+    GTK_THEME = "catppuccin-mocha-mauve-standard+normal";
     GRIMBLAST_HIDE_CURSOR = 0;
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE ="22";

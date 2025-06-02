@@ -29,8 +29,8 @@ tooltip {
   margin-top: 3px;
   margin-bottom: 3px;
   margin-left: 0px;
-  padding-left: 1px;
-  padding-right: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
   margin-right: 0px;
   color: #cdd6f4;
     animation: ws_normal 20s ease-in-out 1;
@@ -40,8 +40,8 @@ tooltip {
   background: #a6adc8;
   color: #1e1e2e;
   margin-left: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
   margin-right: 3px;
     animation: ws_active 20s ease-in-out 1;
     transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
