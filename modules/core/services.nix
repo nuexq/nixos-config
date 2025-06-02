@@ -15,12 +15,7 @@
       gnome-settings-daemon
     ];
   };
-  services.logind = {
-    enable = true;
-    extraConfig = ''
-      HandlePowerKey=ignore
-    '';
-    handleLidSwitch = "suspend";
-    handleLidSwitchDocked = "ignore";
-  };
+  services.logind.extraConfig = ''
+    HandlePowerKey=ignore
+  '';
 }
