@@ -19,9 +19,9 @@
     background-clip: border-box;
 }
 
-/* #notifications_box { */
-/*   border: solid 4px red; */
-/* } */
+#notifications_box {
+  border: solid 4px red;
+}
 
 label {
     color: @text;
