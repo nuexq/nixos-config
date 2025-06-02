@@ -33,13 +33,13 @@
     cursorTheme = {
       name = "Whitesur-Cursors";
       package = pkgs.whitesur-cursors;
-      size = 24;
+      size = 18;
     };
   };
 
   home.pointerCursor = {
     name = "Whitesur-Cursors";
     package = pkgs.whitesur-cursors;
-    size = 24;
+    size = 18;
   };
 }
