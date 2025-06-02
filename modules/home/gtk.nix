@@ -24,9 +24,10 @@
     };
 
     iconTheme = {
-      name = "catppuccin-papirus-folders-unstable";
+      name = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders;
     };
+
     cursorTheme = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
