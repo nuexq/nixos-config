@@ -31,15 +31,15 @@
       package = pkgs.catppuccin-papirus-folders;
     };
     cursorTheme = {
-      name = "Apple-Cursor";
-      package = pkgs.apple-cursor;
-      size = 20;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 22;
     };
   };
 
   home.pointerCursor = {
-    name = "Apple-Cursor";
-    package = pkgs.apple-cursor;
-    size = 20;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
+    size = 22;
   };
 }

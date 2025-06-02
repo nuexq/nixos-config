@@ -18,7 +18,7 @@ in
         "wl-paste --watch cliphist store &"
         "waybar &"
         "swaync &"
-        "hyprctl setcursor 'Apple-Cursor' 20 &"
+        "hyprctl setcursor Bibata-Modern-Ice 20 &"
         "swww-daemon &"
 	"hypridle &"
 
@@ -48,7 +48,7 @@ in
         gaps_in = 3;
         gaps_out = 8;
         border_size = 1;
-        "col.active_border" = "rgb(cdd6f4) rgb(585b70) 45deg";
+        "col.active_border" = "rgb(585b70) rgb(585b70) 45deg";
         "col.inactive_border" = "rgb(181825)";
 	resize_on_border = true;
       };
