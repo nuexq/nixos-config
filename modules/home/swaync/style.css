@@ -28,7 +28,7 @@ label {
 }
 
 .notification {
-    border: @mauve;
+    border: @surface1;
     box-shadow: none;
     /* margin: 0px; */
     /* margin: -15px -10px -15px -10px; */
