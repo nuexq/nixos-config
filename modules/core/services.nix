@@ -15,8 +15,12 @@
       gnome-settings-daemon
     ];
   };
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+  services.logind = {
+    enable = true;
+    extraConfig = ''
+      HandlePowerKey=ignore
+    '';
+    handleLidSwitch = "suspend";
+    handleLidSwitchDocked = "ignore";
+  };
 }
