@@ -10,7 +10,7 @@
       bg1: #313244;
       fg0: #cdd6f4;
 
-      accent-color: #45475a;
+      accent-color: #313244;
       urgent-color: #f9e2af;
 
       background-color: transparent;
@@ -68,10 +68,12 @@
 
     element normal active {
       text-color: @accent-color;
+      text-color: @bg0;
     }
 
     element alternate active {
       text-color: @accent-color;
+      text-color: @bg0;
     }
 
     element selected {
@@ -80,6 +82,7 @@
 
     element selected normal, element selected active {
       background-color: @accent-color;
+      text-color: @bg0;
     }
 
     element selected urgent {
@@ -100,7 +103,7 @@
       modi: "run,drun,window";
       lines: 8;
       cycle: false;
-      font: "FiraCode Nerd Font Medium 12";
+      font: "JetBrainsMono Nerd Font Medium 12";
       show-icons: true;
       icon-theme: "Papirus-dark";
       terminal: "ghostty";
@@ -109,9 +112,6 @@
       disable-history: true;
       hide-scrollbar: true;
       display-drun: " Apps ";
-      display-run: " Run ";
-      display-window: " Window ";
-      sidebar-mode: true;
       sorting-method: "fzf";
     }
 
