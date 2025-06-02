@@ -15,15 +15,11 @@
       size = 12;
     };
     theme = {
-      name = "Colloid-Purple-Dark-Catppuccin";
-      package = pkgs.colloid-gtk-theme.override {
-        colorVariants = [ "dark" ];
-        themeVariants = [ "purple" ];
-        tweaks = [
-          "catppuccin"
-          "rimless"
-          "float"
-        ];
+      name = "Catppuccin-Mocha-Compact-Mauve-dark";
+      package = pkgs.catppuccin-gtk.override {
+        size = "compact";
+        accents = ["mauve"];
+        variant = "mocha";
       };
     };
     iconTheme = {
