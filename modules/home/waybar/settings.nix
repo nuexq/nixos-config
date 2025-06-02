@@ -222,7 +222,7 @@
     format = "{}";
     rotate = 0;
     exec = "echo ; echo  logout";
-    on-click = "rofi-power-menu";
+    on-click = "power-menu";
     interval = 86400; # once every da;
     tooltip = true;
   };
