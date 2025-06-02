@@ -18,10 +18,8 @@ in
         "wl-paste --watch cliphist store &"
         "waybar &"
         "swaync &"
-        "hyprctl setcursor Bibata-Modern-Ice 24 &"
+        "hyprctl setcursor Whitesur-Cursors 18 &"
         "swww-daemon &"
-
-        "hyprlock"
 
         "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         "[workspace 1 silent] ${browser}"
