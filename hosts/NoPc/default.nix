@@ -10,6 +10,7 @@
     brightnessctl
     cpupower-gui
     powertop
+    xclip
   ];
 
   services = {

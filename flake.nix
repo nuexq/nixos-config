@@ -57,7 +57,7 @@
       nixosConfigurations = {
         NoPc = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts ];
+          modules = [ ./hosts/NoPc ];
           specialArgs = {
             host = "NoPc";
             inherit self inputs username;
