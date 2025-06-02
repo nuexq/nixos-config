@@ -6,6 +6,7 @@
     enableZshIntegration = true;
 
     settings = {
+      add_newline = true;
       format = " $hostname$shell$directory$git_branch$git_status$character";
 
       directory = {
@@ -18,28 +19,28 @@
 
       git_branch = {
         symbol = "󰘬";
-        format = "[ [$symbol](bold green bg:${mixedColor}) $branch ](bg:${mixedColor} green)";
+        format = "[ [$symbol](bold black bg:#cba6f7) $branch ](bg:#cba6f7 black)";
       };
 
       git_status = {
         disabled = false;
         ignore_submodules = false;
-        ahead = "[􀄨 ($count) ](blue)";
-        behind = "[􀄩 ($count) ](yellow)";
-        deleted = "[􀆄 ($count) ](red)";
-        diverged = "[􀢁 ($count) ](red)";
-        format = "[ $all_status$ahead_behind]()";
-        modified = "[􁚛 ($count) ](yellow)";
-        renamed = "[􀈏  ($count) ](purple)";
-        staged = "[􀥄 ($count) ](cyan)";
-        stashed = "[􀐚 ($count) ](blue)";
+	ahead = "[ ($count) ](blue)";
+	behind = "[ ($count) ](yellow)";
+	deleted = "[ ($count) ](red)";
+	diverged = "[ﰬ ($count) ](red)";
+	modified = "[ ($count) ](yellow)";
+	renamed = "[ ($count) ](purple)";
+	staged = "[ ($count) ](cyan)";
+	stashed = "[ ($count) ](blue)";
+	format = "[ $all_status$ahead_behind]()";
       };
 
       character = {
-        disabled = false;
-        success_symbol = "[􀄫](green)";
-        error_symbol = "[􀄫](red)";
-      };
+       disabled = false;
+       success_symbol = "[❯](green)";
+       error_symbol = "[❯](red)";
+     };
 
       shell = {
         zsh_indicator = " zsh";
