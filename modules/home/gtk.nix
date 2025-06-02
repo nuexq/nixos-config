@@ -5,7 +5,7 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
     noto-fonts-emoji
-    maple-mono.NF-unhinted
+    maple-mono.NF-CN-unhinted
   ];
 
   gtk = {
