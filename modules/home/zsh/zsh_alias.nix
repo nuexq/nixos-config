@@ -20,7 +20,7 @@
       nv = "nvim"; # nvim
 
       # Nixos
-      cdnix = "cd ~/nixos-config && codium ~/nixos-config";
+      cdnix = "cd ~/nixos-config && nvim ~/nixos-config";
       ns = "nom-shell --run zsh";
       nd = "nom develop --command zsh";
       nb = "nom build";
