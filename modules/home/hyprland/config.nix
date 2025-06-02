@@ -202,6 +202,18 @@ in
 	"$mainMod SHIFT, 0, movetoworkspace, 10"
         "$mainMod CTRL, c, movetoworkspace, empty"
 
+	# Move active window to a workspace silently
+        "$mainMod ALT, 1, movetoworkspacesilent, 1"
+	"$mainMod ALT, 2, movetoworkspacesilent, 2"
+	"$mainMod ALT, 3, movetoworkspacesilent, 3"
+	"$mainMod ALT, 4, movetoworkspacesilent, 4"
+	"$mainMod ALT, 5, movetoworkspacesilent, 5"
+	"$mainMod ALT, 6, movetoworkspacesilent, 6"
+	"$mainMod ALT, 7, movetoworkspacesilent, 7"
+	"$mainMod ALT, 8, movetoworkspacesilent, 8"
+	"$mainMod ALT, 9, movetoworkspacesilent, 9"
+	"$mainMod ALT, 0, movetoworkspacesilent, 10"
+
         # window control
         "$mainMod SHIFT, left, movewindow, l"
         "$mainMod SHIFT, right, movewindow, r"
