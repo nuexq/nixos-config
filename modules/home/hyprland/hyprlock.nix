@@ -21,7 +21,7 @@
       background = [
         {
           monitor = "";
-          path = "${../../../wallpapers/otherWallpaper/catppuccin/clouds.jpg}";
+          path = "${../../../wallpapers/clouds.jpg}";
           blur_passes = 3;
           contrast = 0.8916;
           brightness = 0.8172;
