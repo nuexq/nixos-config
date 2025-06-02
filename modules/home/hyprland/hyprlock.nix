@@ -30,30 +30,15 @@
         }
       ];
 
-      shape = [
-        # User box
-        {
-          monitor = "";
-          size = "300, 50";
-          color = "rgba(88, 91, 112, 0.33)";
-          rounding = 10;
-          border_color = "rgba(205, 214, 244, 0)";
-          position = "0, 120";
-          halign = "center";
-          valign = "bottom";
-        }
-      ];
-
       label = [
         # Time
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(date +'%k:%M')"'';
           color = "rgba(205, 214, 244, 0.9)";
-          font_size = 115;
+          font_size = 120;
           font_family = "Maple Mono NF Bold";
-          shadow_passes = 3;
-          position = "0, -25";
+          position = "0, -100";
           halign = "center";
           valign = "top";
         }
@@ -64,21 +49,20 @@
           color = "rgba(205, 214, 244, 0.9)";
           font_size = 18;
           font_family = "Maple Mono NF";
-          shadow_passes = 3;
-          position = "0, -225";
+          position = "0, -300";
           halign = "center";
           valign = "top";
         }
         # Username
         {
           monitor = "";
-          text = "  $USER";
+          text = "Welcome $USER";
           color = "rgba(205, 214, 244, 1)";
-          font_size = 15;
+          font_size = 16;
           font_family = "Maple Mono NF Bold";
-          position = "0, 131";
+          position = "0, 40";
           halign = "center";
-          valign = "bottom";
+          valign = "center";
         }
       ];
 
@@ -99,9 +83,9 @@
           fade_on_empty = false;
           placeholder_text = ''<i><span foreground="##cdd6f4">Enter Password</span></i>'';
           hide_input = false;
-          position = "0, 50";
+          position = "0, -40";
           halign = "center";
-          valign = "bottom";
+          valign = "center";
         }
       ];
     };
