@@ -13,17 +13,16 @@
     settings = {
       general = {
         hide_cursor = true;
-        no_fade_in = false;
-        disable_loading_bar = true;
-        ignore_empty_input = true;
-        fractional_scaling = 0;
+	no_fade_in = false;
+        grace = 0;
+    	disable_loading_bar = true;
       };
 
       background = [
         {
           monitor = "";
-          path = "${../../../wallpapers/otherWallpaper/gruvbox/forest_road.jpg}";
-          blur_passes = 2;
+          path = "${../../../wallpapers/otherWallpaper/catppuccin/clouds.jpg}";
+          blur_passes = 3;
           contrast = 0.8916;
           brightness = 0.8172;
           vibrancy = 0.1696;
@@ -36,10 +35,10 @@
         {
           monitor = "";
           size = "300, 50";
-          color = "rgba(102, 92, 84, 0.33)";
+          color = "rgba(88, 91, 112, 0.33)";
           rounding = 10;
-          border_color = "rgba(255, 255, 255, 0)";
-          position = "0, ${if host == "laptop" then "120" else "270"}";
+          border_color = "rgba(205, 214, 244, 0)";
+          position = "0, 120";
           halign = "center";
           valign = "bottom";
         }
@@ -50,11 +49,11 @@
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(date +'%k:%M')"'';
-          color = "rgba(235, 219, 178, 0.9)";
+          color = "rgba(205, 214, 244, 0.9)";
           font_size = 115;
           font_family = "Maple Mono NF Bold";
           shadow_passes = 3;
-          position = "0, ${if host == "laptop" then "-25" else "-150"}";
+          position = "0, -25";
           halign = "center";
           valign = "top";
         }
@@ -62,11 +61,11 @@
         {
           monitor = "";
           text = ''cmd[update:1000] echo "- $(date +'%A, %B %d') -" '';
-          color = "rgba(235, 219, 178, 0.9)";
+          color = "rgba(205, 214, 244, 0.9)";
           font_size = 18;
           font_family = "Maple Mono NF";
           shadow_passes = 3;
-          position = "0, ${if host == "laptop" then "-225" else "-350"}";
+          position = "0, -225";
           halign = "center";
           valign = "top";
         }
@@ -74,10 +73,10 @@
         {
           monitor = "";
           text = "  $USER";
-          color = "rgba(235, 219, 178, 1)";
+          color = "rgba(205, 214, 244, 1)";
           font_size = 15;
           font_family = "Maple Mono NF Bold";
-          position = "0, ${if host == "laptop" then "131" else "281"}";
+          position = "0, 131";
           halign = "center";
           valign = "bottom";
         }
@@ -86,22 +85,21 @@
       input-field = [
         {
           monitor = "";
-          size = "300, 50";
-          outline_thickness = 1;
-          rounding = 10;
-          dots_size = 0.25;
-          dots_spacing = 0.4;
+          size = "250, 60";
+          outline_thickness = 2;
+          dots_size = 0.2;
+          dots_spacing = 0.2;
           dots_center = true;
-          outer_color = "rgba(102, 92, 84, 0.33)";
-          inner_color = "rgba(102, 92, 84, 0.33)";
-          color = "rgba(235, 219, 178, 0.9)";
-          font_color = "rgba(235, 219, 178, 0.9)";
+          outer_color = "rgba(0, 0, 0, 0)";
+          inner_color = "rgba(0, 0, 0, 0.5)";
+          color = "rgba(205, 214, 244, 0.9)";
+          font_color = "rgba(205, 214, 244, 0.9)";
           font_size = 14;
           font_family = "Maple Mono NF Bold";
           fade_on_empty = false;
-          placeholder_text = ''<i><span foreground="##fbf1c7">Enter Password</span></i>'';
+          placeholder_text = ''<i><span foreground="##cdd6f4">Enter Password</span></i>'';
           hide_input = false;
-          position = "0, ${if host == "laptop" then "50" else "200"}";
+          position = "0, 50";
           halign = "center";
           valign = "bottom";
         }
