@@ -1,19 +1,20 @@
-{ username, ... }:
+{ username, pkgs, ... }:
+
 {
   services = {
     xserver = {
       enable = true;
-      xkb.layout = "us,fr";
+      xkb.layout = "us,ara";
+
+      displayManager.sddm.enable = true;
+
+      displayManager.autoLogin.enable = false;
     };
 
-    displayManager.autoLogin = {
-      enable = true;
-      user = "${username}";
-    };
-    libinput = {
-      enable = true;
-    };
+    libinput.enable = true;
   };
-  # To prevent getting stuck at shutdown
+
+  # Avoid long shutdown times
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 }
+
