@@ -1,11 +1,4 @@
-{
-  pkgs,
-  inputs,
-  username,
-  host,
-  ...
-}:
-{
+{ pkgs, inputs, username, host, ... }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   home-manager = {
@@ -13,10 +6,7 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs username host; };
     users.${username} = {
-      imports = [
-        ./../home
-        inputs.catppuccin.homeModules.catppuccin
-      ];
+      imports = [ ./../home inputs.catppuccin.homeModules.catppuccin ];
 
       home.username = username;
       home.homeDirectory = "/home/${username}";
@@ -27,22 +17,19 @@
         enable = true;
         flavor = "mocha";
         accent = "mauve";
-	hyprlock.enable = false;
-	swaync.enable = false;
-	hyprland.enable = false;
-	starship.enable = false;
-	zsh-syntax-highlighting.enable = false;
+        hyprlock.enable = false;
+        swaync.enable = false;
+        hyprland.enable = false;
+        starship.enable = false;
+        zsh-syntax-highlighting.enable = false;
       };
     };
   };
 
-  users.users.${username} = {
+  users.users."${username}" = {
     isNormalUser = true;
     description = username;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
 
