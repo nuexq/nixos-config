@@ -16,7 +16,7 @@
     ./hyprland                        # window manager
     ./lazygit.nix
     ./nemo.nix                        # file manager
-    ./nvim.nix                        # neovim editor
+    ./nvim                            # neovim editor
     ./obsidian.nix
     ./packages                        # other packages
     ./rofi.nix                        # launcher
