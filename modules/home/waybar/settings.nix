@@ -36,7 +36,7 @@
       "backlight"
       "network"
       "pulseaudio"
-      "pulseaudio#microphone",
+      "pulseaudio#microphone"
       "custom/notification"
       "custom/r_end"
       "custom/l_end"
@@ -181,14 +181,14 @@
   "pulseaudio#microphone" = {
     format = "{format_source}";
     rotate = 0;
-    formatsource = "";
+    formatsource = "";
     format-sourcemuted = "";
     on-click = "pavucontrol -t 4";
     on-scroll-up = "swayosd-client --input-volume +2 --max-volume=100";
     on-scroll-down = "swayosd-client --input-volume -2";
     tooltip-format = "{format_source} {source_desc}";
     scroll-step = 5;
-  },
+  };
 
   "custom/notification" = {
      tooltip = false;
