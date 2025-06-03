@@ -16,5 +16,8 @@
 
     # Rust
     rustup
+
+    # Java
+    openjdk21
   ];
 }
