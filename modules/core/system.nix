@@ -1,6 +1,5 @@
 { pkgs, inputs, ... }:
 {
-  # imports = [ inputs.nix-gaming.nixosModules.default ];
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -31,7 +30,7 @@
     git
   ];
 
-  time.timeZone = "Europe/Paris";
+  time.timeZone = "Africa/Casablanca";
   i18n.defaultLocale = "en_US.UTF-8";
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";
