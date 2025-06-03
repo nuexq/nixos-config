@@ -13,10 +13,9 @@
 
       c = "clear"; # clear terminal
       l = "eza -lh  -icons=auto"; # long list
-      ls = "eza -1   --icons=auto"; # short list
       ll = "eza -lha --icons=auto --sort=name --group-directories-first"; # long list all
+      ls = "eza -1   --icons=auto"; # short list
       ld = "eza -lhD --icons=auto"; # long list dirs
-      pl = "$aurhelper -Qs"; # list installed package
       nv = "nvim"; # nvim
 
       # Nixos
