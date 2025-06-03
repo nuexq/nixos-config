@@ -5,6 +5,7 @@ require("mason-tool-installer").setup({
 		"stylua",
 		"cbfmt",
 		"prettier",
+    "nixfmt",
 	},
 	auto_update = false,
 	run_on_start = true,

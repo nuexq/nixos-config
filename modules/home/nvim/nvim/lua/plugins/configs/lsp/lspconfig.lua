@@ -14,3 +14,11 @@ for _, server in ipairs(servers) do
 		})
 	end
 end
+
+lspconfig.nixd.setup({
+  on_attach = on_attach,
+	capabilities = capabilities,
+  cmd = { "nixd" }, -- use system-installed nixd
+  filetypes = { "nix" },
+  root_dir = lspconfig.util.root_pattern("flake.nix", "shell.nix", ".git"),
+})

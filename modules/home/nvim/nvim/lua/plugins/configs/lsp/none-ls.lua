@@ -23,5 +23,6 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.eslint_d, -- Use the built-in diagnostics for eslint_d
 		null_ls.builtins.diagnostics.biome,
 		null_ls.builtins.formatting.eslint_d,
+		null_ls.builtins.formatting.nixfmt,
 	},
 })
