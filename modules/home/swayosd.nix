@@ -28,45 +28,4 @@
       ];
     };
   };
-
-  xdg.configFile."swayosd/style.css".text = ''
-    window {
-        padding: 0px 10px;
-        border-radius: 25px;
-        border: 10px;
-        background: alpha(#313244, 0.99);
-    }
-
-    #container {
-        margin: 15px;
-    }
-
-    image, label {
-        color: #cdd6f4;
-    }
-
-    progressbar:disabled,
-    image:disabled {
-        opacity: 0.95;
-    }
-
-    progressbar {
-        min-height: 6px;
-        border-radius: 999px;
-        background: transparent;
-        border: none;
-    }
-    trough {
-        min-height: inherit;
-        border-radius: inherit;
-        border: none;
-        background: alpha(#a6adc8, 0.2);
-    }
-    progress {
-        min-height: inherit;
-        border-radius: inherit;
-        border: none;
-        background: #cdd6f4;
-    }
-  '';
 }
