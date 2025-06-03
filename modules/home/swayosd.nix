@@ -18,8 +18,9 @@
         ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume +2 --max-volume=100"
         ",XF86AudioLowerVolume, exec, swayosd-client --output-volume -2"
 
-        "$mainMod, F3, exec, swayosd-client --output-volume +2 --max-volume=100"
-        "$mainMod, F2, exec, swayosd-client --output-volume -2"
+        "ALT, F1, exec, swayosd-client --output-volume mute-toggle"
+        "ALT, F3, exec, swayosd-client --output-volume +2 --max-volume=100"
+        "ALT, F2, exec, swayosd-client --output-volume -2"
       ];
       bindr = [
         "CAPS,Caps_Lock,exec,swayosd-client --caps-lock"
