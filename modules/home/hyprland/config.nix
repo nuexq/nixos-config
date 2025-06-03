@@ -271,7 +271,6 @@ in
 	"opacity 0.90 0.90,class:^(com.mitchellh.ghostty)$"
         "float,class:^(imv)$"
         "float,class:^(mpv)$"
-        "float,class:^(Audacious)$"
         "pin,class:^(rofi)$"
         "pin,class:^(waypaper)$"
         "float,title:^(Volume Control)$"
