@@ -7,7 +7,6 @@
     ./cava.nix                        # audio visualizer
     ./discord.nix                     # discord
     ./fastfetch.nix                   # fetch tool
-    ./flow.nix                        # terminal text editor
     ./fzf.nix                         # fuzzy finder
     ./gaming.nix                      # packages related to gaming
     ./ghostty.nix                     # terminal
