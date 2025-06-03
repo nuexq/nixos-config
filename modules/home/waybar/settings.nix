@@ -36,6 +36,7 @@
       "backlight"
       "network"
       "pulseaudio"
+      "pulseaudio#microphone",
       "custom/notification"
       "custom/r_end"
       "custom/l_end"
@@ -139,8 +140,8 @@
     rotate = 0;
     format = "{icon} {percent}%";
     format-icons = ["" "" "" "" "" "" "" "" ""];
-    on-scroll-up = "brightnessctl set 1%+";
-    on-scroll-down = "brightnessctl set 1%-";
+    on-scroll-up = "swayosd-client --brightness raise 1%+";
+    on-scroll-down = "swayosd-client --brightness lower 1%-";
     min-length = 6;
   };
 
@@ -161,7 +162,7 @@
     format = "{icon} {volume}";
     rotate = 0;
     format-muted = "婢";
-    on-click = "hyprctl dispatch exec '[float; center]' pavucontrol -t 3";
+    on-click = "pavucontrol -t 3";
     on-scroll-up = "swayosd-client --output-volume +2 --max-volume=100";
     on-scroll-down = "swayosd-client --output-volume -2";
     tooltip-format = "{icon} {desc} // {volume}%";
@@ -176,6 +177,18 @@
       default = ["" "" ""];
     };
   };
+
+  "pulseaudio#microphone" = {
+    format = "{format_source}";
+    rotate = 0;
+    formatsource = "";
+    format-sourcemuted = "";
+    on-click = "pavucontrol -t 4";
+    on-scroll-up = "swayosd-client --input-volume +2 --max-volume=100";
+    on-scroll-down = "swayosd-client --input-volume -2";
+    tooltip-format = "{format_source} {source_desc}";
+    scroll-step = 5;
+  },
 
   "custom/notification" = {
      tooltip = false;
