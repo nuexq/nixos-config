@@ -9,18 +9,20 @@
       bind = [ ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle" ];
       # binds active in lockscreen
       bindl = [
-        ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise 5%+"
-        ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower 5%-"
-        "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set 100%"
-        "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 0%"
+        "ALT, F5 exec, swayosd-client --brightness raise 5%+"
+        "ALT, F6 exec, swayosd-client --brightness lower 5%-"
       ];
       bindle = [
         ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume +2 --max-volume=100"
         ",XF86AudioLowerVolume, exec, swayosd-client --output-volume -2"
 
+	# volume
         "ALT, F1, exec, swayosd-client --output-volume mute-toggle"
         "ALT, F3, exec, swayosd-client --output-volume +2 --max-volume=100"
         "ALT, F2, exec, swayosd-client --output-volume -2"
+
+	# mic
+        "ALT, F4, exec, swayosd-client --input-volume mute-toggle"
       ];
       bindr = [
         "CAPS,Caps_Lock,exec,swayosd-client --caps-lock"
