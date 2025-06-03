@@ -9,8 +9,8 @@
       bind = [ ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle" ];
       # binds active in lockscreen
       bindl = [
-        "ALT, F5 exec, swayosd-client --brightness raise 5%+"
-        "ALT, F6 exec, swayosd-client --brightness lower 5%-"
+        "ALT, F5, exec, swayosd-client --brightness raise 5%+"
+        "ALT, F6, exec, swayosd-client --brightness lower 5%-"
       ];
       bindle = [
         ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume +2 --max-volume=100"
