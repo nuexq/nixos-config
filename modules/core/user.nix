@@ -31,6 +31,7 @@
 	swaync.enable = false;
 	hyprland.enable = false;
 	starship.enable = false;
+	zsh-syntax-highlighting.enable = false;
       };
     };
   };
