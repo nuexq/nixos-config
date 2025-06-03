@@ -268,29 +268,24 @@ in
 
       # windowrule
       windowrule = [
-	"opacity 0.90 0.90,class:^(com.mitchellh.ghostty)$"
-        "float,class:^(imv)$"
-        "float,class:^(mpv)$"
+        # Pin
         "pin,class:^(rofi)$"
         "pin,class:^(waypaper)$"
-        "float,title:^(Volume Control)$"
-        "size 700 450,title:^(Volume Control)$"
-        "move 40 55%,title:^(Volume Control)$"
+        "pin,title:^(Picture-in-Picture)$"
 
-        "float, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
-        "pin, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
-        "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
-        "opacity 1.0 override 1.0 override, class:(Aseprite)"
-        "opacity 1.0 override 1.0 override, class:(zen)"
-        "opacity 1.0 override 1.0 override, class:(evince)"
-        "idleinhibit focus, class:^(mpv)$"
+	# Size
+        "size 700 450,title:^(Volume Control)$"
+	"size 850 500,class:^(zenity)$"
+        "size 725 330,class:^(SoundWireServer)$"
+
+	# Floating
+	"float,class:^(imv)$"
+        "float,class:^(mpv)$"
+        "float,title:^(Volume Control)$"
+        "float,title:^(Picture-in-Picture)$"
         "float,class:^(org.gnome.Calculator)$"
         "float,class:^(waypaper)$"
         "float,class:^(zenity)$"
-        "size 850 500,class:^(zenity)$"
-        "size 725 330,class:^(SoundWireServer)$"
         "float,class:^(org.gnome.FileRoller)$"
         "float,class:^(org.pulseaudio.pavucontrol)$"
         "float,class:^(SoundWireServer)$"
@@ -307,15 +302,9 @@ in
         "float,title:^(branchdialog)$"
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
-
-        "opacity 0.0 override,class:^(xwaylandvideobridge)$"
-        "noanim,class:^(xwaylandvideobridge)$"
-        "noinitialfocus,class:^(xwaylandvideobridge)$"
-        "maxsize 1 1,class:^(xwaylandvideobridge)$"
-        "noblur,class:^(xwaylandvideobridge)$"
-
-        # "maxsize 1111 700, floating: 1"
-        # "center, floating: 1"
+ 
+        # Center
+        "center,class:^(org.pulseaudio.pavucontrol)$"
 
         # Remove context menu transparency in chromium based apps
         "opaque,class:^()$,title:^()$"
@@ -323,6 +312,7 @@ in
         "noblur,class:^()$,title:^()$"
 
 	# transparency
+        "opacity 0.0 override,class:^(xwaylandvideobridge)$"
 	"opacity 0.90 0.90,class:^(dev.zed.Zed)$"
 	"opacity 0.80 0.80,class:^(discord)$"
 	"opacity 0.80 0.80,class:^(Steam)$"
@@ -337,6 +327,22 @@ in
 	"opacity 0.80 0.80,class:^(qt6ct)$"
 	"opacity 0.80 0.80,class:^(obsidian)$"
 	"opacity 0.80 0.80,class:^(Notion)$"
+	"opacity 0.90 0.90,class:^(com.mitchellh.ghostty)$"
+        "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
+        "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
+        "opacity 1.0 override 1.0 override, class:(Aseprite)"
+        "opacity 1.0 override 1.0 override, class:(zen)"
+        "opacity 1.0 override 1.0 override, class:(evince)"
+        "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
+
+	# other
+        "move 40 55%,title:^(Volume Control)$"
+        "idleinhibit focus, class:^(mpv)$"
+	"noanim,class:^(xwaylandvideobridge)$"
+        "noinitialfocus,class:^(xwaylandvideobridge)$"
+        "maxsize 1 1,class:^(xwaylandvideobridge)$"
+        "noblur,class:^(xwaylandvideobridge)$"
+
       ];
     };
 
