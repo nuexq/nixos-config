@@ -29,5 +29,6 @@
     GRIMBLAST_HIDE_CURSOR = 0;
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE ="22";
+    EDITOR = "nvim";
   };
 }
