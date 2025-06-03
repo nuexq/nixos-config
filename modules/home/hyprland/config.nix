@@ -2,8 +2,7 @@
 let
   browser = "zen-beta";
   terminal = "ghostty";
-in
-{
+in {
   wayland.windowManager.hyprland = {
     settings = {
       # autostart
@@ -20,7 +19,7 @@ in
         "swaync &"
         "hyprctl setcursor Bibata-Modern-Ice 20 &"
         "swww-daemon &"
-	"hypridle &"
+        "hypridle &"
 
         "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         "[workspace 1 silent] ${browser}"
@@ -36,10 +35,8 @@ in
         float_switch_override_focus = 0;
         mouse_refocus = 0;
         sensitivity = -1;
-	force_no_accel = 1;
-        touchpad = {
-          natural_scroll = true;
-        };
+        force_no_accel = 1;
+        touchpad = { natural_scroll = true; };
       };
 
       general = {
@@ -50,7 +47,7 @@ in
         border_size = 1;
         "col.active_border" = "rgb(585b70) rgb(585b70) 45deg";
         "col.inactive_border" = "rgb(181825)";
-	resize_on_border = true;
+        resize_on_border = true;
       };
 
       misc = {
@@ -63,7 +60,7 @@ in
         focus_on_activate = true;
         new_window_takes_over_fullscreen = 2;
         middle_click_paste = false;
-  	disable_splash_rendering = true;
+        disable_splash_rendering = true;
       };
 
       dwindle = {
@@ -82,7 +79,7 @@ in
 
       decoration = {
         rounding = 0;
-	dim_special = 0.3;
+        dim_special = 0.3;
 
         blur = {
           enabled = true;
@@ -94,36 +91,32 @@ in
           special = true;
         };
 
-        shadow = {
-          enabled = false;
-        };
+        shadow = { enabled = false; };
       };
 
       animations = {
         enabled = true;
 
         bezier = [
-    	  "wind, 0.05, 0.9, 0.1, 1.05"
-    	  "winIn, 0.1, 1.1, 0.1, 1.1"
-    	  "winOut, 0.3, -0.3, 0, 1"
-    	  "liner, 1, 1, 1, 1"
+          "wind, 0.05, 0.9, 0.1, 1.05"
+          "winIn, 0.1, 1.1, 0.1, 1.1"
+          "winOut, 0.3, -0.3, 0, 1"
+          "liner, 1, 1, 1, 1"
         ];
 
         animation = [
-    	  "windows, 1, 6, wind, slide"
-    	  "windowsIn, 1, 6, winIn, slide"
-    	  "windowsOut, 1, 5, winOut, slide"
-    	  "windowsMove, 1, 5, wind, slide"
-    	  "border, 1, 1, liner"
-    	  "borderangle, 1, 30, liner, loop"
-    	  "fade, 1, 10, default"
-    	  "workspaces, 1, 5, wind"
+          "windows, 1, 6, wind, slide"
+          "windowsIn, 1, 6, winIn, slide"
+          "windowsOut, 1, 5, winOut, slide"
+          "windowsMove, 1, 5, wind, slide"
+          "border, 1, 1, liner"
+          "borderangle, 1, 30, liner, loop"
+          "fade, 1, 10, default"
+          "workspaces, 1, 5, wind"
         ];
       };
 
-      binds = {
-        movefocus_cycles_fullscreen = true;
-      };
+      binds = { movefocus_cycles_fullscreen = true; };
 
       bind = [
         # show keybinds list
@@ -189,30 +182,30 @@ in
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
-	# Move active window to a workspace with mainMod + SHIFT + [0-9]
-	"$mainMod SHIFT, 1, movetoworkspace, 1"
-	"$mainMod SHIFT, 2, movetoworkspace, 2"
-	"$mainMod SHIFT, 3, movetoworkspace, 3"
-	"$mainMod SHIFT, 4, movetoworkspace, 4"
-	"$mainMod SHIFT, 5, movetoworkspace, 5"
-	"$mainMod SHIFT, 6, movetoworkspace, 6"
-	"$mainMod SHIFT, 7, movetoworkspace, 7"
-	"$mainMod SHIFT, 8, movetoworkspace, 8"
-	"$mainMod SHIFT, 9, movetoworkspace, 9"
-	"$mainMod SHIFT, 0, movetoworkspace, 10"
+        # Move active window to a workspace with mainMod + SHIFT + [0-9]
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
         "$mainMod CTRL, c, movetoworkspace, empty"
 
-	# Move active window to a workspace silently
+        # Move active window to a workspace silently
         "$mainMod ALT, 1, movetoworkspacesilent, 1"
-	"$mainMod ALT, 2, movetoworkspacesilent, 2"
-	"$mainMod ALT, 3, movetoworkspacesilent, 3"
-	"$mainMod ALT, 4, movetoworkspacesilent, 4"
-	"$mainMod ALT, 5, movetoworkspacesilent, 5"
-	"$mainMod ALT, 6, movetoworkspacesilent, 6"
-	"$mainMod ALT, 7, movetoworkspacesilent, 7"
-	"$mainMod ALT, 8, movetoworkspacesilent, 8"
-	"$mainMod ALT, 9, movetoworkspacesilent, 9"
-	"$mainMod ALT, 0, movetoworkspacesilent, 10"
+        "$mainMod ALT, 2, movetoworkspacesilent, 2"
+        "$mainMod ALT, 3, movetoworkspacesilent, 3"
+        "$mainMod ALT, 4, movetoworkspacesilent, 4"
+        "$mainMod ALT, 5, movetoworkspacesilent, 5"
+        "$mainMod ALT, 6, movetoworkspacesilent, 6"
+        "$mainMod ALT, 7, movetoworkspacesilent, 7"
+        "$mainMod ALT, 8, movetoworkspacesilent, 8"
+        "$mainMod ALT, 9, movetoworkspacesilent, 9"
+        "$mainMod ALT, 0, movetoworkspacesilent, 10"
 
         # window control
         "$mainMod SHIFT, left, movewindow, l"
@@ -242,9 +235,9 @@ in
         "$mainMod ALT, k, moveactive, 0 -40"
         "$mainMod ALT, l, moveactive, 40 0"
 
-	# Special workspaces (scratchpad)
-	"$mainMod ALT, S, movetoworkspacesilent, special"
-	"$mainMod, S, togglespecialworkspace,"
+        # Special workspaces (scratchpad)
+        "$mainMod ALT, S, movetoworkspacesilent, special"
+        "$mainMod, S, togglespecialworkspace,"
 
         # media and volume controls
         # ",XF86AudioMute,exec, pamixer -t"
@@ -273,13 +266,13 @@ in
         "pin,class:^(waypaper)$"
         "pin,title:^(Picture-in-Picture)$"
 
-	# Size
+        # Size
         "size 700 450,title:^(Volume Control)$"
-	"size 850 500,class:^(zenity)$"
+        "size 850 500,class:^(zenity)$"
         "size 725 330,class:^(SoundWireServer)$"
 
-	# Floating
-	"float,class:^(imv)$"
+        # Floating
+        "float,class:^(imv)$"
         "float,class:^(mpv)$"
         "float,title:^(Volume Control)$"
         "float,title:^(Picture-in-Picture)$"
@@ -302,7 +295,7 @@ in
         "float,title:^(branchdialog)$"
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
- 
+
         # Center
         "center,class:^(org.pulseaudio.pavucontrol)$"
 
@@ -311,23 +304,23 @@ in
         "noshadow,class:^()$,title:^()$"
         "noblur,class:^()$,title:^()$"
 
-	# transparency
+        # transparency
         "opacity 0.0 override,class:^(xwaylandvideobridge)$"
-	"opacity 0.90 0.90,class:^(dev.zed.Zed)$"
-	"opacity 0.80 0.80,class:^(discord)$"
-	"opacity 0.80 0.80,class:^(Steam)$"
-	"opacity 0.80 0.80,class:^(steam)$"
-	"opacity 0.80 0.80,class:^(steamwebhelper)$"
-	"opacity 0.85 0.85,class:^(Spotify)$"
-	"opacity 0.90 0.90,class:^(Code)$"
-	"opacity 0.90 0.90,class:^(code-url-handler)$"
-	"opacity 0.90 0.90,class:^(com.mitchellh.ghostty)$"
-	"opacity 0.80 0.80,class:^(nemo)$"
-	"opacity 0.80 0.80,class:^(qt5ct)$"
-	"opacity 0.80 0.80,class:^(qt6ct)$"
-	"opacity 0.80 0.80,class:^(obsidian)$"
-	"opacity 0.80 0.80,class:^(Notion)$"
-	"opacity 0.90 0.90,class:^(com.mitchellh.ghostty)$"
+        "opacity 0.90 0.90,class:^(dev.zed.Zed)$"
+        "opacity 0.80 0.80,class:^(discord)$"
+        "opacity 0.80 0.80,class:^(Steam)$"
+        "opacity 0.80 0.80,class:^(steam)$"
+        "opacity 0.80 0.80,class:^(steamwebhelper)$"
+        "opacity 0.85 0.85,class:^(Spotify)$"
+        "opacity 0.90 0.90,class:^(Code)$"
+        "opacity 0.90 0.90,class:^(code-url-handler)$"
+        "opacity 0.90 0.90,class:^(com.mitchellh.ghostty)$"
+        "opacity 0.80 0.80,class:^(nemo)$"
+        "opacity 0.80 0.80,class:^(qt5ct)$"
+        "opacity 0.80 0.80,class:^(qt6ct)$"
+        "opacity 0.80 0.80,class:^(obsidian)$"
+        "opacity 0.80 0.80,class:^(Notion)$"
+        "opacity 0.90 0.90,class:^(com.mitchellh.ghostty)$"
         "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
         "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
         "opacity 1.0 override 1.0 override, class:(Aseprite)"
@@ -335,10 +328,10 @@ in
         "opacity 1.0 override 1.0 override, class:(evince)"
         "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
 
-	# other
+        # other
         "move 40 55%,title:^(Volume Control)$"
         "idleinhibit focus, class:^(mpv)$"
-	"noanim,class:^(xwaylandvideobridge)$"
+        "noanim,class:^(xwaylandvideobridge)$"
         "noinitialfocus,class:^(xwaylandvideobridge)$"
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
@@ -346,12 +339,7 @@ in
       ];
     };
 
-    extraConfig = "
-      monitor=,1920x1080@60,auto,1
-
-      xwayland {
-        force_zero_scaling = true
-      }
-    ";
+    extraConfig =
+      "\n      monitor=,1920x1080@60,auto,1\n\n      xwayland {\n        force_zero_scaling = true\n      }\n    ";
   };
 }
