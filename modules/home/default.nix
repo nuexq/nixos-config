@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./audacious.nix                   # music player
     ./bat.nix                         # better cat command
     ./browser.nix                     # firefox based browser
     ./btop.nix                        # resouces monitor 
@@ -20,7 +19,6 @@
     ./nemo.nix                        # file manager
     ./nvim.nix                        # neovim editor
     ./obsidian.nix
-    #./p10k/p10k.nix
     ./packages                        # other packages
     ./rofi.nix                        # launcher
     ./scripts/scripts.nix             # personal scripts
