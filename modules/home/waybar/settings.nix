@@ -119,7 +119,7 @@
   };
 
   "hyprland/window" = {
-    format = "  {}";
+    format = " 󱄅  {}";
      rotate = 0;
     separate-outputs = true;
     rewrite = {
@@ -161,7 +161,7 @@
   pulseaudio = {
     format = "{icon} {volume}";
     rotate = 0;
-    format-muted = "婢";
+    format-muted = "󰝟";
     on-click = "pavucontrol -t 3";
     on-scroll-up = "swayosd-client --output-volume +2 --max-volume=100";
     on-scroll-down = "swayosd-client --output-volume -2";
@@ -181,7 +181,7 @@
   "pulseaudio#microphone" = {
     format = "{format_source}";
     rotate = 0;
-    formatsource = "";
+    format-source = "";
     format-sourcemuted = "";
     on-click = "pavucontrol -t 4";
     on-scroll-up = "swayosd-client --input-volume +2 --max-volume=100";
