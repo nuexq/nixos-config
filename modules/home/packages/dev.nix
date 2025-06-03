@@ -19,5 +19,9 @@
 
     # Java
     openjdk21
+
+    # JS/TS
+    nodejs
+    bun
   ];
 }
