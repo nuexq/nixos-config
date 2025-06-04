@@ -137,7 +137,6 @@ in {
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "CTRL, ESCAPE, exec, toggle-waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-        #"$mainMod SHIFT, W,exec, wallpaper-picker"
         "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
         "$mainMod, N, exec, swaync-client -t -sw"
         "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 9] missioncenter'"
