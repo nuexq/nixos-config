@@ -13,6 +13,7 @@
     ./git.nix                         # version control
     ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme
+    ./qt.nix                          # qt theme
     ./hyprland                        # window manager
     ./lazygit.nix
     ./nemo.nix                        # file manager
