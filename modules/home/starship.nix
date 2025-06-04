@@ -17,7 +17,7 @@
         format = "[$path ]($style)";
         truncation_length = 99;
         truncation_symbol = ".../";
-        truncation_to_repo = false;
+        truncate_to_repo = false;
       };
 
       git_branch = {
