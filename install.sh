@@ -43,7 +43,7 @@ install() {
 
     # Copy the wallpapers
     echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
-    cp -r wallpapers/* ~/Pictures/wallpapers/others/
+    cp -r wallpapers/* ~/Pictures/wallpapers/
 
     # Get the hardware configuration
     echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
