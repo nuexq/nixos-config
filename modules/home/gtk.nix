@@ -1,9 +1,7 @@
-{ pkgs, inputs, ... }:
-{
+{ pkgs, inputs, ... }: {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
     noto-fonts-emoji
     maple-mono.NF-CN-unhinted
   ];
@@ -11,7 +9,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "JetBrain Nerd Font";
+      name = "Maple Mono NF CN";
       size = 12;
     };
 
@@ -20,7 +18,7 @@
       flavor = "mocha";
       accent = "mauve";
       size = "standard";
-      tweaks = [ "normal" ];
+      tweaks = [ "black" "rimless" "normal" ];
     };
 
     iconTheme = {
@@ -39,5 +37,9 @@
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;
     size = 22;
+  };
+
+  home.sessionVariables = {
+    GTK_THEME = "catppuccin-mocha-mauve-standard+black,rimless,normal";
   };
 }
