@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.starship = {
     enable = true;
 
@@ -7,59 +6,76 @@
 
     settings = {
       add_newline = true;
-      format = " $hostname$shell$directory$git_branch$git_status$character";
+
+      character = { use_symbol_for_status = false; };
 
       directory = {
-        style = "blue";
-        format = "[$path ]($style)";
+        style = "purple";
+        format = "[$path]($style)";
         truncation_length = 99;
-        truncation_symbol = "…/";
+        truncate_symbol = ".../";
         truncate_to_repo = false;
       };
 
-      git_branch = {
-        symbol = "󰘬";
-        format = "[ [$symbol](bold black bg:#cba6f7) $branch ](bg:#cba6f7 black)";
+      git_branch = { symbol = " "; };
+
+      git_commit = {
+        disabled = false;
+        commit_hash_length = 4;
+        tag_disabled = false;
       };
+
+      git_state = { disabled = true; };
 
       git_status = {
-        disabled = false;
-        ignore_submodules = false;
-	ahead = "[ ($count) ](blue)";
-	behind = "[ ($count) ](yellow)";
-	deleted = "[ ($count) ](red)";
-	diverged = "[ﰬ ($count) ](red)";
-	modified = "[ ($count) ](yellow)";
-	renamed = "[ ($count) ](purple)";
-	staged = "[ ($count) ](cyan)";
-	stashed = "[ ($count) ](blue)";
-	format = "[ $all_status$ahead_behind]()";
+        # disabled = false;
+        # ignore_submodules = false;
+        # ahead = "[ ($count) ](blue)";
+        # behind = "[ ($count) ](yellow)";
+        # deleted = "[ ($count) ](red)";
+        # diverged = "[ﰬ ($count) ](red)";
+        # modified = "[ ($count) ](yellow)";
+        # renamed = "[ ($count) ](purple)";
+        # staged = "[ ($count) ](cyan)";
+        # stashed = "[ ($count) ](blue)";
+        # format = "[ $all_status$ahead_behind]()";
+
+        conflicted_count = { enabled = true; };
+        untracked_count = { enabled = true; };
+        modified_count = { enabled = true; };
+        staged_count = { enabled = true; };
+        renamed_count = { enabled = true; };
+        deleted_count = { enabled = true; };
+        stashed_count = { enabled = true; };
       };
 
-      character = {
-       disabled = false;
-       success_symbol = "[❯](green)";
-       error_symbol = "[❯](red)";
-     };
-
-      shell = {
-        zsh_indicator = " zsh";
-        nu_indicator = " nu";
-        fish_indicator = "";
-        unknown_indicator = "";
-        style = "yellow";
-        disabled = false;
+      kubernetes = {
+        symbol = "⎈ ";
+        disabled = true;
       };
 
-      line_break = {
-        disabled = false;
-      };
+      line_break = { disabled = false; };
 
-      hostname = {
-        ssh_only = false;
-        format = "[$hostname]($style)";
-        style = "bold cyan";
-      };
+      nix_shell = { disabled = true; };
+
+      memory_usage = { disabled = true; };
+
+      java = { symbol = " "; };
+
+      julia = { symbol = " "; };
+
+      nodejs = { symbol = ""; };
+
+      package = { symbol = ""; };
+
+      python = { };
+
+      ruby = { };
+
+      rust = { symbol = " "; };
+
+      username = { disabled = false; };
+
     };
   };
 }
