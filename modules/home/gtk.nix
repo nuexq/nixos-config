@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -9,7 +9,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "Maple Mono NF CN";
+      name = "JetBrainsMono Nerd Font";
       size = 12;
     };
 
