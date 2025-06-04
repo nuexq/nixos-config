@@ -14,7 +14,7 @@
 
       directory = {
         style = "purple";
-        format = "[$path]($style)";
+        format = "[$path ]($style)";
         truncation_length = 99;
         truncate_symbol = ".../";
         truncate_to_repo = false;
