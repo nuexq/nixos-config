@@ -1,12 +1,18 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   qt = {
     enable = true;
-    platformTheme = "qtct";
+    platformTheme.name = "kvantum";
     style = {
-      package = with pkgs; [ darkly-qt5 darkly ];
       name = "kvantum";
-    }
+      catppuccin = {
+        apply = true;
+        enable = true;
+        accent = "mauve";
+        flavor = "mocha";
+      };
+    };
   };
 }
+
