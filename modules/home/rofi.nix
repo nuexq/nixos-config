@@ -1,100 +1,85 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [ rofi-wayland ];
 
   xdg.configFile."rofi/theme.rasi".text = ''
+    configuration {
+      font: "JetBrainsMono Nerd Font Medium 10";
+
+      drun {
+        display-name: "";
+      }
+
+      run {
+        display-name: "";
+      }
+
+      window {
+        display-name: "";
+      }
+
+      timeout {
+        delay: 10;
+        action: "kb-cancel";
+      }
+    }
+
     * {
-      font: "Maple Mono NF CN";
-
-      bg0: #1e1e2e;
-      bg1: #313244;
-      fg0: #cdd6f4;
-
-      accent-color: #313244;
-      urgent-color: #f9e2af;
-
-      background-color: transparent;
-      text-color: @fg0;
-
+      border: 0;
       margin: 0;
       padding: 0;
       spacing: 0;
+
+      bg: #1e1e2e;
+      bg-alt: #313244;
+      fg: #cdd6f4;
+      fg-alt: #a6adc8;
+
+      background-color: @bg;
+      text-color: @fg;
     }
 
     window {
-      location: center;
-      width: 480;
-      background-color: @bg0;
+      transparency: "real";
+    }
+
+    mainbox {
+      children: [inputbar, listview];
     }
 
     inputbar {
-      spacing: 8px;
-      padding: 8px;
-      background-color: @bg1;
+      background-color: @bg-alt;
+      children: [prompt, entry];
     }
 
-    prompt, entry, element-icon, element-text {
-      vertical-align: 0.5;
+    entry {
+      background-color: inherit;
+      padding: 12px 3px;
     }
 
     prompt {
-      text-color: @accent-color;
-    }
-
-    textbox {
-      padding: 8px;
-      background-color: @bg1;
+      background-color: inherit;
+      padding: 12px;
     }
 
     listview {
-      padding: 4px 0;
       lines: 8;
-      columns: 1;
-      fixed-height: false;
     }
 
     element {
-      padding: 8px;
-      spacing: 8px;
-    }
-
-    element normal normal {
-      text-color: @fg0;
-    }
-
-    element normal urgent {
-      text-color: @urgent-color;
-    }
-
-    element normal active {
-      text-color: @accent-color;
-      text-color: @fg0;
-    }
-
-    element alternate active {
-      text-color: @accent-color;
-      text-color: @fg0;
-    }
-
-    element selected {
-      text-color: @fg0;
-    }
-
-    element selected normal, element selected active {
-      background-color: @accent-color;
-      text-color: @fg0;
-    }
-
-    element selected urgent {
-      background-color: @urgent-color;
+      children: [element-icon, element-text];
     }
 
     element-icon {
-      size: 0.8em;
+      padding: 10px 10px;
     }
 
     element-text {
-      text-color: inherit;
+      padding: 10px 0;
+      text-color: @fg-alt;
+    }
+
+    element-text selected {
+      text-color: @fg;
     }
   '';
 
@@ -103,7 +88,7 @@
       modi: "run,drun,window";
       lines: 8;
       cycle: false;
-      font: "Maple Mono NF CN Medium 12";
+      font: "JetBrainsMono Nerd Font Medium 10";
       show-icons: true;
       icon-theme: "Papirus-dark";
       terminal: "ghostty";
@@ -113,6 +98,10 @@
       hide-scrollbar: true;
       display-drun: " Apps ";
       sorting-method: "fzf";
+      timeout {
+        delay: 10;
+        action: "kb-cancel";
+      }
     }
 
     @theme "theme"
