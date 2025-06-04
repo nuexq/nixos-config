@@ -4,7 +4,7 @@
 
   xdg.configFile."rofi/theme.rasi".text = ''
     * {
-      font: "JetBrainsMono Nerd Font";
+      font: "Maple Mono NF CN";
 
       bg0: #1e1e2e;
       bg1: #313244;
@@ -103,7 +103,7 @@
       modi: "run,drun,window";
       lines: 8;
       cycle: false;
-      font: "JetBrainsMono Nerd Font Medium 12";
+      font: "Maple Mono NF CN Medium 12";
       show-icons: true;
       icon-theme: "Papirus-dark";
       terminal: "ghostty";
