@@ -18,7 +18,7 @@
       flavor = "mocha";
       accent = "mauve";
       size = "standard";
-      tweaks = [ "black" "rimless" "normal" ];
+      tweaks = [ "rimless" "normal" ];
     };
 
     iconTheme = {
@@ -40,6 +40,6 @@
   };
 
   home.sessionVariables = {
-    GTK_THEME = "catppuccin-mocha-mauve-standard+black,rimless,normal";
+    GTK_THEME = "catppuccin-mocha-mauve-standard+rimless,normal";
   };
 }
