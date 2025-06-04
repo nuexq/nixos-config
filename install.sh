@@ -34,9 +34,11 @@ install() {
     echo -e "Creating folders:"
     echo -e "    - ${MAGENTA}~/Music${NORMAL}"
     echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
+    echo -e "    - ${MAGENTA}~/Developer${NORMAL}"
     echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
     mkdir -p ~/Music
     mkdir -p ~/Documents
+    mkdir -p ~/Developer
     mkdir -p ~/Pictures/wallpapers/others
 
     # Copy the wallpapers
