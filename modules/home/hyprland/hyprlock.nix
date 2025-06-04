@@ -37,7 +37,7 @@
           text = ''cmd[update:1000] echo "$(date +'%k:%M')"'';
           color = "rgba(205, 214, 244, 0.9)";
           font_size = 120;
-          font_family = "Maple Mono NF Bold";
+          font_family = "Maple Mono NF CN Bold";
           position = "0, -100";
           halign = "center";
           valign = "top";
@@ -48,7 +48,7 @@
           text = ''cmd[update:1000] echo "- $(date +'%A, %B %d') -" '';
           color = "rgba(205, 214, 244, 0.9)";
           font_size = 18;
-          font_family = "Maple Mono NF";
+          font_family = "Maple Mono NF CN";
           position = "0, -300";
           halign = "center";
           valign = "top";
@@ -59,7 +59,7 @@
           text = "Welcome $USER";
           color = "rgba(205, 214, 244, 1)";
           font_size = 16;
-          font_family = "Maple Mono NF Bold";
+          font_family = "Maple Mono NF CN Bold";
           position = "0, 40";
           halign = "center";
           valign = "center";
@@ -79,7 +79,7 @@
           color = "rgba(205, 214, 244, 0.9)";
           font_color = "rgba(205, 214, 244, 0.9)";
           font_size = 14;
-          font_family = "Maple Mono NF Bold";
+          font_family = "Maple Mono NF CN Bold";
           fade_on_empty = false;
           placeholder_text = ''<i><span foreground="##cdd6f4">Enter Password</span></i>'';
           hide_input = false;

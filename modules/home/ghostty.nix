@@ -12,7 +12,7 @@ in
 
   xdg.configFile."ghostty/config".text = ''
     # Font
-    font-family = "Maple Mono NF"
+    font-family = "Maple Mono NF CN"
     font-size = 9
     font-thicken = true
 
@@ -44,6 +44,5 @@ in
     window-padding-x = 10
     window-padding-y = 8
     window-padding-color = extend
-    theme = catppuccin-mocha
   '';
 }
