@@ -33,15 +33,15 @@
 
       git_status = {
         format = "[$all_status]()";
-        ahead = "[ ($count)](green)"; # arrow-up
-        behind = "[ ($count)](yellow)"; # arrow-down
-        staged = "[ ($count)](cyan)"; # checkmark
-        conflicted = "[ ($count)](red)"; # conflict icon
-        modified = "[ ($count)](yellow)"; # pencil
-        deleted = "[ ($count)](red)"; # trash or x icon
-        untracked = "[ ($count)](blue)"; # question mark icon
-        renamed = "[➜ ($count)](purple)"; # arrow
-        stashed = "[ ($count)](blue)"; # package icon
+        ahead = "[ ($count)](green)";
+        behind = "[ ($count)](yellow)";
+        staged = "[ ($count)](cyan)";
+        conflicted = "[ ($count)](red)";
+        modified = "[ ($count)](yellow)";
+        deleted = "[ ($count)](red)";
+        untracked = "[ ($count)](blue)";
+        renamed = "[ ($count)](purple)";
+        stashed = "[ ($count)](blue)";
       };
 
       line_break = { disabled = false; };
