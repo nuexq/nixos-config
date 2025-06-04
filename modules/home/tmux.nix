@@ -39,7 +39,17 @@
       set -g @plugin 'tmux-plugins/tmux-sensible'
       set -g @plugin 'christoomey/vim-tmux-navigator'
       set -g @plugin 'tmux-plugins/tmux-yank'
-      #set -g @plugin 'wfxr/tmux-power'
+      set -g @plugin 'wfxr/tmux-power'
+
+      # You can set it to a true color in '#RRGGBB' format
+      set -g @tmux_power_theme '#cba6f7' # mauve
+
+      # The following colors are used as gradient colors (mapped from dark to light)
+      set -g @tmux_power_g0 "#11111b" # base
+      set -g @tmux_power_g1 "#1e1e2e" # mantle
+      set -g @tmux_power_g2 "#313244" # surface0
+      set -g @tmux_power_g3 "#45475a" # surface1
+      set -g @tmux_power_g4 "#585b70" # surface2
 
       run '~/.tmux/plugins/tpm/tpm'
 
