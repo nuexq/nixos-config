@@ -13,23 +13,30 @@
       };
 
       directory = {
-        style = "purple";
+        style = "blue";
         format = "[$path ]($style)";
         truncation_length = 99;
-        truncate_symbol = ".../";
-        truncate_to_repo = false;
+        truncation_symbol = ".../";
+        truncation_to_repo = false;
       };
 
-      git_branch = { symbol = " "; };
+      git_branch = {
+        symbol = " ";
+        style = "bold green";
+        format = "[$symbol$branch]($style)";
+      };
 
       git_status = {
-        conflicted_count = { enabled = true; };
-        untracked_count = { enabled = true; };
-        modified_count = { enabled = true; };
-        staged_count = { enabled = true; };
-        renamed_count = { enabled = true; };
-        deleted_count = { enabled = true; };
-        stashed_count = { enabled = true; };
+        format = "[$all_status]()";
+        ahead = "[$count](green)";
+        behind = "[$count](yellow)";
+        staged = "[$count](cyan)";
+        conflicted = "[$count](red)";
+        modified = "[$count](yellow)";
+        deleted = "[$count](red)";
+        untracked = "[$count](blue)";
+        renamed = "[$count](purple)";
+        stashed = "[$count](blue)";
       };
 
       line_break = { disabled = false; };
