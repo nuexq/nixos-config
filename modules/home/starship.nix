@@ -11,21 +11,18 @@
         success_symbol = "[❯](green)";
         error_symbol = "[❯](red)";
       };
-
       directory = {
         style = "blue";
-        format = "[$path ]($style)";
+        format = "[$path]($style) ";
         truncation_length = 99;
         truncation_symbol = ".../";
         truncate_to_repo = false;
       };
-
       git_branch = {
         symbol = " ";
         style = "bold green";
-        format = "[$symbol$branch ]($style)";
+        format = "on [$symbol$branch]($style) ";
       };
-
       git_status = {
         format = "[$all_status]()";
         ahead = "[$count](green)";
@@ -38,12 +35,7 @@
         renamed = "[$count](purple)";
         stashed = "[$count](blue)";
       };
-
       line_break = { disabled = false; };
-
-      rust = { symbol = ""; };
-      nix_shell = { symbol = ""; };
-
       cmd_duration = { disabled = true; };
     };
   };
