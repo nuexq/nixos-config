@@ -23,7 +23,7 @@
       git_branch = {
         symbol = " ";
         style = "bold green";
-        format = "[$symbol$branch]($style)";
+        format = "[$symbol$branch ]($style)";
       };
 
       git_status = {
