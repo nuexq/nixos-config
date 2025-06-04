@@ -44,5 +44,6 @@ in
     window-padding-x = 10
     window-padding-y = 8
     window-padding-color = extend
+    theme = catppuccin-mocha
   '';
 }
