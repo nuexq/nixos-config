@@ -8,7 +8,7 @@
       add_newline = true;
 
       format = ''
-         $directory$git_branch$git_status
+        $directory$git_branch$git_status
         $character'';
 
       character = {
