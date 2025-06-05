@@ -6,7 +6,7 @@
       language = "en";
       folder = "~/Pictures/wallpapers";
       monitors = "All";
-      wallpaper = "~/Pictures/current-wallpaper.jpg";
+      wallpaper = "";
       backend = "swww";
       fill = "fill";
       sort = "name";
