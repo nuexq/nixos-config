@@ -14,6 +14,7 @@
       character = {
         disabled = false;
         success_symbol = "[❯](green)";
+        vicmd_symbol = "[❮](bold green)";
         error_symbol = "[❯](red)";
       };
 
@@ -33,15 +34,15 @@
 
       git_status = {
         format = "[$all_status]()";
-        ahead = "[ ($count)](green)";
-        behind = "[ ($count)](yellow)";
-        staged = "[ ($count)](cyan)";
-        conflicted = "[ ($count)](red)";
-        modified = "[ ($count)](yellow)";
-        deleted = "[ ($count)](red)";
-        untracked = "[ ($count)](blue)";
-        renamed = "[ ($count)](purple)";
-        stashed = "[ ($count)](blue)";
+        ahead = "[ ($count) ](green)";
+        behind = "[ ($count) ](yellow)";
+        staged = "[ ($count) ](cyan)";
+        conflicted = "[ ($count) ](red)";
+        modified = "[ ($count) ](yellow)";
+        deleted = "[ ($count) ](red)";
+        untracked = "[ ($count) ](blue)";
+        renamed = "[ ($count) ](purple)";
+        stashed = "[ ($count) ](blue)";
       };
 
       line_break = { disabled = false; };
