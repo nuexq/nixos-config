@@ -1,5 +1,4 @@
-{ inputs, pkgs, ... }:
-{
+{ inputs, pkgs, config, ... }: {
   programs.hyprlock = {
     enable = true;
 
@@ -8,14 +7,12 @@
     settings = {
       general = {
         hide_cursor = true;
-        no_fade_in = false;
         grace = 0;
-        disable_loading_bar = true;
       };
 
       background = [{
         monitor = "";
-        path = "~/Pictures/current-wallpaper.jpg";
+        path = "../../../wallpapers/current-wall.jpg";
         blur_passes = 3;
         contrast = 0.8916;
         brightness = 0.8172;
@@ -68,9 +65,7 @@
         dots_center = true;
         outer_color = "rgba(0, 0, 0, 0)";
         inner_color = "rgba(0, 0, 0, 0.5)";
-        color = "rgba(205, 214, 244, 0.9)";
         font_color = "rgba(205, 214, 244, 0.9)";
-        font_size = 14;
         font_family = "Maple Mono NF CN Bold";
         fade_on_empty = false;
         placeholder_text =
