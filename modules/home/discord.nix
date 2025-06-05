@@ -1,8 +1,3 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [
-    (discord.override {
-      withVencord = true;
-    })
-  ];
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ discord.override { withVencord = true; } ];
 }
