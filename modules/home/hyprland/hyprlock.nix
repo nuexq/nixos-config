@@ -12,7 +12,7 @@
 
       background = [{
         monitor = "";
-        path = "${config.home.homeDirectory}/Pictures/current-wallpaper.jpg";
+        path = "${config.home.homeDirectory}/Pictures/current-wallpaper";
         blur_passes = 3;
         contrast = 0.8916;
         brightness = 0.8172;
