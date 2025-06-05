@@ -1,9 +1,4 @@
-{
-  inputs,
-  pkgs,
-  host,
-  ...
-}:
+{ inputs, pkgs, ... }:
 {
   programs.hyprlock = {
     enable = true;
@@ -13,22 +8,20 @@
     settings = {
       general = {
         hide_cursor = true;
-	no_fade_in = false;
+        no_fade_in = false;
         grace = 0;
-    	disable_loading_bar = true;
+        disable_loading_bar = true;
       };
 
-      background = [
-        {
-          monitor = "";
-          path = "${../../../wallpapers/clouds.jpg}";
-          blur_passes = 3;
-          contrast = 0.8916;
-          brightness = 0.8172;
-          vibrancy = 0.1696;
-          vibrancy_darkness = 0.0;
-        }
-      ];
+      background = [{
+        monitor = "";
+        path = "~/Pictures/current-wallpaper.jpg";
+        blur_passes = 3;
+        contrast = 0.8916;
+        brightness = 0.8172;
+        vibrancy = 0.1696;
+        vibrancy_darkness = 0.0;
+      }];
 
       label = [
         # Time
@@ -66,28 +59,27 @@
         }
       ];
 
-      input-field = [
-        {
-          monitor = "";
-          size = "250, 60";
-          outline_thickness = 2;
-          dots_size = 0.2;
-          dots_spacing = 0.2;
-          dots_center = true;
-          outer_color = "rgba(0, 0, 0, 0)";
-          inner_color = "rgba(0, 0, 0, 0.5)";
-          color = "rgba(205, 214, 244, 0.9)";
-          font_color = "rgba(205, 214, 244, 0.9)";
-          font_size = 14;
-          font_family = "Maple Mono NF CN Bold";
-          fade_on_empty = false;
-          placeholder_text = ''<i><span foreground="##cdd6f4">Enter Password</span></i>'';
-          hide_input = false;
-          position = "0, -40";
-          halign = "center";
-          valign = "center";
-        }
-      ];
+      input-field = [{
+        monitor = "";
+        size = "250, 60";
+        outline_thickness = 2;
+        dots_size = 0.2;
+        dots_spacing = 0.2;
+        dots_center = true;
+        outer_color = "rgba(0, 0, 0, 0)";
+        inner_color = "rgba(0, 0, 0, 0.5)";
+        color = "rgba(205, 214, 244, 0.9)";
+        font_color = "rgba(205, 214, 244, 0.9)";
+        font_size = 14;
+        font_family = "Maple Mono NF CN Bold";
+        fade_on_empty = false;
+        placeholder_text =
+          ''<i><span foreground="##cdd6f4">Enter Password</span></i>'';
+        hide_input = false;
+        position = "0, -40";
+        halign = "center";
+        valign = "center";
+      }];
     };
   };
 }
