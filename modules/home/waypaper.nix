@@ -14,7 +14,7 @@
       subfolders = "False";
       show_hidden = "False";
       show_gifs_only = "False";
-      post_command = "cp $wallpaper ~/Pictures/current-wallpaper.jpg";
+      post_command = "cp $wallpaper ../../wallpapers/current-wall.jpg";
       number_of_columns = "3";
       swww_transition_type = "any";
       swww_transition_step = "90";
