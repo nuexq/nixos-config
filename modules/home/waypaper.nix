@@ -7,7 +7,7 @@
     language = en
     folder = ~/Pictures/wallpapers
     monitors = All
-    wallpaper = ~/Pictures/wallpapers/clouds.jpg
+    wallpaper = ~/Pictures/wallpapers/wallpaper
     backend = swww
     fill = fill
     sort = name
@@ -15,7 +15,7 @@
     subfolders = False
     show_hidden = False
     show_gifs_only = False
-    post_command = pkill .waypaper-wrapp
+    post_command = ln -sf "$wallpaper" ~/Pictures/wallpapers/wallpaper && pkill .waypaper-wrapp
     number_of_columns = 3
     swww_transition_type = any
     swww_transition_step = 90
