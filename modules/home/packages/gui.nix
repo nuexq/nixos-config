@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     ## Multimedia
     obs-studio
@@ -7,6 +6,7 @@
     vlc
 
     qalculate-gtk
+    qbittorrent
 
     ## Utility
     zenity
