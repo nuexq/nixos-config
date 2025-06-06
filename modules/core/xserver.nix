@@ -1,4 +1,4 @@
-{ username, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   minesddm = pkgs.stdenv.mkDerivation rec {
@@ -19,11 +19,8 @@ let
       cp -aR $src/minesddm $out/share/sddm/themes/minesddm
     '';
   };
-in
-{
-  environment.systemPackages = with pkgs; [
-    minesddm
-  ];
+in {
+  environment.systemPackages = [ minesddm ];
 
   services = {
     xserver = {
