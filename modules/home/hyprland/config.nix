@@ -263,7 +263,6 @@ in {
         # Pin
         "pin,class:^(rofi)$"
         "pin,class:^(waypaper)$"
-        "pin,title:^(Picture-in-Picture)$"
 
         # Size
         "size 700 450,title:^(Volume Control)$"
