@@ -6,6 +6,8 @@
     pavucontrol
     vlc
 
+    qalculate-gtk
+
     ## Utility
     zenity
   ];
