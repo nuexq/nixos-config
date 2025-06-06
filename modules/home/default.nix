@@ -33,5 +33,6 @@
     ./starship.nix
     ./minecraft.nix                   # minecraft
     ./tmux.nix                        # terminal multiplexer
+    ./theme.nix                       # theme
   ];
 }
