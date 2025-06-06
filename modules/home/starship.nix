@@ -14,7 +14,6 @@
       character = {
         disabled = false;
         success_symbol = "[❯](green)";
-        vicmd_symbol = "[❮](bold green)";
         error_symbol = "[❯](red)";
       };
 
