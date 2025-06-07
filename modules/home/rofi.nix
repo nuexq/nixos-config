@@ -8,7 +8,8 @@
           padding: 0;
           spacing: 0;
 
-          bg: #1e1e2e;
+          bg: #11111b;
+          bg-alt: #181825;
           fg: #cdd6f4;
           fg-alt: #a6adc8;
 
@@ -70,7 +71,7 @@
     }
 
     inputbar {
-      background-color: @bg;
+      background-color: @bg-alt;
       children: [prompt, entry];
     }
 
