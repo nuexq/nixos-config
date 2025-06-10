@@ -1,19 +1,11 @@
-{ pkgs, config, ... }:
-{
-  imports = [
-    ./hardware-configuration.nix
-    ./../../modules/core
-  ];
+{ pkgs, config, ... }: {
+  imports = [ ./hardware-configuration.nix ./../../modules/core ];
 
-  environment.systemPackages = with pkgs; [
-    acpi
-    cpupower-gui
-    powertop
-    xclip
-  ];
+  environment.systemPackages = with pkgs; [ acpi powertop xclip lm_sensors ];
 
   services = {
-    power-profiles-daemon.enable = true;
+    power-profiles-daemon.enable = false;
+    cpupower-gui.enable = true;
 
     upower = {
       enable = true;
@@ -23,41 +15,48 @@
       criticalPowerAction = "PowerOff";
     };
 
-    tlp.settings = {
-      CPU_ENERGY_PERF_POLICY_ON_AC = "power";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+    tlp = {
+      enable = true;
+      settings = {
+        # CPU prefrences
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
 
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 1;
+        # No CPU turbo boost
+        CPU_BOOST_ON_AC = 1;
+        CPU_BOOST_ON_BAT = 0;
 
-      CPU_HWP_DYN_BOOST_ON_AC = 1;
-      CPU_HWP_DYN_BOOST_ON_BAT = 1;
+        # Disable HWP dyanic boost
+        CPU_HWP_DYN_BOOST_ON_AC = 1;
+        CPU_HWP_DYN_BOOST_ON_BAT = 0;
 
-      PLATFORM_PROFILE_ON_AC = "performance";
-      PLATFORM_PROFILE_ON_BAT = "performance";
+        # System profiles
+        PLATFORM_PROFILE_ON_AC = "performance";
+        PLATFORM_PROFILE_ON_BAT = "low-power";
 
-      INTEL_GPU_MIN_FREQ_ON_AC = 500;
-      INTEL_GPU_MIN_FREQ_ON_BAT = 500;
-      # INTEL_GPU_MAX_FREQ_ON_AC=0;
-      # INTEL_GPU_MAX_FREQ_ON_BAT=0;
-      # INTEL_GPU_BOOST_FREQ_ON_AC=0;
-      # INTEL_GPU_BOOST_FREQ_ON_BAT=0;
+        # Intel GPU min freq: allowing lowest on AC/battery
+        INTEL_GPU_MIN_FREQ_ON_AC = 0;
+        INTEL_GPU_MIN_FREQ_ON_BAT = 0;
 
-      # PCIE_ASPM_ON_AC = "default";
-      # PCIE_ASPM_ON_BAT = "powersupersave";
+        # PCIe power saving
+        PCIE_ASPM_ON_AC = "performance";
+        PCIE_ASPM_ON_BAT = "powersupersave";
+
+        # STOP charging at 80%
+        STOP_CHARGE_THRESH_BAT0 = 80;
+        # START charging when battery drops below, say, 75%.
+        START_CHARGE_THRESH_BAT0 = 75;
+
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      };
     };
   };
 
-  powerManagement.cpuFreqGovernor = "performance";
-
   boot = {
-    kernelModules = [ "acpi_call" ];
-    extraModulePackages =
-      with config.boot.kernelPackages;
-      [
-        acpi_call
-        cpupower
-      ]
-      ++ [ pkgs.cpupower-gui ];
+    kernelModules = [ "acpi_call" "coretemp" "thinkpad_acpi" ];
+    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
   };
 }
+
