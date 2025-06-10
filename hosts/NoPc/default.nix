@@ -1,7 +1,7 @@
 { pkgs, config, ... }: {
   imports = [ ./hardware-configuration.nix ./../../modules/core ];
 
-  environment.systemPackages = with pkgs; [ acpi powertop xclip lm_sensors ];
+  environment.systemPackages = with pkgs; [ acpi powertop xclip lm_sensors bc ];
 
   services = {
     power-profiles-daemon.enable = false;
