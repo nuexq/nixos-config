@@ -104,11 +104,11 @@ tooltip {
   padding-right: 4px;
 }
 
-#custom-cpu_temp.warning {
+#custom-cpu_temp.warn {
   color: #f9e2af;
 }
 
-#custom-cpu_temp.critical {
+#custom-cpu_temp.crit {
   color: #f38ba8;
 }
 

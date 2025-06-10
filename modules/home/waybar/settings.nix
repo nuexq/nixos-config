@@ -79,11 +79,10 @@
     };
 
     "custom/cpu_temp" = {
-      format = " {output}°C";
-      interval = 2;
+      format = "{}°C";
       exec = "get-cpu-temp";
+      interval = 2;
       return-type = "json";
-      tooltip = true;
     };
 
     idle_inhibitor = {
