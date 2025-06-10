@@ -184,7 +184,7 @@ label {
 
 .notification-group>box {
     all: unset;
-    background: @mantle;
+    background: @base;
     /* background: alpha(currentColor, 0.072); */
     padding: 8px;
     margin: 0px;
