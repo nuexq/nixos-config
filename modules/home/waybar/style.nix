@@ -79,6 +79,7 @@ tooltip {
 #cpu,
 #idle_inhibitor,
 #memory,
+#custom-cpu_temp,
 #network,
 #custom-notification,
 #custom-power,
@@ -101,6 +102,14 @@ tooltip {
   margin: 4px 0px 4px 0px;
   padding-left: 4px;
   padding-right: 4px;
+}
+
+#custom-cpu_temp.warning {
+  color: #f9e2af;
+}
+
+#custom-cpu_temp.critical {
+  color: #f38ba8;
 }
 
 #workspaces,
