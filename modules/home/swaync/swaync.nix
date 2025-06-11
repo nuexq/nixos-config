@@ -7,10 +7,10 @@
       positionX = "right";
       positionY = "top";
       cssPriority = "user";
-      control-center-margin-top = 22;
-      control-center-margin-bottom = 2;
-      control-center-margin-right = 1;
-      control-center-margin-left = 0;
+      control-center-margin-top = 10;
+      control-center-margin-bottom = 10;
+      control-center-margin-right = 10;
+      control-center-margin-left = 10;
       notification-icon-size = 64;
       notification-body-image-height = 128;
       notification-body-image-width = 200;
