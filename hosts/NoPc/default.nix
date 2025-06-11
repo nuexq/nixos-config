@@ -43,9 +43,10 @@
         PCIE_ASPM_ON_BAT = "powersupersave";
 
         # STOP charging at 80%
-        STOP_CHARGE_THRESH_BAT0 = 80;
+
+        STOP_CHARGE_THRESH_BAT1 = 80;
         # START charging when battery drops below, say, 75%.
-        START_CHARGE_THRESH_BAT0 = 75;
+        START_CHARGE_THRESH_BAT1 = 75;
 
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
