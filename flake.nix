@@ -43,18 +43,11 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs =
-    { nixpkgs, self, ... }@inputs:
+  outputs = { nixpkgs, self, ... }@inputs:
     let
       username = "nuexq";
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      lib = nixpkgs.lib;
-    in
-    {
+    in {
       nixosConfigurations = {
         NoPc = nixpkgs.lib.nixosSystem {
           inherit system;
