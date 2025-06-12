@@ -1,5 +1,4 @@
-# modules/home/minecraft.nix
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.packages = [
