@@ -2,7 +2,7 @@
 
 init() {
     # Vars
-    HOST='NoPc'
+    HOST='NoPC'
 
     # Colors
     NORMAL=$(tput sgr0)

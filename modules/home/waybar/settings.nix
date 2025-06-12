@@ -1,5 +1,4 @@
-{ host, ... }:
-
+{ ... }:
 {
   programs.waybar.settings.mainBar = {
     position = "top";
@@ -133,7 +132,7 @@
       rotate = 0;
       separate-outputs = true;
       rewrite = {
-        "nuexq@NoPc:(.*)" = "$1 ";
+        "nuexq@NoPC:(.*)" = "$1 ";
         "(.*) — Mozilla Firefox" = "$1 󰈹";
         "(.*)Mozilla Firefox" = "Firefox 󰈹";
         "(.*) - Visual Studio Code" = "$1 󰨞";

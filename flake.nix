@@ -49,11 +49,11 @@
       system = "x86_64-linux";
     in {
       nixosConfigurations = {
-        NoPc = nixpkgs.lib.nixosSystem {
+        NoPC = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/NoPc ];
+          modules = [ ./hosts/NoPC ];
           specialArgs = {
-            host = "NoPc";
+            host = "NoPC";
             inherit self inputs username;
           };
         };
