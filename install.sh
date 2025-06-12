@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# source: https://github.com/Frost-Phoenix/nixos-config/blob/main/install.sh
+
 init() {
     # Vars
     HOST='NoPC'
