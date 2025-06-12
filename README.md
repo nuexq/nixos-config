@@ -7,26 +7,24 @@
 <img alt="preview" src="https://github.com/user-attachments/assets/dbe48233-e55a-4a23-91f9-db5cd6d6322f" />
 
 ## Components
-|                             | NixOS + Hyprland                                                                              |
-| --------------------------- | :---------------------------------------------------------------------------------------------:
-| **Window Manager**          | [Hyprland][Hyprland] |
-| **Bar**                     | [Waybar][Waybar] |
-| **Application Launcher**    | [rofi][rofi] |
-| **Notification Daemon**     | [swaync][swaync] |
-| **Terminal Emulator**       | [Ghostty][Ghostty] |
-| **Shell**                   | [zsh][zsh] + [starship][starship] |
-| **Text Editor**             | [Neovim][Neovim] |
-| **File Manager**            | [nemo][nemo] + [yazi][yazi] |
-| **Fonts**                   | [Maple Mono NF][Maple Mono] + [JetBrainsMono NF][JetBrainsMono] |
-| **Color Scheme**            | [Catppuccin][Catppuccin] |
-| **Lockscreen**              | [Hyprlock][Hyprlock] |
-| **Image Viewer**            | [imv][imv] |
-| **Media Player**            | [mpv][mpv] |
-| **Screenshot Software**     | [grimblast][grimblast] |
-| **Screen Recording**        | [wf-recorder][wf-recorder] |
-| **Clipboard**               | [wl-clip-persist][wl-clip-persist] |
-| **Color Picker**            | [hyprpicker][hyprpicker] |
 
+- **Window Manager:** [Hyprland][Hyprland]  
+- **Bar:** [Waybar][Waybar]  
+- **Application Launcher:** [rofi][rofi]  
+- **Notification Daemon:** [swaync][swaync]  
+- **Terminal Emulator:** [Ghostty][Ghostty]  
+- **Shell:** [zsh][zsh] + [starship][starship]  
+- **Text Editor:** [Neovim][Neovim]  
+- **File Manager:** [nemo][nemo] + [yazi][yazi]  
+- **Fonts:** [Maple Mono NF][Maple Mono] + [JetBrainsMono NF][JetBrainsMono]  
+- **Color Scheme:** [Catppuccin][Catppuccin]  
+- **Lockscreen:** [Hyprlock][Hyprlock]  
+- **Image Viewer:** [imv][imv]  
+- **Media Player:** [mpv][mpv]  
+- **Screenshot Software:** [grimblast][grimblast]  
+- **Screen Recording:** [wf-recorder][wf-recorder]  
+- **Clipboard:** [wl-clip-persist][wl-clip-persist]  
+- **Color Picker:** [hyprpicker][hyprpicker]  
 
 ## Usage
 > [!CAUTION]
