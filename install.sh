@@ -41,7 +41,7 @@ install() {
     mkdir -p ~/Music
     mkdir -p ~/Documents
     mkdir -p ~/Developer
-    mkdir -p ~/Pictures/wallpapers/others
+    mkdir -p ~/Pictures/wallpapers
 
     # Copy the wallpapers
     echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
