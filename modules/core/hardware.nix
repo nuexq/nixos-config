@@ -5,6 +5,10 @@ let
     inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
   hardware = {
+    opengl = {
+      enable = true;
+      driSupport32Bit = true;
+    };
     graphics = {
       enable = true;
       package = hyprland-pkgs.mesa;
@@ -12,6 +16,7 @@ in {
         intel-media-driver
         vaapiVdpau
         libvdpau-va-gl
+        vulkan-tools
       ];
     };
 
@@ -25,10 +30,7 @@ in {
 
   services.thermald.enable = true;
 
-  boot.kernelParams = [
-    "i915.enable_psr=1"
-    "i915.enable_fbc=1"
-    "i915.semaphores=1"
-  ];
+  boot.kernelParams =
+    [ "i915.enable_psr=1" "i915.enable_fbc=1" "i915.semaphores=1" ];
 }
 
