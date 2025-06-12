@@ -1,5 +1,6 @@
-{ pkgs, ... }:
-{
+{ pkgs, inputs, ... }: {
+  imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
+
   services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
