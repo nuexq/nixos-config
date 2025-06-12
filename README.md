@@ -4,7 +4,7 @@
       A nixOS Configuration
    <br>
 </h1>
-<img alt="preview" src="https://github.com/user-attachments/assets/dbe48233-e55a-4a23-91f9-db5cd6d6322f" />
+<img alt="preview" src="https://github.com/user-attachments/assets/6b075f62-151d-4039-8e35-9325d8dfccf7"/>
 
 ## Components
 
