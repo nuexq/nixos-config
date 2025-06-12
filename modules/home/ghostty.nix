@@ -28,7 +28,8 @@ in
 
     window-width = 120
     window-height = 45
-    window-padding-x = 4
+    window-padding-x = 10
+    window-padding-y = 8,0
 
     confirm-close-surface = false
     clipboard-read = allow
@@ -41,8 +42,6 @@ in
     background-opacity = 1
     background-blur-radius = 20
 
-    window-padding-x = 10
-    window-padding-y = 8
     window-padding-color = extend
     theme = catppuccin-mocha
   '';
