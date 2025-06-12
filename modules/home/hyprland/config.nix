@@ -116,6 +116,10 @@ in {
         ];
       };
 
+      debug = {
+        full_cm_proto = true;
+      };
+
       binds = { movefocus_cycles_fullscreen = true; };
 
       bind = [
