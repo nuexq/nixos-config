@@ -64,7 +64,6 @@
       };
     };
     style = ''
-                @define-color shadow rgba(0, 0, 0, 0.25);
       /*
       *
       * Catppuccin Mocha palette
@@ -118,7 +117,6 @@
       .notification {
         border: none;
         box-shadow: none;
-        border-radius: 4px;
         background: inherit;
       }
 
@@ -153,10 +151,6 @@
         border: none;
       }
 
-
-      .notification-default-action {
-        border-radius: 4px;
-      }
 
       /* When alternative actions are visible */
       .notification-default-action:not(:only-child) {
@@ -205,10 +199,6 @@
         margin: 0px 0px 0px 0px;
       }
 
-      .body-image {
-        border-radius: 4px;
-      }
-
       /* The "Notifications" and "Do Not Disturb" text widget */
       .top-action-title {
         color: @text;
@@ -221,7 +211,6 @@
       .control-center {
         background: @crust;
         border: 0px solid @selected;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,.80);
         margin: 10px;
         padding: 4px;
       }
@@ -394,7 +383,6 @@
 
       .widget-buttons-grid > flowbox > flowboxchild {
         background: @mantle;
-        border-radius: 4px;
         min-height: 50px;
         min-width: 85px;
         margin: 5px;
@@ -403,7 +391,6 @@
 
       .widget-buttons-grid > flowbox > flowboxchild > button {
         background: transparent;
-        border-radius: 4px;
         margin: 0px;
         border: none;
         box-shadow: none;
@@ -424,7 +411,6 @@
         padding: 0px;
         margin: -5px 0px -10px 0px;
         padding: 0px;
-        border-radius: 4px;
         background: @mantle;
       }
       .widget-mpris > box > button:nth-child(1),
@@ -466,12 +452,10 @@
         color: #eeeeee;
         font-weight: bold;
         font-size: 1.25rem;
-        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
       }
       .widget-mpris-subtitle {
         color: #eeeeee;
         font-size: 1rem;
-        text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
       }
 
       .widget-mpris-player {
@@ -485,70 +469,6 @@
       .notification-group > box.vertical {
         /* border: solid 5px red; */
         margin-top: 3px
-      }
-
-      /* Backlight and volume widgets */
-      .widget-backlight,
-      .widget-volume {
-        background: transparent;
-        /* background-color: @crust; */
-        /* background-color: @theme_bg_color; */
-        /* border: 1px solid @surface1; */
-        border-top: none;
-        border-bottom: none; font-size: 13px;
-        font-weight: 600;
-        border-radius: 0px;
-        margin: 0px;
-        padding: 0px;
-      }
-      .widget-volume > box {
-        background: @mantle;
-        border-radius: 4px;
-        margin: 5px 10px 5px 10px;
-        min-height: 50px;
-      }
-      .widget-volume > box > label {
-        min-width: 50px;
-        padding: 0px;
-      }
-      .widget-volume > box > button {
-        min-width: 50px;
-        box-shadow: none;
-        padding: 0px;
-      }
-      .widget-volume > box > button:hover {
-        background: @surface0;
-      }
-      .widget-volume > revealer > list {
-        background: @mantle;
-        border-radius: 4px;
-        margin-top: 5px;
-        padding: 0px;
-      }
-      .widget-volume > revealer > list > row {
-        padding-left: 10px;
-        min-height: 40px;
-        background: transparent;
-      }
-      .widget-volume > revealer > list > row:hover {
-        background: transparent;
-        box-shadow: none;
-        border-radius: 4px;
-      }
-      .widget-backlight > scale {
-        background: @mantle;
-        border-radius: 0px 4px 4px 0px;
-        margin: 5px 10px 5px 0px;
-        padding: 0px 10px 0px 0px;
-        min-height: 50px;
-      }
-      .widget-backlight > label {
-        background: @surface0;
-        margin: 5px 0px 5px 10px;
-        border-radius: 4px 0px 0px 4px;
-        padding: 0px;
-        min-height: 50px;
-        min-width: 50px;
       }
 
       /* DND widget */
