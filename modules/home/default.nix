@@ -24,7 +24,7 @@
     ./scripts/scripts.nix             # personal scripts
     ./ssh.nix                         # ssh config
     ./swayosd.nix                     # brightness / volume wiget
-    ./swaync/swaync.nix               # notification deamon
+    ./swaync.nix               # notification deamon
     ./waybar                          # status bar
     ./waypaper.nix                    # GUI wallpaper picker
     ./xdg-mimes.nix                   # xdg config
