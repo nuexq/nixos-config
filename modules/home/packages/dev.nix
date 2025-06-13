@@ -14,14 +14,15 @@
     valgrind
     llvmPackages_20.clang-tools
 
-    # Rust
-    rustup
-
     # Java
     openjdk21
 
     # JS/TS
     nodejs
     bun
+
+    # Rust
+    (rust-bin.stable.latest.default.override { extensions = [ "rust-src" ]; })
+    cargo-watch
   ];
 }
