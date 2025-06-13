@@ -22,7 +22,7 @@
     };
   };
   nixpkgs = {
-    overlays = [ inputs.nur.overlays.default ];
+    overlays = [ inputs.nur.overlays.default inputs.rust-overlay.overlays.default ];
   };
 
   environment.systemPackages = with pkgs; [
