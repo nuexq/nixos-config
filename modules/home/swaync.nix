@@ -1,5 +1,4 @@
 { ... }: {
-  #  use later
   services.swaync = {
     enable = true;
     settings = {
