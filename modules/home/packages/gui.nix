@@ -10,7 +10,6 @@
     qbittorrent
 
     zenity
-    activitywatch
   ];
 }
 
