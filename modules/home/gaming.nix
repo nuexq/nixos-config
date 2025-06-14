@@ -1,9 +1,8 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    gamemode
-    mangohud
-    umu-launcher
-
-    nur.repos.${"0komo"}.sklauncher
+    gamemode                         # gamemoderun
+    mangohud                         # monitoring fps
+    umu-launcher                     # proton outside steam
+    nur.repos.${"0komo"}.sklauncher  # sklauncher
   ];
 }

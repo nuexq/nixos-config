@@ -9,9 +9,6 @@
       font-size = 9;
       font-thicken = true;
 
-      #adjust-underline-position = "40%";
-      #adjust-underline-thickness = "-60%";
-
       cursor-style = "block";
       cursor-style-blink = false;
       mouse-hide-while-typing = true;
@@ -31,9 +28,6 @@
 
       gtk-tabs-location = "hidden";
       window-decoration = false;
-
-      #background-opacity = 1;
-      #background-blur-radius = 20;
     };
   };
 }

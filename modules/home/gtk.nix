@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -15,8 +15,8 @@
 
     catppuccin = {
       enable = true;
-      flavor = "mocha";
-      accent = "mauve";
+      flavor = config.catppuccin.flavor;
+      accent = config.catppuccin.accent;
       size = "standard";
       tweaks = [ "rimless" "normal" ];
     };
@@ -40,6 +40,6 @@
   };
 
   home.sessionVariables = {
-    GTK_THEME = "catppuccin-mocha-mauve-standard+rimless,normal";
+    GTK_THEME = "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard+rimless,normal";
   };
 }

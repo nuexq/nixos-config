@@ -3,7 +3,7 @@
   home.packages = (
     with pkgs;
     [
-      evince # pdf
+      evince      # pdf
       file-roller # archive
     ]
   );

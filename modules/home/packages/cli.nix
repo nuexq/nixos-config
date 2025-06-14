@@ -30,7 +30,6 @@
     woomer                            # GitHub release fetcher for Wayland software
     yt-dlp-light                      # Lightweight YouTube downloader
     xdg-utils                         # Desktop integration utils (open files/URLs)
-
     cbonsai                           # Terminal screensaver (ASCII bonsai)
     cmatrix                           # Matrix effect in terminal
     pipes                             # Terminal pipes animation
