@@ -6,6 +6,10 @@
 </h1>
 <img alt="preview" src="https://github.com/user-attachments/assets/6b075f62-151d-4039-8e35-9325d8dfccf7"/>
 
+> [!CAUTION]
+> This flake is for my personal use. Not everything is meant to be reusable or functional outside my setup.  
+> Feel free to explore and adapt parts of it.
+
 ## Components
 
 - **Window Manager:** [Hyprland][Hyprland]  
@@ -25,23 +29,6 @@
 - **Screen Recording:** [wf-recorder][wf-recorder]  
 - **Clipboard:** [wl-clip-persist][wl-clip-persist]  
 - **Color Picker:** [hyprpicker][hyprpicker]  
-
-## Usage
-> [!CAUTION]
-> This setup changes system-level configs, which might not work the same on your machine.
-Make sure you read and adjust everything before using it, I'm not responsible if something breaks.
-
-You can run the `install.sh` script that will:
- - Replace my [hardware-configuration.nix](/hosts/NoPC/hardware-configuration.nix) with your `/etc/nixos/hardware-configuration.nix`.
- - Create basic direcotries (`Music`, `Documents`, `Developer`, `Pictures/wallpapers`).
- - Copy my [wallpapers](/wallpapers) to `~/Pictures/wallpapers`.
- - Building the system.
-
-Or you can do this manually by removing my [hardware-configuration.nix](/hosts/NoPC/hardware-configuration.nix) and replacing it with yours in `/etc/nixos/hardware-configuration.nix` and then running:
-
-```
-sudo nix-rebuild switch --flakes .#NoPC
-```
 
 # Credits
 Here are some dotfiles I learned from or borrowed ideas:
