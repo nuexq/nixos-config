@@ -155,12 +155,6 @@ return {
 
 	-- Editing Helper
 	{
-		"smoka7/multicursors.nvim",
-		event = "VeryLazy",
-		dependencies = { "nvimtools/hydra.nvim" },
-		opts = {},
-	},
-	{
 		"numToStr/Comment.nvim",
 		event = "VeryLazy",
 		config = function()
