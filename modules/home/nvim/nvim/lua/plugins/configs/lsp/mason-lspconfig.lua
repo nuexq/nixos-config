@@ -13,5 +13,6 @@ require("mason-lspconfig").setup({
 		"marksman", -- Markdown LSP
 		"wgsl_analyzer", -- wgsl-analyzer
 		"astro", -- Astro LSP
+    "tailwindcss", -- Tailwind CSS Language Server
 	},
 })
