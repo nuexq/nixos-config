@@ -5,7 +5,7 @@
 
   networking.useDHCP = false;
 
-  networking.interfaces.enp3s0.ipv4.addresses = [{
+  networking.interfaces.wlo1.ipv4.addresses = [{
     address = "192.168.1.42";
     prefixLength = 24;
   }];
