@@ -14,7 +14,7 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 8096 139 445 137 138 ];
+    allowedTCPPorts = [ 8096 139 445 137 138 80 443 ];
   };
 
   networking.networkmanager.enable = true;
@@ -47,6 +47,7 @@
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
+    caddy
   ];
 
   security.sudo.wheelNeedsPassword = false;
@@ -72,11 +73,17 @@
   system.stateVersion = "24.05";
 
   # jellyfin
-  services.jellyfin = {
+  services.jellyfin.enable = true;
+
+  services.caddy = {
     enable = true;
-    dataDir = "/var/lib/jellyfin";
-    openFirewall = true;
-  };
+    package = pkgs.caddy;
+    virtualHosts = {
+      "http://192.168.1.8:8096".extraConfig = ''
+        reverse_proxy 192.168.1.8:8096
+      '';
+    };
+  }
 
   # samba
   services.samba = {
