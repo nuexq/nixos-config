@@ -47,7 +47,6 @@
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
-    caddy
   ];
 
   security.sudo.wheelNeedsPassword = false;
@@ -74,16 +73,6 @@
 
   # jellyfin
   services.jellyfin.enable = true;
-
-  services.caddy = {
-    enable = true;
-    package = pkgs.caddy;
-    virtualHosts = {
-      "http://192.168.1.8:8096".extraConfig = ''
-        reverse_proxy 192.168.1.8:8096
-      '';
-    };
-  }
 
   # samba
   services.samba = {
