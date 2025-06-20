@@ -27,7 +27,7 @@
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
-    packages = with pkgs; [ git tmux ];
+    packages = with pkgs; [ git ];
   };
 
   services.openssh = {
@@ -38,14 +38,13 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ btop htop curl wget ];
+  environment.systemPackages = with pkgs; [ curl wget ];
 
   security.sudo.wheelNeedsPassword = false;
-
-  system.stateVersion = "24.05";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  system.stateVersion = "24.05";
 }
 
