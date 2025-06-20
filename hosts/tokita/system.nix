@@ -37,7 +37,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ curl wget ];
+  environment.systemPackages = with pkgs; [ curl wget neovim ];
 
   security.sudo.wheelNeedsPassword = false;
 
