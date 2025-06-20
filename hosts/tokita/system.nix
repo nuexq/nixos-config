@@ -1,6 +1,5 @@
 { pkgs, username, inputs, host, ... }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
-
   networking.hostName = "tokita";
 
   networking.useDHCP = false;
@@ -13,7 +12,11 @@
   networking.defaultGateway = "192.168.1.1";
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
-  networking.firewall.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 8096 139 445 137 138 ];
+  };
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Africa/Casablanca";
@@ -37,7 +40,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ curl wget neovim ];
+  environment.systemPackages = with pkgs; [ curl wget neovim jellyfin ];
 
   security.sudo.wheelNeedsPassword = false;
 
@@ -60,5 +63,29 @@
   };
 
   system.stateVersion = "24.05";
+
+  # jellyfin
+  services.jellyfin = {
+    enable = true;
+    dataDir = "/var/lib/jellyfin";
+    mediaDirs = {
+      Movies = "/home/${username}/shared/movies";
+      TVShows = "/home/${username}/shared/tvshows";
+    };
+    port = 8096;
+  };
+
+  # samba
+  services.samba = {
+    enable = true;
+    shares = {
+      shared = {
+        path = "/home/${username}/shared";
+        browseable = true;
+        guestOk = true;
+        readOnly = false;
+      };
+    };
+  };
 }
 
