@@ -48,7 +48,7 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs username host; };
     users.${username} = {
-      imports = [ ./../home ];
+      imports = [ ./../home.nix ];
 
       home.username = username;
       home.homeDirectory = "/home/${username}";
