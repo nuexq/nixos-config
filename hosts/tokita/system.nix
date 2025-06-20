@@ -40,7 +40,14 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ curl wget neovim jellyfin ];
+  environment.systemPackages = with pkgs; [
+    curl
+    wget
+    neovim
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
+  ];
 
   security.sudo.wheelNeedsPassword = false;
 
@@ -68,10 +75,6 @@
   services.jellyfin = {
     enable = true;
     dataDir = "/var/lib/jellyfin";
-    mediaDirs = {
-      Movies = "/home/${username}/shared/movies";
-      TVShows = "/home/${username}/shared/tvshows";
-    };
     port = 8096;
   };
 
