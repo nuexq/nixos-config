@@ -65,6 +65,15 @@
             inherit self inputs username;
           };
         };
+
+        tokita = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/tokita ];
+          specialArgs = {
+            host = "tokita";
+            inherit self inputs username;
+          };
+        };
       };
     };
 }
