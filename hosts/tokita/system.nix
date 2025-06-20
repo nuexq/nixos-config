@@ -75,7 +75,7 @@
   services.jellyfin = {
     enable = true;
     dataDir = "/var/lib/jellyfin";
-    port = 8096;
+    openFirewall = true;
   };
 
   # samba
