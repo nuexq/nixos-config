@@ -1,7 +1,5 @@
-{ pkgs, username, inputs, ... }: {
+{ pkgs, username, inputs, host, ... }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
-
-  home-manager.users.${username} = import ./home.nix;
 
   networking.hostName = "tokita";
 
@@ -44,6 +42,21 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    extraSpecialArgs = { inherit inputs username host; };
+    users.${username} = {
+      imports = [ ./../home ];
+
+      home.username = username;
+      home.homeDirectory = "/home/${username}";
+      home.stateVersion = "24.05";
+
+      programs.home-manager.enable = true;
+    };
+  };
 
   system.stateVersion = "24.05";
 }
