@@ -1,4 +1,4 @@
-{ pkgs, username, inputs, host, ... }: {
+{ pkgs, username, config, inputs, host, ... }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   networking.hostName = "tokita";
 
@@ -14,7 +14,7 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 8096 139 445 137 138 80 443 ];
+    allowedTCPPorts = [ 8096 139 445 137 138 ];
   };
 
   networking.networkmanager.enable = true;
@@ -77,12 +77,32 @@
   # samba
   services.samba = {
     enable = true;
-    shares = {
+    openFirewall = true;
+
+    settings = {
+      global = {
+        workgroup = "WORKGROUP";
+        "server string" = config.networking.hostName;
+        "netbios name" = config.networking.hostName;
+        "security" = "user";
+        "invalid users" = [ "root" ];
+        "guest account" = "nobody";
+        "map to guest" = "bad user";
+        "passdb backend" = "tdbsam";
+        "hosts allow" = "192.168.1.8/24";
+      };
+
       shared = {
         path = "/home/${username}/shared";
-        browseable = true;
-        guestOk = true;
-        readOnly = false;
+        "browseable" = "yes";
+        "writeable" = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "valid users" = username;
+        "vfs objects" = "catia fruit streams_xattr";
+        "fruit:aapl" = "yes";
       };
     };
   };
