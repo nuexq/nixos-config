@@ -51,6 +51,7 @@
     catppuccin.url = "github:catppuccin/nix";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nixarr.url = "github:rasmus-kirk/nixarr";
   };
 
   outputs = { nixpkgs, self, ... }@inputs:

@@ -1,5 +1,9 @@
 { pkgs, username, config, inputs, host, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager inputs.nix-minecraft.nixosModules.minecraft-servers ];
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    inputs.nix-minecraft.nixosModules.minecraft-servers
+    inputs.nixarr.nixosModules.default
+  ];
   networking.hostName = "tokita";
 
   networking.useDHCP = false;
