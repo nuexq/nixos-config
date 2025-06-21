@@ -49,9 +49,9 @@
     curl
     wget
     neovim
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
+    #jellyfin
+    #jellyfin-web
+    #jellyfin-ffmpeg
   ];
 
   security.sudo.wheelNeedsPassword = false;
@@ -79,7 +79,7 @@
   system.stateVersion = "24.05";
 
   # jellyfin
-  services.jellyfin.enable = true;
+  #services.jellyfin.enable = true;
 
   # samba
   services.samba = {
