@@ -15,6 +15,7 @@
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 8096 139 445 137 138 ];
+    allowedUDPPorts = [ 3702 ];
   };
 
   networking.networkmanager.enable = true;
@@ -68,6 +69,8 @@
       programs.home-manager.enable = true;
     };
   };
+
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
   system.stateVersion = "24.05";
 
