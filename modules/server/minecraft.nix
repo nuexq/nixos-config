@@ -10,11 +10,13 @@ in {
     enable = true;
     eula = true;
     openFirewall = true;
-    servers.paper = {
+    servers.NoServer = {
       enable = true;
       jvmOpts = "-Xmx3G -Xms1G";
       enableReload = true;
       package = pkgs.paperServers.paper-1_20_4;
+
+      serverProperties = { "online-mode" = false; };
     };
   };
 }
