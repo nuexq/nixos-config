@@ -6,5 +6,8 @@
     exports = ''
       /home/${username}/shared 192.168.1.0/24(rw,sync,no_subtree_check)
     '';
+    statd.enable = true;
+    lockd.enable = true;
   };
+  services.rpcbind.enable = true;
 }
