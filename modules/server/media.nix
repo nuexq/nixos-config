@@ -8,7 +8,6 @@ in
   services.radarr = {
     enable = true;
     dataDir = "/srv/media/radarr";
-    port = 7878;
     user = "nuexq";
     group = "users";
   };
@@ -16,7 +15,6 @@ in
   services.sonarr = {
     enable = true;
     dataDir = "/srv/media/sonarr";
-    port = 8989;
     user = "nuexq";
     group = "users";
   };
@@ -24,7 +22,6 @@ in
   services.bazarr = {
     enable = true;
     dataDir = "/srv/media/bazarr";
-    port = 6767;
     user = "nuexq";
     group = "users";
   };
@@ -39,7 +36,6 @@ in
     group = "users";
     # Optional: enable web-ui for remote control
     webUiEnable = true;
-    webUiPort = 8080;
   };
 
   # Make sure these directories exist and permissions are correct:
