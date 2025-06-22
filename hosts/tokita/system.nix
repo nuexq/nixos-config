@@ -29,7 +29,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [ neovim btop htop git ];
+    packages = with pkgs; [ neovim btop htop git curl tmux ];
   };
 
   # Allow sudo for wheel group
