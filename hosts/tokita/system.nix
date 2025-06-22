@@ -1,11 +1,11 @@
-{ config, pkgs, lib, inputs, username, ... }:
+{  pkgs, username, ... }:
 
 {
   networking.hostName = "tokita";
 
   # Use static IP or DHCP
   networking.useDHCP = false;
-  networking.interfaces.enp3s0.ipv4.addresses = [{
+  networking.interfaces.wlo1.ipv4.addresses = [{
     address = "192.168.1.8";
     prefixLength = 24;
   }];
