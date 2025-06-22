@@ -14,7 +14,7 @@ in {
       enable = true;
       jvmOpts = "-Xmx3G -Xms1G";
       enableReload = true;
-      package = pkgs.paperServers.papermc-1_20_4;
+      package = pkgs.paperServers.paper-1_20_4;
     };
   };
 }
