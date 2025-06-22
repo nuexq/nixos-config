@@ -26,6 +26,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" ];
     shell = pkgs.zsh;
+    packages = with pkgs; [ nvim btop htop ];
   };
 
   # Allow sudo for wheel group
