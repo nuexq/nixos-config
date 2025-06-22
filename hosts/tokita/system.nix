@@ -25,10 +25,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" ];
     shell = pkgs.zsh;
-    openssh.authorizedKeys.keys = [
-      # Add your laptop’s public key here
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJTfMYQJ24I4P+9ZsbhxwUd93VXPl7Gz5mH33ozN109F"
-    ];
   };
 
   # Allow sudo for wheel group
