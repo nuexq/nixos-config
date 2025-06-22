@@ -1,10 +1,4 @@
-{ config, ... }:
-
-let
-  # Download client config path
-  qbittorrentConfig = "/var/lib/qbittorrent/config/qbittorrent.conf";
-in
-{
+{ config, ... }: {
   services.radarr = {
     enable = true;
     dataDir = "/srv/media/radarr";
@@ -26,16 +20,17 @@ in
     group = "users";
   };
 
-  services.qbittorrent = {
+  services.transmission = {
     enable = true;
-    # Config path for qBittorrent, will be created automatically if missing
-    config = qbittorrentConfig;
-    # Set download directory for completed downloads
-    downloadsDir = "/srv/media/downloads";
     user = "nuexq";
-    group = "users";
-    # Optional: enable web-ui for remote control
-    webUiEnable = true;
+    rpc = {
+      enabled = true;
+      username = "your_rpc_username"; # change this
+      password = "your_rpc_password"; # change this
+      whitelistEnabled = false; # allow any IP, or customize
+      port = 9091;
+    };
+    downloadDir = "/srv/media/downloads";
   };
 
   # Make sure these directories exist and permissions are correct:
@@ -47,13 +42,15 @@ in
   ];
 
   # Firewall ports open for these services
-  networking.firewall.allowedTCPPorts = with config.networking.firewall.allowedTCPPorts or []; [
-    7878  # Radarr
-    8989  # Sonarr
-    6767  # Bazarr
-    8080  # qBittorrent web UI
-  ];
+  networking.firewall.allowedTCPPorts =
+    with config.networking.firewall.allowedTCPPorts or [ ]; [
+      7878 # Radarr
+      8989 # Sonarr
+      6767 # Bazarr
+      9091 #  # Transmission Web UI
+    ];
 
   # Optional: User should be in appropriate groups for permissions
-  users.users.nuexq.extraGroups = (config.users.users.nuexq.extraGroups or []) ++ [ "users" "networkmanager" "video" ];
+  users.users.nuexq.extraGroups = (config.users.users.nuexq.extraGroups or [ ])
+    ++ [ "users" "networkmanager" "video" ];
 }
