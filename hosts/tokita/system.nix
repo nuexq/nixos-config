@@ -6,12 +6,13 @@
 
   # Use static IP or DHCP
   networking.useDHCP = false;
-  networking.interfaces.wlo1.ipv4.addresses = [{
+  networking.interfaces.wlo0.ipv4.addresses = [{
     address = "192.168.1.8";
     prefixLength = 24;
   }];
   networking.defaultGateway = "192.168.1.1";
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
 
   # Timezone, locale
   time.timeZone = "Africa/Casablanca";
