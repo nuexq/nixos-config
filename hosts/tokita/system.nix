@@ -22,7 +22,7 @@
 
   # Enable OpenSSH
   services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.settings.PasswordAuthentication = true;
 
   # Define your user
   users.users.${username} = {
