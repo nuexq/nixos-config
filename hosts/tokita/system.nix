@@ -1,6 +1,7 @@
-{  pkgs, username, ... }:
+{ pkgs, username, ... }:
 
 {
+  imports = [ ../../modules/core/bootloader.nix ../../modules/core/nh.nix ];
   networking.hostName = "tokita";
 
   # Use static IP or DHCP
