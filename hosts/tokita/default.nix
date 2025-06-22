@@ -5,7 +5,7 @@
     ./system.nix
 
     # Add service configs from modules
-    #../../modules/jellyfin.nix
+    ../../modules/server/
 
     # Add other custom modules here
   ];
