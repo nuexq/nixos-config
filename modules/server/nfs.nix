@@ -8,6 +8,5 @@
     '';
   };
   services.nfs.statd.enable = true;
-  services.nfs.lockd.enable = true;
   services.rpcbind.enable = true;
 }
