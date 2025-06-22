@@ -14,6 +14,8 @@
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   networking.firewall.allowedTCPPorts = [ 22 ];
 
+  networking.networkmanager.enable = true;
+
   # Timezone, locale
   time.timeZone = "Africa/Casablanca";
   i18n.defaultLocale = "en_US.UTF-8";
