@@ -5,7 +5,7 @@
     ./system.nix
 
     # Add service configs from modules
-    ../../modules/server/
+    ../../modules/server
 
     # Add other custom modules here
   ];
