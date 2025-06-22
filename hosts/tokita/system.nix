@@ -4,6 +4,7 @@
   imports = [ ../../modules/core/bootloader.nix ../../modules/core/nh.nix ];
   networking.hostName = "tokita";
 
+  # networking
   # Use static IP or DHCP
   networking.useDHCP = false;
   networking.interfaces.wlo0.ipv4.addresses = [{
@@ -15,6 +16,8 @@
   networking.firewall.allowedTCPPorts = [ 22 ];
 
   networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
 
   # Timezone, locale
   time.timeZone = "Africa/Casablanca";
