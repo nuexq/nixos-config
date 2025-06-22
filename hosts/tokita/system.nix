@@ -32,7 +32,7 @@
     packages = with pkgs; [ neovim btop htop git curl tmux ];
   };
 
-  experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow sudo for wheel group
   security.sudo.enable = true;
