@@ -2,6 +2,6 @@
   imports = [
     ./minecraft.nix # minecraft server
     ./jellyfin.nix  # jellyfin
-    ./nsf.nix       # nfs server
+    ./nfs.nix       # nfs server
   ];
 }
