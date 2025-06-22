@@ -1,12 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./system.nix
-
-    # Add service configs from modules
-    ../../modules/server
-
-    # Add other custom modules here
-  ];
+  imports = [ ./system.nix ../../modules/server ./hardware-configuration.nix ];
 }
