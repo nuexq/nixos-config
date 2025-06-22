@@ -1,0 +1,42 @@
+{ config, pkgs, lib, inputs, username, ... }:
+
+{
+  networking.hostName = "tokita";
+
+  # Use static IP or DHCP
+  networking.useDHCP = false;
+  networking.interfaces.enp3s0.ipv4.addresses = [{
+    address = "192.168.1.8";
+    prefixLength = 24;
+  }];
+  networking.defaultGateway = "192.168.1.1";
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+
+  # Timezone, locale
+  time.timeZone = "Africa/Casablanca";
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  # Enable OpenSSH
+  services.openssh.enable = true;
+  services.openssh.settings.PasswordAuthentication = false;
+
+  # Define your user
+  users.users.${username} = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "video" ];
+    shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      # Add your laptop’s public key here
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJTfMYQJ24I4P+9ZsbhxwUd93VXPl7Gz5mH33ozN109F"
+    ];
+  };
+
+  # Allow sudo for wheel group
+  security.sudo.enable = true;
+  security.sudo.wheelNeedsPassword = false;
+
+  # Enable ZSH
+  programs.zsh.enable = true;
+
+  system.stateVersion = "24.05";
+}
