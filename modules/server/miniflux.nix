@@ -3,7 +3,7 @@
 {
   services.miniflux = {
     enable = true;
-    adminCredentialsFile = "/etc/miniflux_adming";
+    adminCredentialsFile = "/etc/miniflux_admin";
 
     config = {
       CREATE_ADMIN= "1";
