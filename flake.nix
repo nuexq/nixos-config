@@ -49,6 +49,8 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     catppuccin.url = "github:catppuccin/nix";
+
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = { nixpkgs, self, ... }@inputs:
@@ -65,6 +67,16 @@
             inherit self inputs username;
           };
         };
+
+        tokita = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/tokita ];
+          specialArgs = {
+            host = "tokita";
+            inherit self inputs username;
+          };
+        };
+
       };
     };
 }
