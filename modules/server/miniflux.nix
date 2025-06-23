@@ -16,5 +16,7 @@
       DISABLE_LOCAL_AUTH = "false";
     };
   };
+
+  networking.firewall.allowedTCPPorts = [ 8067 ];
 }
 
