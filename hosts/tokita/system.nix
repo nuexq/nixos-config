@@ -13,7 +13,8 @@
   }];
   networking.defaultGateway = "192.168.1.1";
   networking.nameservers = [ "192.168.1.1" "8.8.8.8" ];
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedUDPPorts = [ 53 ];
+  networking.firewall.allowedTCPPorts = [ 22 53 ];
 
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
@@ -48,6 +49,9 @@
   services.dnsmasq = {
     enable = true;
     settings = { address = "/home.com/192.168.1.8"; };
+    enableDns = true;
+    localService = true;
+    listenAddresses = [ "192.168.1.8" ];
   };
 
   system.stateVersion = "24.05";
