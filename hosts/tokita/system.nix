@@ -49,7 +49,11 @@
   services.dnsmasq = {
     enable = true;
     settings = {
-      address = [ "/home.com/192.168.1.8" "/rss.home.com/192.168.1.8" ];
+      address = [
+        "/home.com/192.168.1.8"
+        "/rss.home.com/192.168.1.8"
+        "/jellyfin.home.com/192.168.1.8"
+      ];
     };
   };
 
