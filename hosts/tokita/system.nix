@@ -48,7 +48,9 @@
   # lAN-wide dns
   services.dnsmasq = {
     enable = true;
-    settings = { address = "/home.com/192.168.1.8"; };
+    settings = {
+      address = [ "/home.com/192.168.1.8" "/rss.home.com/192.168.1.8" ];
+    };
   };
 
   system.stateVersion = "24.05";
