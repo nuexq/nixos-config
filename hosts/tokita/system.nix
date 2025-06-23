@@ -49,9 +49,8 @@
   services.dnsmasq = {
     enable = true;
     settings = { address = "/home.com/192.168.1.8"; };
-    enableDns = true;
     localService = true;
-    listenAddresses = [ "192.168.1.8" ];
+    listenAddresses = [ "127.0.0.1" "192.168.1.8" ];
   };
 
   system.stateVersion = "24.05";
