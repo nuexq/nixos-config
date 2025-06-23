@@ -10,6 +10,10 @@
 > This flake is for my personal use. Not everything is meant to be reusable or functional outside my setup.  
 > Feel free to explore and adapt parts of it.
 
+Hosts:
+  - NoPC: My main laptop.
+  - tokita: A simple home server
+
 ## Components
 
 - **Window Manager:** [Hyprland][Hyprland]  
