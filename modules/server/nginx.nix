@@ -3,8 +3,6 @@
 {
   services.nginx = {
     enable = true;
-    defaultEnable = true;
-
     virtualHosts."rss.home.com" = {
       listen = [{
         addr = "192.168.1.8";
