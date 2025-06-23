@@ -3,17 +3,13 @@
 {
   services.miniflux = {
     enable = true;
-
-    # Provide this file with:
-    adminCredentialsFile = /var/lib/miniflux/admin.env;
+    adminCredentialsFile = "/etc/miniflux.env";
 
     config = {
-      BASE_URL =
-        "http://192.168.1.8:8067";
-      CREATE_ADMIN = "1";
-      LISTEN_ADDR = "0.0.0.0:8067";
-
-      DISABLE_LOCAL_AUTH = "false";
+      BASE_URL = "http://192.168.1.10:8067";
+      LISTEN_ADDR = "0.0.0.1:8067";
+      METRICS_COLLECTOR = "1";
+      DISABLE_LOCAL_AUTH = false;
     };
   };
 
