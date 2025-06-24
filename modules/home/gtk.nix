@@ -4,12 +4,13 @@
     nerd-fonts.jetbrains-mono
     noto-fonts-emoji
     maple-mono.NF-CN-unhinted
+    inter-nerdfont
   ];
 
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "Inter Nerd Font";
       size = 12;
     };
 
@@ -40,6 +41,7 @@
   };
 
   home.sessionVariables = {
-    GTK_THEME = "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard+rimless,normal";
+    GTK_THEME =
+      "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard+rimless,normal";
   };
 }
