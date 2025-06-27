@@ -11,7 +11,7 @@ let
       owner = "Davi-S";
       repo = "sddm-theme-minesddm";
       rev = "main";
-      sha256 = "0awarrfgzg4wang7m7v79qq59y545mrjh1cc14rn1r49krzg5ibp";
+      sha256 = "sha256-d8Xyfp6J5GAzCYwFKHMtpPhUME5nn3qeVZy8/1zOiis=";
     };
 
     installPhase = ''
