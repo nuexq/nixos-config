@@ -16,7 +16,10 @@ in {
       enableReload = true;
       package = pkgs.paperServers.paper-1_21_6;
 
-      serverProperties = { "online-mode" = false; };
+      serverProperties = {
+        "online-mode" = false;
+        "keepInventory" = true;
+      };
     };
   };
 }
