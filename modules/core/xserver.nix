@@ -32,6 +32,7 @@ in {
         sddm = {
           enable = true;
           theme = "minesddm";
+          package = pkgs.libsForQt5.sddm;
         };
       };
     };

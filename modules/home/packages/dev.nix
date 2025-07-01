@@ -15,7 +15,7 @@
     llvmPackages_20.clang-tools
 
     # Java
-    openjdk21
+    openjdk24
 
     # JS/TS
     nodejs
