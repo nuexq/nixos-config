@@ -3,12 +3,12 @@
 {
   services.nginx = {
     enable = true;
-    virtualHosts."rss.home.com" = {
+    virtualHosts."rss.nuexq.local" = {
       listen = [{
         addr = "192.168.1.8";
         port = 80;
       }];
-      serverName = "rss.home.com";
+      serverName = "rss.nuexq.local";
       locations."/" = {
         proxyPass = "http://127.0.0.1:8067";
         extraConfig = ''
@@ -20,12 +20,12 @@
       };
     };
 
-    virtualHosts."jellyfin.home.com" = {
+    virtualHosts."jellyfin.nuexq.local" = {
       listen = [{
         addr = "192.168.1.8";
         port = 80;
       }];
-      serverName = "jellyfin.home.com";
+      serverName = "jellyfin.nuexq.local";
 
       locations."/" = {
         proxyPass = "http://127.0.0.1:8096";

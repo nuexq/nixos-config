@@ -50,9 +50,9 @@
     enable = true;
     settings = {
       address = [
-        "/home.com/192.168.1.8"
-        "/rss.home.com/192.168.1.8"
-        "/jellyfin.home.com/192.168.1.8"
+        "/nuexq.local/192.168.1.8"
+        "/rss.nuexq.local/192.168.1.8"
+        "/jellyfin.nuexq.local/192.168.1.8"
       ];
     };
   };

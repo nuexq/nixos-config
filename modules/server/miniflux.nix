@@ -7,7 +7,7 @@
 
     config = {
       CREATE_ADMIN= "1";
-      BASE_URL = "http://rss.home.com";
+      BASE_URL = "http://rss.nuexq.local";
       LISTEN_ADDR = "0.0.0.0:8067";
     };
   };
