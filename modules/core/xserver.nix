@@ -10,8 +10,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "Davi-S";
       repo = "sddm-theme-minesddm";
-      rev = "main";
-      sha256 = "sha256-d8Xyfp6J5GAzCYwFKHMtpPhUME5nn3qeVZy8/1zOiis=";
+      rev = "65de0d6f32d3bcbe23ebddb2aff89220dc56bcb2";
+      sha256 = "sha256-oV6/zsyAHCV8U3jYqQFxwk/JYrxq9T7ekg6GaJT+dXc=";
     };
 
     installPhase = ''
