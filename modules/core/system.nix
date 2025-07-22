@@ -22,7 +22,7 @@
       [ inputs.nur.overlays.default inputs.rust-overlay.overlays.default ];
   };
 
-  environment.systemPackages = with pkgs; [ wget git sshfs ];
+  environment.systemPackages = with pkgs; [ wget git sshfs comma ];
 
   time.timeZone = "Africa/Casablanca";
   i18n.defaultLocale = "en_US.UTF-8";
