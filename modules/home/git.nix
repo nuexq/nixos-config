@@ -4,7 +4,7 @@
     enable = true;
 
     userName = "nuexq";
-    userEmail = "hi.yassir.op@gmail.com";
+    userEmail = "nuexqq@gmail.com";
 
     extraConfig = {
       init.defaultBranch = "main";
