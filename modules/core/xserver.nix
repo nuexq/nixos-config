@@ -39,8 +39,4 @@ in {
 
     libinput.enable = true;
   };
-
-  # Avoid long shutdown times
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 }
-
