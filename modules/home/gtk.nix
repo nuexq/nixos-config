@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, lib, ... }: {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -14,17 +14,18 @@
       size = 12;
     };
 
-    catppuccin = {
-      enable = true;
-      flavor = config.catppuccin.flavor;
-      accent = config.catppuccin.accent;
-      size = "standard";
-      tweaks = [ "rimless" "normal" ];
+    theme = {
+      name = "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard";
+      package = pkgs.catppuccin-gtk.override {
+        size = "standard";
+        accents = [ "mauve" ];
+        variant = "mocha";
+      };
     };
 
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders;
+      package = lib.mkForce pkgs.catppuccin-papirus-folders;
     };
 
     cursorTheme = {
@@ -42,6 +43,6 @@
 
   home.sessionVariables = {
     GTK_THEME =
-      "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard+rimless,normal";
+      "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard";
   };
 }
