@@ -438,21 +438,6 @@ return {
 
 	-- Completion
 	{
-		"supermaven-inc/supermaven-nvim",
-		event = "VeryLazy",
-		config = function()
-			require("supermaven-nvim").setup({
-				log_level = "off",
-				keymaps = {
-					accept_suggestion = "<M-n>",
-					clear_suggestion = "<C-]>",
-					accept_word = "<C-j>",
-				},
-			})
-		end,
-	},
-
-	{
 		"luckasRanarison/tailwind-tools.nvim",
 		name = "tailwind-tools",
 		build = ":UpdateRemotePlugins",
