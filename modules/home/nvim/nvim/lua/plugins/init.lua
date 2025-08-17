@@ -8,13 +8,8 @@ return {
 			require("plugins.configs.ui.colorscheme")
 		end,
 	},
-	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
-			require("gruvbox").setup({})
-		end,
-	},
+	{ "sam4llis/nvim-tundra", opts = {}, event = "VeryLazy" },
+	{ "rose-pine/neovim", name = "rose-pine", opts = {}, event = "VeryLazy" },
 	{
 		"goolord/alpha-nvim",
 		config = function()
