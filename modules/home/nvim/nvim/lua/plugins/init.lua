@@ -171,6 +171,19 @@ return {
 
 	-- Editing Helper
 	{
+		"MagicDuck/grug-far.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("grug-far").setup({})
+		end,
+	},
+	{
+		"smoka7/multicursors.nvim",
+		event = "VeryLazy",
+		dependencies = { "nvimtools/hydra.nvim" },
+		opts = {},
+	},
+	{
 		"numToStr/Comment.nvim",
 		event = "VeryLazy",
 		config = function()
