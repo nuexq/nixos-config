@@ -261,6 +261,37 @@ wk.add({
 			},
 			icon = { icon = "󰛂", color = "green" },
 		},
+		{
+			"<leader>dl",
+			"<cmd>Leet<cr>",
+			desc = "Leetcode",
+			icon = { icon = "", color = "red" },
+		},
+		{
+			"<leader>dlr",
+			"<cmd>Leet run<cr>",
+			desc = "Leetcode run",
+			icon = { icon = "", color = "green" },
+		},
+		{
+			"<leader>dls",
+			"<cmd>Leet submit<cr>",
+			desc = "Leetcode submit",
+			icon = { icon = "󰁜", color = "green" },
+		},
+		{
+			"<leader>dll",
+			"<cmd>Leet last_submit<cr>",
+			desc = "Leetcode last submit",
+			icon = { icon = "󰁂", color = "orange" },
+		},
+		{
+			"<leader>dlc",
+			"<cmd>Leet console<cr>",
+			desc = "Leet console",
+			icon = { icon = "", color = "cyan" },
+		},
+		icon = { icon = "󰛂", color = "green" },
 	},
 
 	-- Insert mode mappings
