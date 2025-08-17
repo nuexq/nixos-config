@@ -466,4 +466,17 @@ return {
 			require("plugins.configs.cmp")
 		end,
 	},
+	{
+		"kawre/leetcode.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+		},
+		opts = {
+			lang = "typescript",
+			image_support = true,
+		},
+	},
 }
