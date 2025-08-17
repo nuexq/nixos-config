@@ -138,7 +138,13 @@ wk.add({
 			},
 			{
 				"<leader>ca",
-				"<cmd>lua vim.lsp.buf.code_action()<cr>",
+				function()
+					if vim.bo.filetype == "rust" then
+						vim.cmd.RustLsp("codeAction")
+					else
+						vim.lsp.buf.code_action()
+					end
+				end,
 				desc = "Code action",
 				icon = { icon = "󰮨", color = "yellow" },
 			},
@@ -203,7 +209,17 @@ wk.add({
 		-- Multicursor
 		{ "m", "<cmd>MCstart<cr>", desc = "Create multiple cursors (normal)" },
 
-		{ "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Show hover information" },
+		{
+			"K",
+			function()
+				if vim.bo.filetype == "rust" then
+					vim.cmd.RustLsp({ "hover", "actions" })
+				else
+					vim.lsp.buf.hover()
+				end
+			end,
+			desc = "Show hover information",
+		},
 
 		-- Other
 		{
