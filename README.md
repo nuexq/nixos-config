@@ -35,7 +35,6 @@ Hosts:
 - **Color Picker:** [hyprpicker][hyprpicker]  
 
 # Credits
-Here are some dotfiles I learned from or borrowed ideas:
  - [Frost-Phoenix/nixos-config](https://github.com/Frost-Phoenix/nixos-config/): the starting point, and the base of this dotfiles.
 
 <!-- Links -->
