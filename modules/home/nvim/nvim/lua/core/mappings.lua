@@ -206,9 +206,6 @@ wk.add({
 			{ "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Show signature help" },
 		},
 
-		-- Multicursor
-		{ "m", "<cmd>MCstart<cr>", desc = "Create multiple cursors (normal)" },
-
 		{
 			"K",
 			function()
@@ -308,7 +305,6 @@ wk.add({
 		{ "p", '"_dP', desc = "Paste without yanking" },
 		{ "<", "<gv", desc = "Indent left and reselect" },
 		{ ">", ">gv", desc = "Indent right and reselect" },
-		{ "m", "<cmd>'<,'>MCvisual<cr>", desc = "Create multiple cursors (visual)" },
 		{
 			"<A-k>",
 			function()
