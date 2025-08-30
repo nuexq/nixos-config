@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   imports = [
     ./bootloader.nix
     ./hardware.nix
@@ -15,5 +14,6 @@
     ./flatpak.nix
     ./user.nix
     ./wayland.nix
+    ./nix.nix
   ];
 }
