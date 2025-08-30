@@ -15,7 +15,8 @@
     };
 
     theme = {
-      name = "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard";
+      name =
+        "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard";
       package = pkgs.catppuccin-gtk.override {
         size = "standard";
         accents = [ "mauve" ];
@@ -27,22 +28,19 @@
       name = "Papirus-Dark";
       package = lib.mkForce pkgs.catppuccin-papirus-folders;
     };
-
-    cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 22;
-    };
   };
 
   home.pointerCursor = {
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
+    name = "phinger-cursors-dark";
+    package = pkgs.phinger-cursors;
     size = 22;
+    gtk.enable = true;
   };
 
   home.sessionVariables = {
     GTK_THEME =
       "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard";
+    XCURSOR_THEME = "phinger-cursors-dark";
+    XCURSOR_SIZE = "22";
   };
 }

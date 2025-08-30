@@ -19,8 +19,6 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     GRIMBLAST_HIDE_CURSOR = 0;
-    XCURSOR_THEME = "Bibata-Modern-Ice";
-    XCURSOR_SIZE ="22";
     EDITOR = "nvim";
   };
 }

@@ -195,6 +195,7 @@ wk.add({
 			{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "Open LazyGit", icon = { icon = "", color = "purple" } },
 			{ "<leader>gv", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" } },
 		},
+
 		{
 			group = "Go to",
 			{ "g", desc = "Go to" },
