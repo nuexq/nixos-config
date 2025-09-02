@@ -14,9 +14,16 @@ in {
       package = hyprland-pkgs.mesa;
       extraPackages = with pkgs; [
         intel-media-driver
-        vaapiVdpau
+        vaapiIntel
         libvdpau-va-gl
+        vaapiVdpau
+        vulkan-loader
         vulkan-tools
+        hyprland-pkgs.mesa.drivers
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        intel-media-driver
+        vaapiIntel
       ];
     };
 
@@ -30,7 +37,16 @@ in {
 
   services.thermald.enable = true;
 
-  boot.kernelParams =
-    [ "i915.enable_psr=1" "i915.enable_fbc=1" "i915.semaphores=1" ];
+  boot = {
+    kernelModules = [ "i915" ];
+    kernelParams =
+      [ "i915.enable_psr=1" "i915.enable_fbc=1" "i915.semaphores=1" ];
+  };
+
+  environment.systemPackages = with pkgs; [
+    vulkan-tools
+    libva-utils
+    glxinfo
+  ];
 }
 
