@@ -14,6 +14,7 @@
     mpv                               # Video player
     nitch                             # System fetch utility
     onefetch                          # Git repo summary in terminal
+    fastfetch                         # system information tool
     pamixer                           # PulseAudio command-line mixer
     playerctl                         # Controller for media players
     poweralertd                       # Alerts when running on battery
