@@ -2,6 +2,7 @@
   imports = [ inputs.nix-gaming.nixosModules.platformOptimizations ];
 
   programs = {
+    gamemode.enable = true;
     steam = {
       enable = true;
 

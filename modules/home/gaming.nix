@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  programs.gamemode.enable = true;
   home.packages = with pkgs; [
     mangohud # monitoring fps
     umu-launcher # proton outside steam
