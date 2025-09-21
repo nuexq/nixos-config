@@ -3,10 +3,12 @@
     pavucontrol
     vlc
 
-    qalculate-gtk
-    qbittorrent
+    qalculate-gtk # calculator
+    qbittorrent # BitTorrent client
 
     zenity
+    ghidra # reverse-engineering software (static)
+    (cutter.withPlugins (ps: with ps; [ jsdec rz-ghidra sigdb ]))
   ];
 }
 
