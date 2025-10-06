@@ -8,8 +8,8 @@ return {
 			require("plugins.configs.ui.colorscheme")
 		end,
 	},
-	{ "sam4llis/nvim-tundra", opts = {}, event = "VeryLazy" },
 	{ "rose-pine/neovim", name = "rose-pine", opts = {}, event = "VeryLazy" },
+	{ "kepano/flexoki-neovim", name = "flexoki" },
 	{
 		"goolord/alpha-nvim",
 		config = function()
