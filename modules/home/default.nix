@@ -33,5 +33,6 @@
     ./starship.nix                    # shell prompt
     ./tmux.nix                        # terminal multiplexer
     ./theme.nix                       # theme
+    ./direnv.nix                      # direnv
   ];
 }
