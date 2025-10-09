@@ -19,7 +19,7 @@ in {
         vaapiVdpau
         vulkan-loader
         vulkan-tools
-        hyprland-pkgs.mesa.drivers
+        hyprland-pkgs.mesa
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [
         intel-media-driver
