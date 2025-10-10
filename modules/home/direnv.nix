@@ -1,6 +1,8 @@
 { ... }:
 {
   programs.direnv = {
+    enable = true;
+    silent = true;
     enableZshIntegration = true;
 
     # faster, persistent implementation of use_nix and use_flake

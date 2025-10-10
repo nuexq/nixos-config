@@ -28,11 +28,11 @@
     ./waybar                          # status bar
     ./waypaper.nix                    # GUI wallpaper picker
     ./xdg-mimes.nix                   # xdg config
+    ./direnv.nix                      # direnv
     ./zsh                             # shell
     ./yazi.nix                        # tui file-manager
     ./starship.nix                    # shell prompt
     ./tmux.nix                        # terminal multiplexer
     ./theme.nix                       # theme
-    ./direnv.nix                      # direnv
   ];
 }
