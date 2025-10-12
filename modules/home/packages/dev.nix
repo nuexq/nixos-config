@@ -8,14 +8,13 @@
     # C / C++
     gcc
     gdb
-    gef
     cmake
     gnumake
     valgrind
     llvmPackages_20.clang-tools
 
     # Java
-    openjdk24
+    jdk
 
     # JS/TS
     nodejs
