@@ -14,6 +14,5 @@
     ./flatpak.nix
     ./user.nix
     ./wayland.nix
-    ./nix.nix
   ];
 }

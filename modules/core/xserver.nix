@@ -26,14 +26,13 @@ in {
     xserver = {
       enable = true;
       xkb.layout = "us,ara";
-
-      displayManager = {
-        autoLogin.enable = false;
-        sddm = {
-          enable = true;
-          theme = "minesddm";
-          package = pkgs.kdePackages.sddm;
-        };
+    };
+    displayManager = {
+      autoLogin.enable = false;
+      sddm = {
+        enable = true;
+        theme = "minesddm";
+        package = pkgs.kdePackages.sddm;
       };
     };
 
