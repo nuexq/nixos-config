@@ -42,15 +42,15 @@
       window-decoration = false;
 
       keybind = [
-        "alt+1=''"
-        "alt+2=''"
-        "alt+3=''"
-        "alt+4=''"
-        "alt+5=''"
-        "alt+6=''"
-        "alt+7=''"
-        "alt+8=''"
-        "alt+9=''"
+        "alt+1=unbind"
+        "alt+2=unbind"
+        "alt+3=unbind"
+        "alt+4=unbind"
+        "alt+5=unbind"
+        "alt+6=unbind"
+        "alt+7=unbind"
+        "alt+8=unbind"
+        "alt+9=unbind"
       ];
     };
   };
