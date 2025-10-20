@@ -14,5 +14,6 @@
     ./flatpak.nix
     ./user.nix
     ./wayland.nix
+    ./spicetify.nix
   ];
 }
