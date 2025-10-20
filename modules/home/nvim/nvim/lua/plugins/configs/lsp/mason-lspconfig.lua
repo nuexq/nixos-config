@@ -4,7 +4,6 @@ require("mason-lspconfig").setup({
 		"ts_ls", -- typescript-language-server
 		"html", -- html-lsp
 		"cssls", -- css-lsp
-		"rust_analyzer", -- rust-analyzer
 		"lua_ls", -- lua-language-server
 		"clangd", -- clangd
 		"bashls", -- Bash LSP
@@ -14,5 +13,6 @@ require("mason-lspconfig").setup({
 		"wgsl_analyzer", -- wgsl-analyzer
 		"astro", -- Astro LSP
     "tailwindcss", -- Tailwind CSS Language Server
+    "texlab" -- latex LSP
 	},
 })

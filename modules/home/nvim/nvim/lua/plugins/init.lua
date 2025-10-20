@@ -337,7 +337,7 @@ return {
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		opts = {
-			file_types = { "markdown", "mdx" },
+			file_types = { "markdown", "mdx", "tex" },
 			heading = {
 				width = "block",
 				left_pad = 1,

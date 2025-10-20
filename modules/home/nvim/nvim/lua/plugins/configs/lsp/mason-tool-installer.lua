@@ -6,6 +6,8 @@ require("mason-tool-installer").setup({
 		"cbfmt",
 		"prettier",
     "nixfmt",
+    "vale",
+    "latexindent"
 	},
 	auto_update = false,
 	run_on_start = true,
