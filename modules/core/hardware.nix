@@ -27,11 +27,17 @@ in {
 
     enableRedistributableFirmware = true;
     firmware = with pkgs; [ linux-firmware ];
+
+    # 🔵 Bluetooth configuration
+    bluetooth.enable = true;
   };
 
-  services.fstrim.enable = true;
+  services = {
+    fstrim.enable = true;
+    thermald.enable = true;
 
-  services.thermald.enable = true;
+    blueman.enable = true;
+  };
 
   boot = {
     kernelModules = [ "i915" ];
@@ -39,10 +45,5 @@ in {
       [ "i915.enable_psr=1" "i915.enable_fbc=1" "i915.semaphores=1" ];
   };
 
-  environment.systemPackages = with pkgs; [
-    vulkan-tools
-    libva-utils
-    glxinfo
-  ];
+  environment.systemPackages = with pkgs; [ vulkan-tools libva-utils glxinfo ];
 }
-
