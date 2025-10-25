@@ -28,8 +28,10 @@ in {
     enableRedistributableFirmware = true;
     firmware = with pkgs; [ linux-firmware ];
 
-    # 🔵 Bluetooth configuration
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = false;
+    };
   };
 
   services = {
