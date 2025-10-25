@@ -298,9 +298,8 @@ in {
         "float,title:^(branchdialog)$"
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
-
-        # Center
-        "center,class:^(org.pulseaudio.pavucontrol)$"
+        "float,center,class:^(Anki)$,title:^(Add)$,"
+        "float,center,class:^(org.pulseaudio.pavucontrol)$"
 
         # Remove context menu transparency in chromium based apps
         "opaque,class:^()$,title:^()$"
@@ -331,7 +330,7 @@ in {
         "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
 
         # other
-        "move 40 55%,title:^(Volume Control)$"
+        # "move 40 55%,title:^(Volume Control)$"
         "idleinhibit focus, class:^(mpv)$"
         "noanim,class:^(xwaylandvideobridge)$"
         "noinitialfocus,class:^(xwaylandvideobridge)$"

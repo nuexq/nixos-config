@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ config, ... }: {
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1;
     __GL_GSYNC_ALLOWED = 0;
@@ -9,7 +8,7 @@
     GDK_BACKEND = "wayland";
     ANKI_WAYLAND = 1;
     DIRENV_LOG_FORMAT = "";
-    WLR_DRM_NO_ATOMIC = 1; 
+    WLR_DRM_NO_ATOMIC = 1;
     WLR_BACKEND = "vulkan";
     WLR_RENDERER = "vulkan";
     WLR_NO_HARDWARE_CURSORS = 1;
@@ -20,5 +19,16 @@
     CLUTTER_BACKEND = "wayland";
     GRIMBLAST_HIDE_CURSOR = 0;
     EDITOR = "nvim";
+    # GTK
+    GTK_THEME =
+      "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard";
+    XCURSOR_THEME = "phinger-cursors-dark";
+    XCURSOR_SIZE = "22";
+    # QT
+    QT_AUTO_SCREEN_SCALE_FACTOR = 1;
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
+    QT_QPA_PLATFORM = "wayland;xcb";
+    DISABLE_QT5_COMPAT = 0;
+    CALIBRE_USE_DARK_PALETTE = "1";
   };
 }

@@ -37,10 +37,7 @@
     gtk.enable = true;
   };
 
-  home.sessionVariables = {
-    GTK_THEME =
-      "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard";
-    XCURSOR_THEME = "phinger-cursors-dark";
-    XCURSOR_SIZE = "22";
+  dconf.settings = {
+    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
   };
 }
