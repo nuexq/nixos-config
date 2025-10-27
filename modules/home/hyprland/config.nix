@@ -57,7 +57,7 @@ in {
         layers_hog_keyboard_focus = true;
         animate_manual_resizes = false;
         enable_swallow = true;
-        focus_on_activate = true;
+        focus_on_activate = false;
         new_window_takes_over_fullscreen = 2;
         middle_click_paste = false;
         disable_splash_rendering = true;
@@ -298,8 +298,8 @@ in {
         "float,title:^(branchdialog)$"
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
-        "float,center,class:^(Anki)$,title:^(Add)$,"
-        "float,center,class:^(org.pulseaudio.pavucontrol)$"
+        "float,class:^(Anki)$,title:^(Add)$,"
+        "float,class:^(org.pulseaudio.pavucontrol)$"
 
         # Remove context menu transparency in chromium based apps
         "opaque,class:^()$,title:^()$"
