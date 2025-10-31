@@ -1,6 +1,6 @@
-{ inputs, pkgs, ... }:
-{
-  home.packages = (
-    with pkgs; [ inputs.zen-browser.packages."${system}".default vivaldi ]
-  );
+{ inputs, pkgs, ... }: {
+  home.packages = (with pkgs; [
+    inputs.zen-browser.packages."${system}".default
+    nur.repos.${"Ev357"}.helium
+  ]);
 }
