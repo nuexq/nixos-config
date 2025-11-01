@@ -10,16 +10,16 @@ in {
       package = hyprland-pkgs.mesa;
       extraPackages = with pkgs; [
         intel-media-driver
-        vaapiIntel
+        intel-vaapi-driver 
         libvdpau-va-gl
-        vaapiVdpau
+        libva-vdpau-driver
         vulkan-loader
         vulkan-tools
         hyprland-pkgs.mesa
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [
         intel-media-driver
-        vaapiIntel
+        intel-vaapi-driver
       ];
     };
 
@@ -47,5 +47,5 @@ in {
       [ "i915.enable_psr=1" "i915.enable_fbc=1" "i915.semaphores=1" ];
   };
 
-  environment.systemPackages = with pkgs; [ vulkan-tools libva-utils glxinfo ];
+  environment.systemPackages = with pkgs; [ vulkan-tools libva-utils mesa-demos ];
 }

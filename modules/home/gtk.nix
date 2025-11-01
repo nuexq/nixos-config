@@ -2,7 +2,7 @@
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     maple-mono.NF-CN-unhinted
     inter-nerdfont
   ];
