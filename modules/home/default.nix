@@ -20,7 +20,6 @@
     ./nvim                            # neovim editor
     ./obsidian.nix                    # obsidian notes
     ./packages                        # other packages
-    ./rofi.nix                        # launcher
     ./scripts/scripts.nix             # personal scripts
     ./ssh.nix                         # ssh config
     ./swayosd.nix                     # brightness / volume wiget
@@ -34,5 +33,6 @@
     ./starship.nix                    # shell prompt
     ./tmux.nix                        # terminal multiplexer
     ./theme.nix                       # theme
+    ./vicinae.nix                     # launcher
   ];
 }

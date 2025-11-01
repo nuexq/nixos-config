@@ -24,6 +24,7 @@ in {
         "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         "[workspace 1 silent] ${browser}"
         "[workspace 2 silent] ${terminal}"
+        "USE_LAYER_SHELL=0 vicinae server >> ~/.local/share/hyprland/exec.log 2>&1"
       ];
 
       input = {
@@ -116,9 +117,7 @@ in {
         ];
       };
 
-      debug = {
-        full_cm_proto = true;
-      };
+      debug = { full_cm_proto = true; };
 
       binds = { movefocus_cycles_fullscreen = true; };
 
@@ -132,7 +131,7 @@ in {
         "$mainMod, Q, killactive,"
         "ALT, return, fullscreen"
         "$mainMod, W, exec, toggle-float"
-        "ALT, Space, exec, rofi -show drun || pkill rofi"
+        "ALT, Space, exec, vicinae toggle"
         "$mainMod SHIFT, D, exec, discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, power-menu"
@@ -253,7 +252,7 @@ in {
         "$mainMod, mouse_up, workspace, e+1"
 
         # clipboard manager
-        "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window { width: 500px; }' | cliphist decode | wl-copy"
+        "$mainMod, V, exec, vicinae vicinae://extensions/vicinae/clipboard/history"
       ];
 
       # mouse binding
@@ -265,8 +264,8 @@ in {
       # windowrule
       windowrule = [
         # Pin
-        "pin,class:^(rofi)$"
         "pin,class:^(waypaper)$"
+        "pin,title:^(Vicinae Launcher)$"
 
         # Size
         "size 700 450,title:^(Volume Control)$"
@@ -337,8 +336,12 @@ in {
         "noinitialfocus,class:^(xwaylandvideobridge)$"
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
+        "noanim, title:^(Vicinae Launcher)$"
+        "opacity 0.90 0.90,title:^(Vicinae Launcher)$"
 
       ];
+
+      layerrule = [ "blur,vicinae" "ignorealpha 0, vicinae" "noanim, vicinae" ];
     };
 
     extraConfig =
