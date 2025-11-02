@@ -145,10 +145,10 @@ in {
         "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 9] missioncenter'"
         "$mainMod, equal, exec, woomer"
 
-        # screenshot
-        ",Print, exec, screenshot --copy"
-        "$mainMod, Print, exec, screenshot --save"
-        "$mainMod SHIFT, Print, exec, screenshot --swappy"
+        # screenshot 
+        ",Print, exec, screenshot --fullscreen" # Fullscreen screenshot instantly 
+        "$mainMod, Print, exec, screenshot --freeze-copy" # Freeze + select area → copy
+        "$mainMod SHIFT, Print, exec, screenshot --nonfreeze-copy" # Non-freeze + select area → copy
 
         # switch focus
         "$mainMod, left,  movefocus, l"
