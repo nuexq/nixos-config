@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, lib, ... }: {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -15,12 +15,12 @@
     };
 
     theme = {
-      name =
-        "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-standard";
-      package = pkgs.catppuccin-gtk.override {
+      name = "Catppuccin-GTK-Purple-Dark";
+      package = pkgs.magnetic-catppuccin-gtk.override {
+        accent = [ "purple" ];
+        shade = "dark";
         size = "standard";
-        accents = [ "mauve" ];
-        variant = "mocha";
+        tweaks = [ ];
       };
     };
 
