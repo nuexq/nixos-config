@@ -53,7 +53,6 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    vicinae.url = "github:vicinaehq/vicinae";
   };
 
   outputs = { nixpkgs, self, ... }@inputs:

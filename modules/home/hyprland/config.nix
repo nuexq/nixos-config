@@ -337,6 +337,7 @@ in {
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
         "noanim, title:^(Vicinae Launcher)$"
+        "noborder, title:^(Vicinae Launcher)$"
         "opacity 0.90 0.90,title:^(Vicinae Launcher)$"
 
       ];
