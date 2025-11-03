@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     swww
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
-    grim
     slurp
     hyprshot
     wl-clip-persist

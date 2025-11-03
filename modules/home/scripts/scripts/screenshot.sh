@@ -7,17 +7,15 @@ file="${dir}/Screenshot_${time}.png"
 mkdir -p "$dir"
 
 fullscreen() {
-  grim "$file"
-  wl-copy <"$file"
-  notify-send "Screenshot" "Saved fullscreen as $file and copied to clipboard" -i "$file"
+    hyprshot -m monitor --output "$file" --copy
 }
 
 freeze_copy() {
-  hyprshot -z -m region --clipboard-only
+    hyprshot -z -m region --clipboard-only
 }
 
 nonfreeze_copy() {
-  grim -g "$(slurp)" - | wl-copy
+    hyprshot -m region --clipboard-only
 }
 
 # Handle arguments
