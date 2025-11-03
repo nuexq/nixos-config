@@ -13,7 +13,7 @@ fullscreen() {
 }
 
 freeze_copy() {
-  GRIMBLAST_HIDE_CURSOR=0 grimblast --notify --freeze copy area
+  hyprshot -z -m region --clipboard-only
 }
 
 nonfreeze_copy() {

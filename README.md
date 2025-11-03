@@ -29,7 +29,7 @@ Hosts:
 - **Lockscreen:** [Hyprlock][Hyprlock]  
 - **Image Viewer:** [imv][imv]  
 - **Media Player:** [mpv][mpv]  
-- **Screenshot Software:** [grimblast][grimblast]  
+- **Screenshot Software:** [hyprshot][hyprshot] + [grim][grim]
 - **Screen Recording:** [wf-recorder][wf-recorder]  
 - **Clipboard:** [wl-clip-persist][wl-clip-persist]  
 - **Color Picker:** [hyprpicker][hyprpicker]  
@@ -50,7 +50,8 @@ Hosts:
 [audacious]: https://audacious-media-player.org/
 [mpv]: https://github.com/mpv-player/mpv
 [Neovim]: https://github.com/neovim/neovim
-[grimblast]: https://github.com/hyprwm/contrib
+[grim]: https://gitlab.freedesktop.org/emersion/grim 
+[hyprshot]: https://github.com/Gustash/Hyprshot 
 [imv]: https://sr.ht/~exec64/imv/
 [swaync]: https://github.com/ErikReider/SwayNotificationCenter
 [Maple Mono]: https://github.com/subframe7536/maple-font

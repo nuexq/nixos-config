@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ ... }: {
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1;
     __GL_GSYNC_ALLOWED = 0;
@@ -17,7 +17,6 @@
     XDG_SESSION_DESKTOP = "Hyprland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
-    GRIMBLAST_HIDE_CURSOR = 0;
     EDITOR = "nvim";
     # GTK
     GTK_THEME =
