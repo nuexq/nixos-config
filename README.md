@@ -18,18 +18,18 @@ Hosts:
 
 - **Window Manager:** [Hyprland][Hyprland]  
 - **Bar:** [Waybar][Waybar]  
-- **Application Launcher:** [rofi][rofi]  
+- **Application Launcher:** [vicinae][vicinae]  
 - **Notification Daemon:** [swaync][swaync]  
 - **Terminal Emulator:** [Ghostty][Ghostty]  
 - **Shell:** [zsh][zsh] + [starship][starship]  
 - **Text Editor:** [Neovim][Neovim]  
 - **File Manager:** [nemo][nemo] + [yazi][yazi]  
-- **Fonts:** [Maple Mono NF][Maple Mono] + [JetBrainsMono NF][JetBrainsMono]  
+- **Fonts:** [Maple Mono NF][Maple Mono] + [Inter NF][Inter]  
 - **Color Scheme:** [Catppuccin][Catppuccin]  
 - **Lockscreen:** [Hyprlock][Hyprlock]  
 - **Image Viewer:** [imv][imv]  
 - **Media Player:** [mpv][mpv]  
-- **Screenshot Software:** [hyprshot][hyprshot] + [grim][grim]
+- **Screenshot Software:** [hyprshot][hyprshot]
 - **Screen Recording:** [wf-recorder][wf-recorder]  
 - **Clipboard:** [wl-clip-persist][wl-clip-persist]  
 - **Color Picker:** [hyprpicker][hyprpicker]  
@@ -42,7 +42,7 @@ Hosts:
 [Ghostty]: https://ghostty.org/
 [starship]: https://starship.rs
 [Waybar]: https://github.com/Alexays/Waybar
-[rofi]: https://github.com/lbonn/rofi
+[vicinae]: https://github.com/vicinaehq/vicinae 
 [nemo]: https://github.com/linuxmint/nemo/
 [yazi]: https://github.com/sxyazi/yazi
 [zsh]: https://ohmyz.sh/
@@ -50,12 +50,11 @@ Hosts:
 [audacious]: https://audacious-media-player.org/
 [mpv]: https://github.com/mpv-player/mpv
 [Neovim]: https://github.com/neovim/neovim
-[grim]: https://gitlab.freedesktop.org/emersion/grim 
 [hyprshot]: https://github.com/Gustash/Hyprshot 
 [imv]: https://sr.ht/~exec64/imv/
 [swaync]: https://github.com/ErikReider/SwayNotificationCenter
 [Maple Mono]: https://github.com/subframe7536/maple-font
-[JetBrainsMono]: https://github.com/JetBrains/JetBrainsMono
+[Inter]: https://github.com/rsms/inter 
 [wl-clip-persist]: https://github.com/Linus789/wl-clip-persist
 [wf-recorder]: https://github.com/ammen99/wf-recorder
 [hyprpicker]: https://github.com/hyprwm/hyprpicker
