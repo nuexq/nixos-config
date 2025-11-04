@@ -266,6 +266,10 @@ return {
 				move_up = { "<Up>", "<C-k>" },
 				move_down = { "<Down>", "<C-j>" },
 			},
+			debug = {
+				enabled = false,
+				show_scores = false,
+			},
 		},
 		lazy = false,
 	},
