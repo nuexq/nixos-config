@@ -258,6 +258,14 @@ return {
 		end,
 	},
 	{ "christoomey/vim-tmux-navigator", event = "VeryLazy" },
+	{
+		"dmtrKovalenko/fff.nvim",
+		build = "nix run .#release",
+		config = function()
+			require("plugins.config.fff")
+		end,
+		lazy = false,
+	},
 
 	-- Git Integration
 	{

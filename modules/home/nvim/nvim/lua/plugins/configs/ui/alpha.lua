@@ -58,7 +58,7 @@ dashboard.section.buttons.val = {
     silent = true,
     nowait = true,
     callback = function()
-      require("telescope.builtin").find_files()
+      require("fff").find_files()
     end,
   }),
   button("h", "  File history", leader, nil, {
