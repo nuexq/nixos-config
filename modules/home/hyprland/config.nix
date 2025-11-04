@@ -7,7 +7,6 @@ in {
     settings = {
       # autostart
       exec-once = [
-        # "hash dbus-update-activation-environment 2>/dev/null"
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
@@ -22,8 +21,9 @@ in {
         "hypridle &"
 
         "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
-        "[workspace 1 silent] ${browser}"
-        "[workspace 2 silent] ${terminal}"
+        "hyprctl dispatch exec '[workspace 1 silent] ${browser}'"
+        "hyprctl dispatch exec '[workspace 2 silent] ${terminal}'"
+        "hyprctl dispatch exec '[workspace 3 silent] discord'"
         "USE_LAYER_SHELL=0 vicinae server >> ~/.local/share/hyprland/exec.log 2>&1"
       ];
 

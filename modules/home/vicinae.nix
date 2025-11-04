@@ -11,7 +11,7 @@
         size = 11;
         normal = "Inter Nerd Font";
       };
-      closeOnFocusLoss = true;
+      closeOnFocusLoss = false;
       popToRootOnClose = false;
       rootSearch.searchFiles = false;
       theme.name = "catppuccin-mocha";
