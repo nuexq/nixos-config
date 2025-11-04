@@ -261,9 +261,12 @@ return {
 	{
 		"dmtrKovalenko/fff.nvim",
 		build = "nix run .#release",
-		config = function()
-			require("plugins.config.fff")
-		end,
+		opts = {
+			keymaps = {
+				move_up = { "<Up>", "<C-k>" },
+				move_down = { "<Down>", "<C-j>" },
+			},
+		},
 		lazy = false,
 	},
 

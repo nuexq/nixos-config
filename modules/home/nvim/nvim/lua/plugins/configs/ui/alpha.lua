@@ -61,14 +61,6 @@ dashboard.section.buttons.val = {
       require("fff").find_files()
     end,
   }),
-  button("h", "  File history", leader, nil, {
-    noremap = true,
-    silent = true,
-    nowait = true,
-    callback = function()
-      require("telescope.builtin").oldfiles()
-    end,
-  }),
   button("n", "  New File", leader, nil, {
     noremap = true,
     silent = true,
