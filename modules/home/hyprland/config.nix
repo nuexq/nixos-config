@@ -42,6 +42,7 @@ in {
 
       general = {
         "$mainMod" = "SUPER";
+        "$hyper" = "SUPER CTRL ALT SHIFT";
         layout = "dwindle";
         gaps_in = 3;
         gaps_out = 8;
@@ -124,6 +125,7 @@ in {
       bind = [
         # show keybinds list
         "$mainMod, F1, exec, show-keybinds"
+        # "$hyper, E, exec, ${terminal} --gtk-single-instance=true"
 
         # keybindings
         "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true"
@@ -146,7 +148,7 @@ in {
         "$mainMod, equal, exec, woomer"
 
         # screenshot 
-        ",Print, exec, screenshot --fullscreen" # Fullscreen screenshot instantly 
+        ",Print, exec, screenshot --fullscreen" # Fullscreen screenshot instantly
         "$mainMod, Print, exec, screenshot --freeze-copy" # Freeze + select area → copy
         "$mainMod SHIFT, Print, exec, screenshot --nonfreeze-copy" # Non-freeze + select area → copy
 

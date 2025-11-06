@@ -15,5 +15,6 @@
     ./user.nix
     ./wayland.nix
     ./spicetify.nix
+    ./keyd.nix
   ];
 }
