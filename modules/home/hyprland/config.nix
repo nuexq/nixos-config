@@ -125,7 +125,6 @@ in {
       bind = [
         # show keybinds list
         "$mainMod, F1, exec, show-keybinds"
-        # "$hyper, E, exec, ${terminal} --gtk-single-instance=true"
 
         # keybindings
         "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true"
@@ -141,16 +140,15 @@ in {
         "$mainMod, E, exec, nemo"
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "CTRL, ESCAPE, exec, toggle-waybar"
-        "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
+        "$mainMod, C, exec, hyprpicker -a"
+        "$mainMod SHIFT, W, exec, vicinae vicinae://extensions/sovereign/swww-switcher/wpgrid"
         "$mainMod, N, exec, swaync-client -t -sw"
-        "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 9] missioncenter'"
         "$mainMod, equal, exec, woomer"
 
         # screenshot 
         ",Print, exec, screenshot --fullscreen" # Fullscreen screenshot instantly
-        "$mainMod, Print, exec, screenshot --freeze-copy" # Freeze + select area → copy
-        "$mainMod SHIFT, Print, exec, screenshot --nonfreeze-copy" # Non-freeze + select area → copy
+        "$mainMod, Print, exec, screenshot --nonfreeze-copy" # Non-freeze + select area → copy
+        "$hyper, S, exec, screenshot --freeze-copy" # Freeze + select area → copy
 
         # switch focus
         "$mainMod, left,  movefocus, l"

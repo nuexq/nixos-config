@@ -7,15 +7,15 @@ file="${dir}/Screenshot_${time}.png"
 mkdir -p "$dir"
 
 fullscreen() {
-    hyprshot -m monitor --output "$file" --copy
+  hyprshot -m output -m eDP-1
 }
 
 freeze_copy() {
-    hyprshot -z -m region --clipboard-only
+  hyprshot -z -m region --clipboard-only
 }
 
 nonfreeze_copy() {
-    hyprshot -m region --clipboard-only
+  hyprshot -m region --clipboard-only
 }
 
 # Handle arguments

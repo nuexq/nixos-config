@@ -8,14 +8,13 @@
           capslock = "overload(hyper, esc)";
           esc = "capslock";
         };
-        hyper = {
+        "hyper:C-M-S-A" = {
           h = "left";
           j = "down";
           k = "up";
           l = "right";
         };
       };
-      extraConfig = "[hyper:C-M-S-A]";
     };
   };
 }

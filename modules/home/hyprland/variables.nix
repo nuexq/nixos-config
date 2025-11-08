@@ -29,5 +29,6 @@
     QT_QPA_PLATFORM = "wayland;xcb";
     DISABLE_QT5_COMPAT = 0;
     CALIBRE_USE_DARK_PALETTE = "1";
+    HYPRSHOT_DIR = "~/Pictures/Screenshots";
   };
 }
