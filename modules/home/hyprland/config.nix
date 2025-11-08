@@ -124,24 +124,24 @@ in {
 
       bind = [
         # show keybinds list
-        "$mainMod, F1, exec, show-keybinds"
+        "$mainMod, F1, exec, vicinae 'vicinae://extensions/sovereign/hypr-keybinds/hyprland-keybinds'"
 
         # keybindings
-        "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true"
-        "$mainMod, B, exec, ${browser}"
-        "$mainMod, Q, killactive,"
-        "ALT, return, fullscreen"
-        "$mainMod, W, exec, toggle-float"
+        "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true" # open terminal
+        "$mainMod, B, exec, ${browser}" # open browser
+        "$mainMod, Q, killactive," # kill active app
+        "ALT, return, fullscreen" # go full screen mode
+        "$mainMod, F, exec, toggle-float"
         "ALT, Space, exec, vicinae toggle"
         "$mainMod SHIFT, D, exec, discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod, Escape, exec, hyprlock"
-        "$mainMod SHIFT, Escape, exec, power-menu"
-        "$mainMod, D, togglesplit,"
+        "$mainMod SHIFT, Escape, exec, vicinae 'vicinae://toggle?fallbackText=power%20management'"
+        "$mainMod, D, togglesplit," # toggle split
         "$mainMod, E, exec, nemo"
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
-        "CTRL, ESCAPE, exec, toggle-waybar"
+        "ALT, Escape, exec, toggle-waybar"
         "$mainMod, C, exec, hyprpicker -a"
-        "$mainMod SHIFT, W, exec, vicinae vicinae://extensions/sovereign/swww-switcher/wpgrid"
+        "$mainMod, W, exec, vicinae vicinae://extensions/sovereign/swww-switcher/wpgrid"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, equal, exec, woomer"
 

@@ -12,7 +12,7 @@
         normal = "Inter Nerd Font";
       };
       closeOnFocusLoss = false;
-      popToRootOnClose = false;
+      popToRootOnClose = true;
       rootSearch.searchFiles = false;
       theme.name = "catppuccin-mocha";
       window = {

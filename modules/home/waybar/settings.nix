@@ -256,7 +256,7 @@
       format = "{}";
       rotate = 0;
       exec = "echo ; echo  logout";
-      on-click = "power-menu";
+      on-click = "vicinae 'vicinae://toggle?fallbackText=power%20management'";
       interval = 86400; # once every da;
       tooltip = true;
     };
