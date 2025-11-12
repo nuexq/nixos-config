@@ -1,3 +1,5 @@
+local catppuccin = require("catppuccin.palettes").get_palette()
+
 local capabilities = vim.tbl_deep_extend(
 	"force",
 	vim.lsp.protocol.make_client_capabilities(),
@@ -8,7 +10,7 @@ local capabilities = vim.tbl_deep_extend(
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-vim.cmd("highlight Folded guibg=NONE")
+vim.cmd("highlight Folded guibg=" .. catppuccin.surface0)
 
 capabilities.textDocument.foldingRange = {
 	dynamicRegistration = false,
