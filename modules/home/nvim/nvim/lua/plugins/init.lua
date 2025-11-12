@@ -12,6 +12,7 @@ return {
 	{ "kepano/flexoki-neovim", name = "flexoki" },
 	{
 		"goolord/alpha-nvim",
+		event = "VimEnter",
 		config = function()
 			require("plugins.configs.ui.alpha")
 		end,
@@ -28,6 +29,7 @@ return {
 	-- UI Enhancements
 	{
 		"akinsho/bufferline.nvim",
+		event = "VeryLazy",
 		dependencies = { "kyazdani42/nvim-web-devicons" },
 		config = function()
 			require("plugins.configs.ui.bufferline")
@@ -41,6 +43,7 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
 		dependencies = { "kyazdani42/nvim-web-devicons" },
 		config = function()
 			require("plugins.configs.ui.lualine")
@@ -48,7 +51,7 @@ return {
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
-		event = "BufEnter",
+		cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeCollapse" },
 		config = function()
 			require("plugins.configs.ui.nvim-tree")
 		end,
@@ -60,7 +63,7 @@ return {
 		config = function()
 			require("mini.files").setup({
 				options = {
-					use_as_default_explorer = true,
+					use_as_default_explorer = false,
 				},
 				windows = {
 					preview = true,
@@ -130,7 +133,7 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
-		event = "VeryLazy",
+		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
 		config = function()
 			require("diffview").setup({
 				file_panel = {
@@ -144,7 +147,7 @@ return {
 			})
 		end,
 	},
-	{ "HiPhish/rainbow-delimiters.nvim", event = "VeryLazy" },
+	{ "HiPhish/rainbow-delimiters.nvim", event = "BufReadPost" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -154,6 +157,7 @@ return {
 			require("plugins.configs.ui.noice")
 		end,
 	},
+	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "VeryLazy" },
 
 	-- Utility
 	{
@@ -306,6 +310,7 @@ return {
 	{
 		"declancm/cinnamon.nvim",
 		version = "*", -- use latest release
+		event = "VeryLazy",
 		opts = {
 			keymaps = {
 				basic = true,
@@ -376,6 +381,10 @@ return {
 	},
 
 	-- Syntax and Language Support
+	{
+		"xiyaowong/virtcolumn.nvim",
+		event = "VeryLazy",
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		event = "VeryLazy",
