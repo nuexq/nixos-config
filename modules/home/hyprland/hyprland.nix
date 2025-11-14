@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     swww
+    mpvpaper
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     slurp
     hyprshot

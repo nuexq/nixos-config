@@ -141,7 +141,7 @@ in {
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "ALT, Escape, exec, toggle-waybar"
         "$mainMod, C, exec, hyprpicker -a"
-        "$mainMod, W, exec, vicinae vicinae://extensions/sovereign/swww-switcher/wpgrid"
+        "$mainMod, W, exec, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, equal, exec, woomer"
 
