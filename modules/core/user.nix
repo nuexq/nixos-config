@@ -13,6 +13,8 @@
       home.stateVersion = "25.05";
       programs.home-manager.enable = true;
     };
+    # Allow backups when files conflict
+    backupFileExtension = "bak";
   };
 
   users.users."${username}" = {
