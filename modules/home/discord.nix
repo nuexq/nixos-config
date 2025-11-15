@@ -3,6 +3,7 @@
 let
   # Override Discord package with Moonlight & Vencord
   discordPkg = pkgs.discord.override {
+    withOpenASAR = true;
     withMoonlight = true;
   };
 
@@ -39,7 +40,7 @@ in
         clearUrls = true;
         cloneExpressions = true;
         copyWebp = true;
-        css = {
+        moonlight-css = {
           enabled = true;
           config = {
             paths = [
@@ -51,7 +52,7 @@ in
         domOptimizer = true;
         experiments = true;
         favouriteGifSearch = true;
-        freeMoji = true;
+        freeMoji = false;
         freeScreenShare = true;
         greentext = false;
         httpCats = true;
