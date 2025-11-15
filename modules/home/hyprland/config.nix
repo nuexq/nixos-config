@@ -131,7 +131,7 @@ in {
         "$mainMod, B, exec, ${browser}" # open browser
         "$mainMod, Q, killactive," # kill active app
         "ALT, return, fullscreen" # go full screen mode
-        "$mainMod, F, exec, toggle-float"
+        "$mainMod, W, exec, toggle-float"
         "ALT, Space, exec, vicinae toggle"
         "$mainMod SHIFT, D, exec, discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod, Escape, exec, hyprlock"
@@ -141,7 +141,7 @@ in {
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "ALT, Escape, exec, toggle-waybar"
         "$mainMod, C, exec, hyprpicker -a"
-        "$mainMod, W, exec, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"
+        "$mainMod SHIFT, W, exec, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, equal, exec, woomer"
 
