@@ -60,6 +60,7 @@ in
         lastFmRpc = false;
         memberCount = true;
         moonbase = true;
+        spotifySpoof = true;
         nativeFixes = {
           enabled = true;
           config.vaapiIgnoreDriverChecks = true;
