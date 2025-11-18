@@ -1,18 +1,16 @@
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"eslint", -- eslint-lsp
-		"ts_ls", -- typescript-language-server
+		"vtsls", -- typescript-language-server
 		"html", -- html-lsp
 		"cssls", -- css-lsp
 		"lua_ls", -- lua-language-server
 		"clangd", -- clangd
 		"bashls", -- Bash LSP
 		"jsonls", -- JSON LSP
-		"yamlls", -- YAML LSP
 		"marksman", -- Markdown LSP
-		"wgsl_analyzer", -- wgsl-analyzer
 		"astro", -- Astro LSP
-    "tailwindcss", -- Tailwind CSS Language Server
-    "texlab" -- latex LSP
+		"tailwindcss", -- Tailwind CSS Language Server
+		"texlab", -- latex LSP
 	},
 })

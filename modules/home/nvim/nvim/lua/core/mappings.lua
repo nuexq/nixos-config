@@ -221,9 +221,10 @@ wk.add({
 			desc = "Show hover information",
 		},
 
-    -- Folds
+		-- Folds
 		{
 			group = "Folds",
+			{ "z", desc = "Folds" },
 			{ "zR", require("ufo").openAllFolds, desc = "Open all folds" },
 			{ "zM", require("ufo").closeAllFolds, desc = "Close all folds" },
 		},

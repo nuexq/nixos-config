@@ -1,5 +1,3 @@
-local catppuccin = require("catppuccin.palettes").get_palette()
-
 local capabilities = vim.tbl_deep_extend(
 	"force",
 	vim.lsp.protocol.make_client_capabilities(),
@@ -7,11 +5,6 @@ local capabilities = vim.tbl_deep_extend(
 )
 
 -- Folding configuration for nvim-ufo
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-vim.cmd("highlight Folded guibg=" .. catppuccin.surface0)
-
 capabilities.textDocument.foldingRange = {
 	dynamicRegistration = false,
 	lineFoldingOnly = true,
@@ -26,6 +19,63 @@ vim.lsp.config("*", {
 	capabilities = capabilities,
 })
 
+-- Typescript/Javascript (vtsls)
+vim.lsp.config("vtsls", {
+	settings = {
+		vtsls = {
+			experimental = {
+				completion = {
+					enableServerSideFuzzyMatch = true,
+				},
+			},
+		},
+		typescript = {
+			updateImportsOnFileMove = { enabled = "always" },
+			suggest = {
+				completeFunctionCalls = true,
+			},
+			inlayHints = {
+				parameterNames = { enabled = "literals" },
+				parameterTypes = { enabled = true },
+				variableTypes = { enabled = true },
+				propertyDeclarationTypes = { enabled = true },
+				functionLikeReturnTypes = { enabled = true },
+				enumMemberValues = { enabled = true },
+			},
+		},
+		javascript = {
+			updateImportsOnFileMove = { enabled = "always" },
+			suggest = {
+				completeFunctionCalls = true,
+			},
+			inlayHints = {
+				parameterNames = { enabled = "literals" },
+				parameterTypes = { enabled = true },
+				variableTypes = { enabled = true },
+				propertyDeclarationTypes = { enabled = true },
+				functionLikeReturnTypes = { enabled = true },
+				enumMemberValues = { enabled = true },
+			},
+		},
+	},
+})
+
+-- Lua Language Server
+vim.lsp.config.lua_ls = {
+	settings = {
+		Lua = {
+			runtime = { version = "LuaJIT" },
+			workspace = {
+				checkThirdParty = false,
+				library = { vim.env.VIMRUNTIME },
+			},
+			completion = { callSnippet = "Replace" },
+			telemetry = { enable = false },
+			diagnostics = { disable = { "missing-fields" } },
+		},
+	},
+}
+
 local servers = mason_lspconfig.get_installed_servers()
 
 for _, server in ipairs(servers) do
@@ -38,30 +88,4 @@ end
 vim.lsp.enable("nixd")
 
 -- UFO setup
-require("ufo").setup({
-	fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
-		local newVirtText = {}
-		local suffix = (" 󰁂 %d "):format(endLnum - lnum)
-		local sufWidth = vim.fn.strdisplaywidth(suffix)
-		local targetWidth = width - sufWidth
-		local curWidth = 0
-		for _, chunk in ipairs(virtText) do
-			local chunkText, hlGroup = chunk[1], chunk[2]
-			local chunkWidth = vim.fn.strdisplaywidth(chunkText)
-			if targetWidth > curWidth + chunkWidth then
-				table.insert(newVirtText, chunk)
-				curWidth = curWidth + chunkWidth
-			else
-				chunkText = truncate(chunkText, targetWidth - curWidth)
-				table.insert(newVirtText, { chunkText, hlGroup })
-				break
-			end
-		end
-		table.insert(newVirtText, { suffix, "MoreMsg" })
-		return newVirtText
-	end,
-})
 
--- Optional keymaps
-vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
