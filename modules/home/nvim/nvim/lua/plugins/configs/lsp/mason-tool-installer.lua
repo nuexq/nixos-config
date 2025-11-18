@@ -6,7 +6,7 @@ require("mason-tool-installer").setup({
 		"prettier",
     "nixfmt",
     "vale",
-    "latexindent"
+    "tex-fmt"
 	},
 	auto_update = false,
 	run_on_start = true,
