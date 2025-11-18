@@ -20,29 +20,21 @@ capabilities.textDocument.foldingRange = {
 -- LSP setup
 local on_attach = require("cmp_nvim_lsp").on_attach
 local mason_lspconfig = require("mason-lspconfig")
-local servers = mason_lspconfig.get_installed_servers()
 
--- Manual server config for nixd
-vim.lsp.config.nixd = {
-	cmd = { "nixd" },
-	filetypes = { "nix" },
-	root_dir = require("lspconfig.util").root_pattern("flake.nix", "shell.nix", ".git"),
+vim.lsp.config("*", {
 	on_attach = on_attach,
 	capabilities = capabilities,
-}
+})
 
--- Enable all servers dynamically, except rust_analyzer
+local servers = mason_lspconfig.get_installed_servers()
+
 for _, server in ipairs(servers) do
 	if server ~= "rust_analyzer" then
-		vim.lsp.config[server] = {
-			on_attach = on_attach,
-			capabilities = capabilities,
-		}
 		vim.lsp.enable(server)
 	end
 end
 
--- Enable nixd manually
+-- Manual setup
 vim.lsp.enable("nixd")
 
 -- UFO setup
