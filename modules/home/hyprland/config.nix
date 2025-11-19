@@ -24,7 +24,7 @@ in {
         "hyprctl dispatch exec '[workspace 1 silent] ${browser}'"
         "hyprctl dispatch exec '[workspace 2 silent] ${terminal}'"
         "hyprctl dispatch exec '[workspace 3 silent] discord'"
-        "USE_LAYER_SHELL=0 vicinae server >> ~/.local/share/hyprland/exec.log 2>&1"
+        "vicinae server"
       ];
 
       input = {
@@ -118,7 +118,10 @@ in {
         ];
       };
 
-      debug = { full_cm_proto = true; };
+      debug = {
+        full_cm_proto = true;
+        disable_logs = false;
+      };
 
       binds = { movefocus_cycles_fullscreen = true; };
 
@@ -263,86 +266,54 @@ in {
 
       # windowrule
       windowrule = [
-        # Pin
-        "pin,class:^(waypaper)$"
-        "pin,title:^(Vicinae Launcher)$"
-
-        # Size
-        "size 700 450,title:^(Volume Control)$"
-        "size 850 500,class:^(zenity)$"
-        "size 725 330,class:^(SoundWireServer)$"
-
+        ''match:float true, center on''
         # Floating
-        "float,class:^(imv)$"
-        "float,class:^(mpv)$"
-        "float,title:^(Volume Control)$"
-        "float,title:^(Picture-in-Picture)$"
-        "float,class:^(org.gnome.Calculator)$"
-        "float,class:^(waypaper)$"
-        "float,class:^(zenity)$"
-        "float,class:^(org.gnome.FileRoller)$"
-        "float,class:^(org.pulseaudio.pavucontrol)$"
-        "float,class:^(SoundWireServer)$"
-        "float,class:^(.sameboy-wrapped)$"
-        "float,class:^(file_progress)$"
-        "float,class:^(confirm)$"
-        "float,class:^(dialog)$"
-        "float,class:^(download)$"
-        "float,class:^(notification)$"
-        "float,class:^(error)$"
-        "float,class:^(confirmreset)$"
-        "float,title:^(Open File)$"
-        "float,title:^(Open Files)$"
-        "float,title:^(File Upload)$"
-        "float,title:^(All Files)$"
-        "float,title:^(branchdialog)$"
-        "float,title:^(Confirm to replace files)$"
-        "float,title:^(File Operation Progress)$"
-        "float,class:^(Anki)$,title:^(Add)$,"
-        "float,class:^(org.pulseaudio.pavucontrol)$"
+        ''match:class imv, float on''
+        ''match:class mpv, float on''
+        ''match:title Volume Control, float on, size 700 450''
+        ''match:title Picture-in-Picture, float on''
+        ''match:class org.gnome.Calculator, float on''
+        ''match:class waypaper, float on, pin on''
+        ''match:class zenity, float on, size 850 500''
+        ''match:class org.gnome.FileRoller, float on''
+        ''match:class org.pulseaudio.pavucontrol, float on''
+        ''match:class SoundWireServer, float on, size 725 330''
+        ''match:class .sameboy-wrapped, float on''
+        ''match:class file_progress, float on''
+        ''match:class confirm, float on''
+        ''match:class dialog, float on''
+        ''match:class download, float on''
+        ''match:class notification, float on''
+        ''match:class error, float on''
+        ''match:class confirmreset, float on''
+        ''match:title Open File, float on''
+        ''match:title Open Files, float on''
+        ''match:title File Upload, float on''
+        ''match:title All Files, float on''
+        ''match:title branchdialog, float on''
+        ''match:title Confirm to replace files, float on''
+        ''match:title File Operation Progress, float on''
+        ''match:class Anki, match:title Add, float on''
 
-        # Remove context menu transparency in chromium based apps
-        "opaque,class:^()$,title:^()$"
-        "noshadow,class:^()$,title:^()$"
-        "noblur,class:^()$,title:^()$"
+        ''match:class xwaylandvideobridge, opacity 0.0 override''
+        ''match:class dev.zed.Zed, opacity 0.90''
+        ''
+          match:class discord|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95''
+        ''match:title .*imv.*, opacity 1.0 override 1.0 override''
+        ''match:title .*mpv.*, opacity 1.0 override 1.0 override''
+        ''match:class Aseprite|zen|evince, opacity 1.0 override 1.0 override''
+        ''match:title Picture-in-Picture, opacity 1.0 override 1.0 override''
 
-        # transparency
-        "opacity 0.0 override,class:^(xwaylandvideobridge)$"
-        "opacity 0.90 0.90,class:^(dev.zed.Zed)$"
-        "opacity 0.95 0.95,class:^(discord)$"
-        "opacity 0.95 0.95,class:^(Steam)$"
-        "opacity 0.95 0.95,class:^(steam)$"
-        "opacity 0.95 0.95,class:^(steamwebhelper)$"
-        "opacity 0.95 0.95,class:^(Spotify)$"
-        "opacity 0.95 0.95,class:^(Code)$"
-        "opacity 0.95 0.95,class:^(code-url-handler)$"
-        "opacity 0.95 0.95,class:^(com.mitchellh.ghostty)$"
-        "opacity 0.95 0.95,class:^(nemo)$"
-        "opacity 0.95 0.95,class:^(qt5ct)$"
-        "opacity 0.95 0.95,class:^(qt6ct)$"
-        "opacity 0.95 0.95,class:^(obsidian)$"
-        "opacity 0.95 0.95,class:^(com.mitchellh.ghostty)$"
-        "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
-        "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
-        "opacity 1.0 override 1.0 override, class:(Aseprite)"
-        "opacity 1.0 override 1.0 override, class:(zen)"
-        "opacity 1.0 override 1.0 override, class:(evince)"
-        "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
-
-        # other
-        # "move 40 55%,title:^(Volume Control)$"
-        "idleinhibit focus, class:^(mpv)$"
-        "noanim,class:^(xwaylandvideobridge)$"
-        "noinitialfocus,class:^(xwaylandvideobridge)$"
-        "maxsize 1 1,class:^(xwaylandvideobridge)$"
-        "noblur,class:^(xwaylandvideobridge)$"
-        "noanim, title:^(Vicinae Launcher)$"
-        "noborder, title:^(Vicinae Launcher)$"
-        "opacity 0.90 0.90,title:^(Vicinae Launcher)$"
-
+        # Other effects
+        ''match:class mpv, idle_inhibit focus''
+        ''
+          match:class xwaylandvideobridge, no_anim on, no_initial_focus on, max_size 1 1, no_blur on''
       ];
 
-      layerrule = [ "blur,vicinae" "ignorealpha 0, vicinae" "noanim, vicinae" ];
+      layerrule = [
+        ''
+          match:namespace vicinae, blur on, ignore_alpha 0, no_anim on''
+      ];
     };
 
     extraConfig =
