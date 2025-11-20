@@ -52,7 +52,7 @@ in
         domOptimizer = true;
         experiments = true;
         favouriteGifSearch = true;
-        freeMoji = false;
+        freeMoji = true;
         freeScreenShare = true;
         greentext = false;
         httpCats = true;

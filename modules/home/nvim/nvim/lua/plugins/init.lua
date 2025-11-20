@@ -480,16 +480,6 @@ return {
 			},
 		},
 	},
-	-- {
-	-- 	"cordx56/rustowl",
-	-- 	config = function()
-	-- 		local lspconfig = require("lspconfig")
-	-- 		lspconfig.rustowlsp.setup({
-	-- 			idle_time = 1000,
-	-- 		})
-	-- 	end,
-	-- },
-
 	-- Completion
 	{
 		"hrsh7th/nvim-cmp",
