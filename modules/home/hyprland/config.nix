@@ -115,6 +115,7 @@ in {
           "borderangle, 1, 30, liner, loop"
           "fade, 1, 10, default"
           "workspaces, 1, 5, wind"
+          "specialWorkspace, 1, 3, wind, fade"
         ];
       };
 

@@ -15,7 +15,6 @@
     enable = true;
 
     settings = {
-
       theme = "catppuccin-${config.catppuccin.flavor}";
       font-family = "Maple Mono NF CN";
       font-size = 9;
