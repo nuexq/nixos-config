@@ -25,8 +25,17 @@ return {
 			require("tiny-devicons-auto-colors").setup({})
 		end,
 	},
+	{
+		"brenoprata10/nvim-highlight-colors",
+		event = "VeryLazy",
+		opts = {},
+	},
 
 	-- UI Enhancements
+	{
+		"xiyaowong/virtcolumn.nvim",
+		event = "VeryLazy",
+	},
 	{
 		"akinsho/bufferline.nvim",
 		event = "VeryLazy",
@@ -50,56 +59,6 @@ return {
 		end,
 	},
 	{
-		"nvim-tree/nvim-tree.lua",
-		cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeCollapse" },
-		config = function()
-			require("plugins.configs.ui.nvim-tree")
-		end,
-	},
-	{
-		"echasnovski/mini.files",
-		version = "*",
-		event = "VeryLazy",
-		config = function()
-			require("mini.files").setup({
-				options = {
-					use_as_default_explorer = false,
-				},
-				windows = {
-					preview = true,
-					width_focus = 45,
-					width_nofocus = 30,
-					width_preview = 45,
-				},
-			})
-		end,
-	},
-	{
-		"mikavilpas/yazi.nvim",
-		event = "VeryLazy",
-		keys = {
-			-- 👇 in this section, choose your own keymappings!
-			{
-				"<leader>-",
-				"<cmd>Yazi<cr>",
-				desc = "Open yazi at the current file",
-			},
-			{
-				-- Open in the current working directory
-				"<leader>cw",
-				"<cmd>Yazi cwd<cr>",
-				desc = "Open the file manager in nvim's working directory",
-			},
-		},
-		opts = {
-			-- if you want to open yazi instead of netrw, see below for more info
-			open_for_directories = false,
-			keymaps = {
-				show_help = "<f1>",
-			},
-		},
-	},
-	{
 		"folke/todo-comments.nvim",
 		event = "VeryLazy",
 		opts = {},
@@ -120,6 +79,9 @@ return {
 						enabled = true,
 						always_show = true,
 					},
+					virt_texts = {
+						priority = 2048,
+					},
 				},
 			})
 			vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
@@ -130,22 +92,6 @@ return {
 		event = "VeryLazy",
 		opts = {},
 		cmd = "Trouble",
-	},
-	{
-		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
-		config = function()
-			require("diffview").setup({
-				file_panel = {
-					listing_style = "list",
-					win_config = {
-						position = "right",
-						width = 30,
-						win_opts = {},
-					},
-				},
-			})
-		end,
 	},
 	{ "HiPhish/rainbow-delimiters.nvim", event = "BufReadPost" },
 	{
@@ -197,25 +143,26 @@ return {
 
 	-- Utility
 	{
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+	},
+	{
 		"nullishamy/autosave.nvim",
 		event = "VeryLazy",
 		config = function()
 			require("autosave").setup({})
 		end,
 	},
+	-- Editing Helper
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = { delay = 1000, preset = "modern", win = { border = "single" } },
+	},
 	{
 		"willothy/moveline.nvim",
 		event = "VeryLazy",
 		build = "make",
-	},
-
-	-- Editing Helper
-	{
-		"MagicDuck/grug-far.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("grug-far").setup({})
-		end,
 	},
 	{
 		"numToStr/Comment.nvim",
@@ -245,11 +192,7 @@ return {
 	{
 		"Wansmer/treesj",
 		keys = {
-			{
-				"<leader>m",
-				"<CMD>TSJToggle<CR>",
-				desc = "Toggle Treesitter Join",
-			},
+			{ "<leader>m", "<CMD>TSJToggle<CR>", desc = "Toggle Treesitter Join" },
 		},
 		cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
 		opts = { use_default_keymaps = false },
@@ -270,8 +213,37 @@ return {
 
 	-- Navigation and Search
 	{
-		"folke/persistence.nvim",
-		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		"MagicDuck/grug-far.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("grug-far").setup({})
+		end,
+	},
+	{
+		"echasnovski/mini.files",
+		version = "*",
+		event = "VeryLazy",
+		config = function()
+			require("mini.files").setup({
+				options = {
+					use_as_default_explorer = false,
+				},
+				windows = {
+					preview = true,
+					width_focus = 45,
+					width_nofocus = 30,
+					width_preview = 45,
+				},
+			})
+		end,
+	},
+
+	{
+		"nvim-tree/nvim-tree.lua",
+		cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeCollapse" },
+		config = function()
+			require("plugins.configs.ui.nvim-tree")
+		end,
 	},
 	{
 		"akinsho/toggleterm.nvim",
@@ -316,6 +288,23 @@ return {
 
 	-- Git Integration
 	{
+		"sindrets/diffview.nvim",
+		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+		config = function()
+			require("diffview").setup({
+				file_panel = {
+					listing_style = "list",
+					win_config = {
+						position = "right",
+						width = 30,
+						win_opts = {},
+					},
+				},
+			})
+		end,
+	},
+
+	{
 		"lewis6991/gitsigns.nvim",
 		config = true,
 		event = "VeryLazy",
@@ -333,7 +322,7 @@ return {
 	{ "danilamihailov/beacon.nvim" },
 	{
 		"rachartier/tiny-glimmer.nvim",
-		event = "TextYankPost",
+		event = "LspAttach",
 		opts = {
 			animations = {
 				fade = {
@@ -370,22 +359,6 @@ return {
 		},
 	},
 	{
-		"karb94/neoscroll.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("neoscroll").setup({})
-		end,
-	},
-	{
-		"famiu/bufdelete.nvim",
-		event = "VeryLazy",
-	},
-	{
-		"brenoprata10/nvim-highlight-colors",
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
 		"nacro90/numb.nvim",
 		opts = {},
 		event = "VeryLazy",
@@ -418,20 +391,11 @@ return {
 
 	-- Syntax and Language Support
 	{
-		"xiyaowong/virtcolumn.nvim",
-		event = "VeryLazy",
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.configs.treesitter")
 		end,
-	},
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = { delay = 1000, preset = "modern", win = { border = "single" } },
 	},
 
 	-- LSP
@@ -474,6 +438,7 @@ return {
 		"mrcjkb/rustaceanvim",
 		version = "^6",
 		lazy = false,
+		ft = "rust",
 		["rust-analaysis"] = {
 			cargo = {
 				allFeatures = true,
@@ -496,6 +461,7 @@ return {
 			require("plugins.configs.cmp")
 		end,
 	},
+	-- Misc
 	{
 		"kawre/leetcode.nvim",
 		event = "VeryLazy",
