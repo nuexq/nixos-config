@@ -210,6 +210,10 @@ return {
 		config = true,
 		event = "InsertEnter",
 	},
+	{
+		"famiu/bufdelete.nvim",
+		event = "VeryLazy",
+	},
 
 	-- Navigation and Search
 	{
