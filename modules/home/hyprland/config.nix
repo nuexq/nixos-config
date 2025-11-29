@@ -131,6 +131,7 @@ in {
         "$mainMod, F1, exec, vicinae 'vicinae://extensions/sovereign/hypr-keybinds/hyprland-keybinds'"
 
         # keybindings
+        "$mainMod, H, exec, ghostty -e btop"
         "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true" # open terminal
         "$mainMod, B, exec, ${browser}" # open browser
         "$mainMod, Q, killactive," # kill active app
@@ -267,54 +268,40 @@ in {
 
       # windowrule
       windowrule = [
-        ''match:float true, center on''
+        "match:float true, center on"
         # Floating
-        ''match:class imv, float on''
-        ''match:class mpv, float on''
-        ''match:title Volume Control, float on, size 700 450''
-        ''match:title Picture-in-Picture, float on''
-        ''match:class org.gnome.Calculator, float on''
-        ''match:class waypaper, float on, pin on''
-        ''match:class zenity, float on, size 850 500''
-        ''match:class org.gnome.FileRoller, float on''
-        ''match:class org.pulseaudio.pavucontrol, float on''
-        ''match:class SoundWireServer, float on, size 725 330''
-        ''match:class .sameboy-wrapped, float on''
-        ''match:class file_progress, float on''
-        ''match:class confirm, float on''
-        ''match:class dialog, float on''
-        ''match:class download, float on''
-        ''match:class notification, float on''
-        ''match:class error, float on''
-        ''match:class confirmreset, float on''
-        ''match:title Open File, float on''
-        ''match:title Open Files, float on''
-        ''match:title File Upload, float on''
-        ''match:title All Files, float on''
-        ''match:title branchdialog, float on''
-        ''match:title Confirm to replace files, float on''
-        ''match:title File Operation Progress, float on''
-        ''match:class Anki, match:title Add, float on''
+        "match:class imv|mpv|org.gnome.Calculator|org.gnome.FileRoller|org.pulseaudio.pavucontrol|waypaper|zenity|SoundWireServer|.sameboy-wrapped|file_progress|confirm|dialog|download|notification|error|confirmreset, float on"
+        "match:title Volume Control|Picture-in-Picture|Open File|Open Files|File Upload|All Files|branchdialog|Confirm to replace files|File Operation Progress, float on"
 
-        ''match:class xwaylandvideobridge, opacity 0.0 override''
-        ''match:class dev.zed.Zed, opacity 0.90''
-        ''
-          match:class discord|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95''
-        ''match:title .*imv.*, opacity 1.0 override 1.0 override''
-        ''match:title .*mpv.*, opacity 1.0 override 1.0 override''
-        ''match:class Aseprite|zen|evince, opacity 1.0 override 1.0 override''
-        ''match:title Picture-in-Picture, opacity 1.0 override 1.0 override''
+        "match:title Volume Control, size 700 450"
+        "match:class zenity, size 850 500"
+        "match:class SoundWireServer, size 725 330"
+        "match:class waypaper, pin on"
+        "match:class Anki, match:title Add, float on"
+
+        "match:class xwaylandvideobridge, opacity 0.0 override"
+        "match:class dev.zed.Zed, opacity 0.90"
+
+        "match:class discord|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
+
+        "match:title .*imv.*|.*mpv.*|Picture-in-Picture, opacity 1.0 override 1.0 override"
+        "match:class Aseprite|zen|evince, opacity 1.0 override 1.0 override"
+
+        "match:class xwaylandvideobridge, opacity 0.0 override"
+        "match:class dev.zed.Zed, opacity 0.90"
+        "match:class discord|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
+        "match:title .*imv.*, opacity 1.0 override 1.0 override"
+        "match:title .*mpv.*, opacity 1.0 override 1.0 override"
+        "match:class Aseprite|zen|evince, opacity 1.0 override 1.0 override"
+        "match:title Picture-in-Picture, opacity 1.0 override 1.0 override"
 
         # Other effects
-        ''match:class mpv, idle_inhibit focus''
-        ''
-          match:class xwaylandvideobridge, no_anim on, no_initial_focus on, max_size 1 1, no_blur on''
+        "match:class mpv, idle_inhibit focus"
+        "match:class xwaylandvideobridge, no_anim on, no_initial_focus on, max_size 1 1, no_blur on"
       ];
 
-      layerrule = [
-        ''
-          match:namespace vicinae, blur on, ignore_alpha 0, no_anim on''
-      ];
+      layerrule =
+        [ "match:namespace vicinae, blur on, ignore_alpha 0, no_anim on" ];
     };
 
     extraConfig =
