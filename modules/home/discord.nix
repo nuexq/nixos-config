@@ -1,93 +1,77 @@
-{ pkgs, config, ... }:
+{ ... }: {
 
-let
-  # Override Discord package with Moonlight & Vencord
-  discordPkg = pkgs.discord.override {
-    withOpenASAR = true;
-    withMoonlight = true;
-  };
-
-  # JSON generator for settings
-  settingsFormat = pkgs.formats.json { };
-in
-{
-  home.packages = [
-    discordPkg
-  ];
-
-  # Discord general settings
-  xdg.configFile."discord/settings.json".source = settingsFormat.generate "discord-settings.json" {
-    SKIP_HOST_UPDATE = true;
-    DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOUR_DOING = true;
-    MIN_WIDTH = 940;
-    MIN_HEIGHT = 500;
-    openasar = {
-      setup = true;
-      quickstart = true;
-    };
-    chromiumSwitches = { };
-    IS_MAXIMIZED = true;
-    IS_MINIMIZED = false;
-    trayBalloonShown = true;
-  };
-
-  # Moonlight settings
-  xdg.configFile."moonlight-mod/stable.json" = {
-    source = settingsFormat.generate "moonlight-settings.json" {
-      extensions = {
-        betterCodeblocks = true;
-        betterEmbedsYT = true;
-        clearUrls = true;
-        cloneExpressions = true;
-        copyWebp = true;
-        moonlight-css = {
+  programs.vesktop = {
+    enable = true;
+    vencord.settings = {
+      themeLinks = [''
+        https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css
+      ''];
+      autoUpdate = false;
+      autoUpdateNotification = false;
+      notifyAboutUpdates = false;
+      useQuickCss = true;
+      disableMinSize = true;
+      plugins = {
+        ShikiCodeblocks = {
           enabled = true;
-          config = {
-            paths = [
-              "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
-            ];
-          };
+          theme =
+            "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/2d87559c7601a928b9f7e0f0dda243d2fb6d4499/packages/tm-themes/themes/catppuccin-mocha.json";
         };
-        disableSentry = true;
-        domOptimizer = true;
-        experiments = true;
-        favouriteGifSearch = true;
-        freeMoji = true;
-        freeScreenShare = true;
-        greentext = false;
-        httpCats = true;
-        inviteToNowhere = true;
-        lastFmRpc = false;
-        memberCount = true;
-        moonbase = true;
-        spotifySpoof = true;
-        nativeFixes = {
+        YoutubeAdblock.enabled = true;
+        FixYoutubeEmbeds.enabled = true;
+        ClearUrls.enabled = true;
+        ExpressionCloner.enabled = true;
+        MemberCount.enabled = true;
+        SpotifyCrack.enabled = true;
+        OnePingPerDM.enabled = true;
+        TextReplace = {
           enabled = true;
-          config.vaapiIgnoreDriverChecks = true;
+          regexRules = [
+            {
+              find = "instagram\\.com";
+              replace = "ddinstagram.com";
+              onlyIfIncludes = "";
+            }
+            {
+              find = "reddit\\.com";
+              replace = "rxddit.com";
+              onlyIfIncludes = "";
+            }
+            {
+              find = "tiktok\\.com";
+              replace = "tfxktok.com";
+              onlyIfIncludes = "";
+            }
+            {
+              find = "twitter\\.com";
+              replace = "vxtwitter.com";
+              onlyIfIncludes = "";
+            }
+            {
+              find = "vm\\.tiktok\\.com";
+              replace = "vm.vxtiktok.com";
+              onlyIfIncludes = "";
+            }
+            {
+              find = "www\\.instagram\\.com";
+              replace = "ddinstagram.com";
+              onlyIfIncludes = "";
+            }
+            {
+              find = "www\\.reddit\\.com";
+              replace = "rxddit.com";
+              onlyIfIncludes = "";
+            }
+            {
+              find = "x\\.com";
+              replace = "vxtwitter.com";
+              onlyIfIncludes = "";
+            }
+          ];
+
         };
-        noHideToken = true;
-        noReplyChainNag = true;
-        noTrack = true;
-        onePingPerDM = true;
-        pronouns = true;
-        textReplacer = {
-          enabled = true;
-          config = {
-            patterns = {
-              "://instagram.com/" = "://ddinstagram.com/";
-              "://reddit.com/" = "://rxddit.com/";
-              "://tiktok.com/" = "://tfxktok.com/";
-              "://twitter.com/" = "://vxtwitter.com/";
-              "://vm.tiktok.com/" = "://vm.vxtiktok.com/";
-              "://www.instagram.com/" = "://ddinstagram.com/";
-              "://www.reddit.com/" = "://rxddit.com/";
-              "://x.com/" = "://vxtwitter.com/";
-            };
-          };
-        };
-        volumeManipulator = true;
+        VolumeBooster.enabled = true;
       };
-      repositories = [ "https://moonlight-mod.github.io/extensions-dist/repo.json" ];
     };
   };
 }
