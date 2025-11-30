@@ -3,7 +3,7 @@
   programs.direnv = {
     enable = true;
     silent = true;
-    enableZshIntegration = true;
+    # enableFishIntegration = true;
 
     # faster, persistent implementation of use_nix and use_flake
     nix-direnv.enable = true;

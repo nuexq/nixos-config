@@ -24,7 +24,7 @@
       cursor-style-blink = false;
       mouse-hide-while-typing = true;
 
-      shell-integration = "zsh";
+      shell-integration = "fish";
       shell-integration-features = "no-cursor";
 
       window-width = 120;

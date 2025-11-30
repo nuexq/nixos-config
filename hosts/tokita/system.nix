@@ -32,7 +32,7 @@
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     packages = with pkgs; [ neovim btop htop git curl tmux ];
   };
 

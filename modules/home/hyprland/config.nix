@@ -23,7 +23,7 @@ in {
         "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         "hyprctl dispatch exec '[workspace 1 silent] ${browser}'"
         "hyprctl dispatch exec '[workspace 2 silent] ${terminal}'"
-        "hyprctl dispatch exec '[workspace 3 silent] discord'"
+        "hyprctl dispatch exec '[workspace 3 silent] vesktop'"
         "vicinae server"
       ];
 
@@ -60,7 +60,6 @@ in {
         animate_manual_resizes = false;
         enable_swallow = true;
         focus_on_activate = false;
-        new_window_takes_over_fullscreen = 2;
         middle_click_paste = false;
         disable_splash_rendering = true;
       };
@@ -138,7 +137,7 @@ in {
         "ALT, return, fullscreen" # go full screen mode
         "$mainMod, W, exec, toggle-float"
         "ALT, Space, exec, vicinae toggle"
-        "$mainMod SHIFT, D, exec, discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
+        "$mainMod SHIFT, D, exec, vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, vicinae 'vicinae://toggle?fallbackText=power%20management'"
         "$mainMod, D, togglesplit," # toggle split
@@ -282,14 +281,14 @@ in {
         "match:class xwaylandvideobridge, opacity 0.0 override"
         "match:class dev.zed.Zed, opacity 0.90"
 
-        "match:class discord|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
+        "match:class vesktop|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
 
         "match:title .*imv.*|.*mpv.*|Picture-in-Picture, opacity 1.0 override 1.0 override"
         "match:class Aseprite|zen|evince, opacity 1.0 override 1.0 override"
 
         "match:class xwaylandvideobridge, opacity 0.0 override"
         "match:class dev.zed.Zed, opacity 0.90"
-        "match:class discord|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
+        "match:class vesktop|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
         "match:title .*imv.*, opacity 1.0 override 1.0 override"
         "match:title .*mpv.*, opacity 1.0 override 1.0 override"
         "match:class Aseprite|zen|evince, opacity 1.0 override 1.0 override"
