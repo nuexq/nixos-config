@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    hyperfine                         # benchmarking
     aoc-cli                           # Advent of Code command-line tool
     dysk                              # Disk information
     eza                               # ls replacement

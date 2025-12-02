@@ -25,7 +25,7 @@ in {
 
       directory = {
         style = "blue";
-        truncation_length = 3;
+        truncation_length = 4;
         truncation_symbol = "…/";
         read_only_style = "red";
         read_only = "  ";
