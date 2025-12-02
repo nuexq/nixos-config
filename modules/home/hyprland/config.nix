@@ -276,7 +276,7 @@ in {
         "match:class zenity, size 850 500"
         "match:class SoundWireServer, size 725 330"
         "match:class waypaper, pin on"
-        "match:class Anki, match:title Add, float on"
+        "match:class anki, match:title Add, float on, size 929 558, center on"
 
         "match:class xwaylandvideobridge, opacity 0.0 override"
         "match:class dev.zed.Zed, opacity 0.90"
