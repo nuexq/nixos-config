@@ -11,6 +11,5 @@ require("mason-lspconfig").setup({
 		"marksman", -- Markdown LSP
 		"astro", -- Astro LSP
 		"tailwindcss", -- Tailwind CSS Language Server
-		"texlab", -- latex LSP
 	},
 })

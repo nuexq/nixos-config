@@ -1,7 +1,5 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [
-    tree-sitter
-  ];
+  home.packages = with pkgs; [ tree-sitter python313Packages.pylatexenc ];
 
   programs.neovim = { enable = true; };
 
