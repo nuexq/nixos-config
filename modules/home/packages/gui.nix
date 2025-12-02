@@ -10,6 +10,10 @@
     ghidra # reverse-engineering software (static)
     (cutter.withPlugins (ps: with ps; [ jsdec rz-ghidra sigdb ]))
     anki
+
+    file-roller # archive
+
+    zathura # pdf viewer
   ];
 }
 

@@ -11,7 +11,6 @@
     ./gaming.nix                      # packages related to gaming
     ./terminals.nix                   # terminal
     ./git.nix                         # version control
-    ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme
     ./qt.nix                          # qt theme
     ./hyprland                        # window manager

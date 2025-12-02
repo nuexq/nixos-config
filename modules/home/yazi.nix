@@ -9,7 +9,7 @@
     text = "nvim"
     image = "imv"
 
-    pdf = "evince"
+    pdf = "zathura"
     video = "mpv"
   '';
 }
