@@ -456,6 +456,7 @@ return {
 		init = function()
 			vim.g.vimtex_view_method = "zathura"
       vim.g.tex_conceal = "abdmg"
+      vim.g.vimtex_compiler_method = "latexmk"
 		end,
 	},
 
