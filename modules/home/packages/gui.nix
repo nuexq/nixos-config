@@ -12,8 +12,8 @@
     anki
 
     file-roller # archive
-
-    zathura # pdf viewer
   ];
+
+  programs.zathura.enable = true;
 }
 
