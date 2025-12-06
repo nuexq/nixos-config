@@ -19,7 +19,7 @@
     nv = "nvim";
 
     # Nomad / nix helpers
-    ns = "nom-shell --run fish";
+    ns = "nom shell";
     nd = "nom develop --command fish";
     nb = "nom build";
     nix-switch = "nh os switch";
