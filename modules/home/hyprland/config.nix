@@ -24,7 +24,7 @@ in {
         "hyprctl dispatch exec '[workspace 1 silent] ${browser}'"
         "hyprctl dispatch exec '[workspace 2 silent] ${terminal}'"
         "hyprctl dispatch exec '[workspace 3 silent] vesktop'"
-        "vicinae server"
+        "USE_LAYER_SHELL=0 vicinae server"
       ];
 
       input = {
@@ -297,6 +297,7 @@ in {
         # Other effects
         "match:class mpv, idle_inhibit focus"
         "match:class xwaylandvideobridge, no_anim on, no_initial_focus on, max_size 1 1, no_blur on"
+        "match:title Vicinae Launcher, no_anim on, pin on, border_size 0"
       ];
 
       layerrule =
