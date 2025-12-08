@@ -28,10 +28,10 @@ in {
     enableRedistributableFirmware = true;
     firmware = with pkgs; [ linux-firmware ];
 
-    bluetooth = {
-      enable = true;
-      powerOnBoot = false;
-    };
+    # bluetooth = {
+    #   enable = true;
+    #   powerOnBoot = false;
+    # };
   };
 
   services = {

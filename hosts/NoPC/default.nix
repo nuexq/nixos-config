@@ -1,11 +1,11 @@
 { pkgs, config, ... }: {
   imports = [ ./hardware-configuration.nix ./../../modules/core ];
 
-  environment.systemPackages = with pkgs; [ acpi powertop xclip lm_sensors bc ];
+  environment.systemPackages = with pkgs; [ acpi xclip lm_sensors bc ];
 
   services = {
     power-profiles-daemon.enable = false;
-    cpupower-gui.enable = true;
+    # cpupower-gui.enable = true;
 
     upower = {
       enable = true;
@@ -19,16 +19,18 @@
       enable = true;
       settings = {
         # CPU prefrences
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "power";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
 
         # No CPU turbo boost
         CPU_BOOST_ON_AC = 1;
         CPU_BOOST_ON_BAT = 0;
+        CPU_BOOST_ON_SAV = 0;
 
         # Disable HWP dyanic boost
         CPU_HWP_DYN_BOOST_ON_AC = 1;
         CPU_HWP_DYN_BOOST_ON_BAT = 0;
+        CPU_HWP_DYN_BOOST_ON_SAV = 0;
 
         # System profiles
         PLATFORM_PROFILE_ON_AC = "performance";
@@ -55,9 +57,11 @@
     };
   };
 
+  powerManagement.powertop.enable = true;
+
   boot = {
-    kernelModules = [ "acpi_call" "coretemp" "thinkpad_acpi" ];
+    kernelModules =
+      [ "acpi_call" "coretemp" "thinkpad_acpi" "i915.enable_psr=1" ];
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
   };
 }
-
