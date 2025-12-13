@@ -24,6 +24,7 @@
         MemberCount.enabled = true;
         SpotifyCrack.enabled = true;
         OnePingPerDM.enabled = true;
+        GifPaste.enabled = true;
         TextReplace = {
           enabled = true;
           regexRules = [
@@ -44,7 +45,7 @@
             }
             {
               find = "twitter\\.com";
-              replace = "vxtwitter.com";
+              replace = "fixupx.com";
               onlyIfIncludes = "";
             }
             {
@@ -64,7 +65,7 @@
             }
             {
               find = "x\\.com";
-              replace = "vxtwitter.com";
+              replace = "fixupx.com";
               onlyIfIncludes = "";
             }
           ];
