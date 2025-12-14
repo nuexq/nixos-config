@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     # Nix
-    nixd                              # nix lsp
+    nil                               # nix lsp
     nixfmt-rfc-style                  # nix formatter
 
     # C / C++

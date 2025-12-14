@@ -85,7 +85,4 @@ for _, server in ipairs(servers) do
 end
 
 -- Manual setup
-vim.lsp.enable("nixd")
-
--- UFO setup
-
+vim.lsp.enable("nil_ls")
