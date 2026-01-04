@@ -19,7 +19,6 @@
     pamixer                           # PulseAudio command-line mixer
     playerctl                         # Controller for media players
     poweralertd                       # Alerts when running on battery
-    programmer-calculator             # Programmer’s calculator (CLI)
     ripgrep                           # grep replacement
     shfmt                             # Bash formatter
     swappy                            # Snapshot editing tool
