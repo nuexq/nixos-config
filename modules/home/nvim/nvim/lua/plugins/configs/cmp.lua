@@ -35,24 +35,32 @@ cmp.setup({
 		},
 	},
 	mapping = cmp.mapping.preset.insert({
+		-- Tab jumps in snippet only
 		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.confirm({ select = true }) -- confirm completion if menu open
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump() -- jump in snippet
-			else
-				fallback() -- normal tab
-			end
-		end, { "i", "s" }),
-
-		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if luasnip.jumpable(-1) then
-				luasnip.jump(-1) -- jump backward in snippet
+			if luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
 			else
 				fallback()
 			end
 		end, { "i", "s" }),
 
+		-- Shift-Tab jumps backward in snippet
+		["<S-Tab>"] = cmp.mapping(function(fallback)
+			if luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+
+		-- Confirm completion using Ctrl-Tab
+		["<CR>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.confirm({ select = true })
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 	}),
