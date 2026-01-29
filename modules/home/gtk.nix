@@ -15,9 +15,9 @@
     };
 
     theme = {
-      name = "Catppuccin-GTK-Purple-Dark";
+      name = "Catppuccin-GTK-Muave-Dark";
       package = pkgs.magnetic-catppuccin-gtk.override {
-        accent = [ "purple" ];
+        accent = [ "mauve" ];
         shade = "dark";
         size = "standard";
         tweaks = [ ];

@@ -50,11 +50,13 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
-  outputs = { nixpkgs, self, ... }@inputs:
+  outputs =
+    { nixpkgs, self, ... }@inputs:
     let
       username = "nuexq";
       system = "x86_64-linux";
-    in {
+    in
+    {
       nixosConfigurations = {
         NoPC = nixpkgs.lib.nixosSystem {
           inherit system;
