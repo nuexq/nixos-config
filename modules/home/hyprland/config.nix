@@ -128,7 +128,6 @@ in {
         "SUPER, F1, exec, vicinae 'vicinae://extensions/sovereign/hypr-keybinds/hyprland-keybinds'"
 
         # keybindings
-        "SUPER, H, exec, ghostty -e btop"
         "SUPER, Return, exec, ${terminal} --gtk-single-instance=true" # open terminal
         "SUPER, B, exec, ${browser}" # open browser
         "SUPER, Q, killactive," # kill active app

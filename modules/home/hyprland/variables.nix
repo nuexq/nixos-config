@@ -20,7 +20,7 @@
     EDITOR = "nvim";
     # GTK
     GTK_THEME =
-      "Catppuccin-GTK-Purple-Dark";
+      "Catppuccin-GTK-Mauve-Dark";
     XCURSOR_THEME = "phinger-cursors-dark";
     XCURSOR_SIZE = "22";
     # QT
