@@ -24,7 +24,7 @@ in {
         "hyprctl dispatch exec '[workspace 1 silent] ${browser}'"
         "hyprctl dispatch exec '[workspace 2 silent] ${terminal}'"
         "hyprctl dispatch exec '[workspace 3 silent] vesktop'"
-        "USE_LAYER_SHELL=0 vicinae server"
+        "vicinae server"
       ];
 
       input = {
