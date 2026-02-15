@@ -5,7 +5,6 @@
   services.flatpak = {
     enable = true;
     packages = [
-      "org.vinegarhq.Sober"
     ];
     overrides = {
       global = {
