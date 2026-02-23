@@ -2,7 +2,8 @@
 let
   browser = "zen-beta";
   terminal = "ghostty";
-in {
+in
+{
   wayland.windowManager.hyprland = {
     settings = {
       # autostart
@@ -37,7 +38,9 @@ in {
         mouse_refocus = 0;
         sensitivity = -1;
         force_no_accel = 1;
-        touchpad = { natural_scroll = true; };
+        touchpad = {
+          natural_scroll = true;
+        };
       };
 
       general = {
@@ -90,7 +93,9 @@ in {
           special = true;
         };
 
-        shadow = { enabled = false; };
+        shadow = {
+          enabled = false;
+        };
       };
 
       animations = {
@@ -121,7 +126,9 @@ in {
         disable_logs = false;
       };
 
-      binds = { movefocus_cycles_fullscreen = true; };
+      binds = {
+        movefocus_cycles_fullscreen = true;
+      };
 
       bind = [
         # show keybinds list
@@ -146,7 +153,7 @@ in {
         "SUPER, N, exec, swaync-client -t -sw"
         "SUPER, equal, exec, woomer"
 
-        # screenshot 
+        # screenshot
         ",Print, exec, screenshot --fullscreen" # Fullscreen screenshot instantly
         "SUPER, Print, exec, screenshot --nonfreeze-copy" # Non-freeze + select area → copy
         "SUPER CTRL ALT SHIFT, S, exec, screenshot --freeze-copy" # Freeze + select area → copy
@@ -297,11 +304,16 @@ in {
         "match:title Vicinae Launcher, no_anim on, pin on, border_size 0"
       ];
 
-      layerrule =
-        [ "match:namespace vicinae, blur on, ignore_alpha 0, no_anim on" ];
+      layerrule = [ "match:namespace vicinae, blur on, ignore_alpha 0, no_anim on" ];
     };
 
-    extraConfig =
-      "\n      monitor=,1920x1080@60,auto,1\n\n      xwayland {\n        force_zero_scaling = true\n      }\n    ";
+    extraConfig = ''
+      monitor = eDP-1, preferred, 0x0, 1
+      monitor = , preferred, auto, 1, mirror, eDP-1
+
+      xwayland {
+          force_zero_scaling = true
+      }
+    '';
   };
 }
