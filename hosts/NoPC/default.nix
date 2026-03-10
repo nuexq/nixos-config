@@ -7,6 +7,29 @@
     power-profiles-daemon.enable = false;
     # cpupower-gui.enable = true;
 
+    undervolt = {
+      enable = true;
+      coreOffset = -85;
+      uncoreOffset = -85;
+
+      gpuOffset = -40;
+
+      analogioOffset = -20;
+
+      temp = 90;
+      turbo = 0;
+      p1 = {
+        limit = 25;
+        window = 1;
+      };
+      p2 = {
+        limit = 25;
+        window = 1;
+      };
+      useTimer = true;
+      verbose = true;
+    };
+
     upower = {
       enable = true;
       percentageLow = 20;

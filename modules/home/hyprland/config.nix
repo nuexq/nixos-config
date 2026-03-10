@@ -144,7 +144,7 @@ in
         "SUPER SHIFT, D, exec, vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "SUPER, Escape, exec, hyprlock"
         "SUPER SHIFT, Escape, exec, vicinae 'vicinae://toggle?fallbackText=power%20management'"
-        "SUPER, D, togglesplit," # toggle split
+        "SUPER, D, layoutmsg, togglesplit," # toggle split
         "SUPER, E, exec, nemo"
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "ALT, Escape, exec, toggle-waybar"

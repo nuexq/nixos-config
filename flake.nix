@@ -55,13 +55,20 @@
     };
   };
 
-  outputs =
-    { nixpkgs, self, ... }@inputs:
+  outputs = { nixpkgs, self, ... }@inputs:
     let
       username = "nuexq";
       system = "x86_64-linux";
-    in
-    {
+
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      myPkgs = import ./pkgs { inherit pkgs; };
+    in {
+      packages.${system} = myPkgs;
+
       nixosConfigurations = {
         NoPC = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -80,7 +87,6 @@
             inherit self inputs username;
           };
         };
-
       };
     };
 }

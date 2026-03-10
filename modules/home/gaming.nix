@@ -1,10 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, self, ... }:
 
+{
   home.packages = with pkgs; [
-    mangohud # monitoring fps
-    umu-launcher # proton outside steam
-    nur.repos.${"0komo"}.sklauncher # sklauncher
-    shipwright # ship of harkinian
+    mangohud
+    umu-launcher
+    shipwright
     osu-lazer-bin
+    self.packages.${pkgs.system}.sklauncher
   ];
 }
