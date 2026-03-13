@@ -12,6 +12,11 @@
       merge.conflictstyle = "diff3";
       pull.ff = "only";
       color.ui = true;
+      url = {
+        "git@github.com:".insteadOf = [ "gh:" "https://github.com/" ];
+        "git@github.com:nuexq/".insteadOf = "fp:";
+      };
+
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
       diff = {
         external = "${pkgs.difftastic}/bin/difft";
