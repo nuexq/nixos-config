@@ -1,41 +1,29 @@
-{ pkgs, username, ... }:
-{
-  programs = {
-    git = {
-      enable = true;
+{ pkgs, username, ... }: {
+  programs.git = {
+    enable = true;
 
-      settings = {
-        user = {
-          name = "nuexq";
-          email = "nuexqq@gmail.com";
-        };
-        init.defaultBranch = "main";
-        merge.conflictstyle = "diff3";
-        diff.colorMoved = "default";
-        pull.ff = "only";
-        color.ui = true;
-        url = {
-          "git@github.com:".insteadOf = [
-            "gh:"
-            "https://github.com/"
-          ];
-          "git@github.com:nuexq/".insteadOf = "fp:";
-        };
-        core.excludesFile = "/home/${username}/.config/git/.gitignore";
+    settings = {
+      user = {
+        name = "nuexq";
+        email = "nuexqq@gmail.com";
+
       };
-    };
-
-    delta = {
-      enable = true;
-      enableGitIntegration = true;
-      options = {
-        line-numbers = true;
-        side-by-side = false;
-        diff-so-fancy = true;
-        navigate = true;
+      init.defaultBranch = "main";
+      merge.conflictstyle = "diff3";
+      pull.ff = "only";
+      color.ui = true;
+      core.excludesFile = "/home/${username}/.config/git/.gitignore";
+      diff = {
+        external = "${pkgs.difftastic}/bin/difft";
+        colorMoved = "default";
+      };
+      difftool = {
+        difftastic = {
+          cmd = ''${pkgs.difftastic}/bin/difft "$LOCAL" "$REMOTE"'';
+        };
       };
     };
   };
 
-  home.packages = [ pkgs.gh ]; # pkgs.git-lfs
+  home.packages = with pkgs; [ gh difftastic ];
 }
