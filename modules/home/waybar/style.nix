@@ -4,7 +4,7 @@
     * {
   border: none;
   border-radius: 0px;
-  font-family: "Maple Mono NF CN";
+  font-family: "Ioskeley Mono";
   font-size: 10px;
   min-height: 10px;
 }

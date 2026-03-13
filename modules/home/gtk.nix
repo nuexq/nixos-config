@@ -1,10 +1,10 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, self, ... }: {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
-    maple-mono.NF-CN-unhinted
     inter-nerdfont
+    self.packages.${pkgs.system}.ioskeley-mono.hinted
   ];
 
   gtk = {

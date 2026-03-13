@@ -65,7 +65,10 @@
         config.allowUnfree = true;
       };
 
-      myPkgs = import ./pkgs { inherit pkgs; };
+      myPkgs = import ./pkgs {
+        inherit pkgs;
+        inherit (pkgs) lib;
+      };
     in {
       packages.${system} = myPkgs;
 

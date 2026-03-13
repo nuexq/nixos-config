@@ -24,7 +24,7 @@ Hosts:
 - **Shell:** [zsh][zsh] + [starship][starship]  
 - **Text Editor:** [Neovim][Neovim]  
 - **File Manager:** [nemo][nemo] + [yazi][yazi]  
-- **Fonts:** [Maple Mono NF][Maple Mono] + [Inter NF][Inter]  
+- **Fonts:** [Ioskeley Mono][Ioskeley Mono] + [Inter NF][Inter]  
 - **Color Scheme:** [Catppuccin][Catppuccin]  
 - **Lockscreen:** [Hyprlock][Hyprlock]  
 - **Image Viewer:** [imv][imv]  
@@ -53,7 +53,7 @@ Hosts:
 [hyprshot]: https://github.com/Gustash/Hyprshot 
 [imv]: https://sr.ht/~exec64/imv/
 [swaync]: https://github.com/ErikReider/SwayNotificationCenter
-[Maple Mono]: https://github.com/subframe7536/maple-font
+[Ioskeley Mono]: https://github.com/ahatem/IoskeleyMono 
 [Inter]: https://github.com/rsms/inter 
 [wl-clip-persist]: https://github.com/Linus789/wl-clip-persist
 [wf-recorder]: https://github.com/ammen99/wf-recorder

@@ -3,7 +3,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Maple Mono NF CN";
+      name = "Ioskeley Mono";
       size = 9;
     };
     extraConfig = ''
@@ -16,7 +16,7 @@
 
     settings = {
       theme = "catppuccin-${config.catppuccin.flavor}";
-      font-family = "Maple Mono NF CN";
+      font-family = "Ioskeley Mono";
       font-size = 9;
       font-thicken = true;
 
