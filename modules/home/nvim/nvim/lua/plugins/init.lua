@@ -292,22 +292,14 @@ return {
 
 	-- Git Integration
 	{
-		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+		"clabby/difftastic.nvim",
 		config = function()
-			require("diffview").setup({
-				file_panel = {
-					listing_style = "list",
-					win_config = {
-						position = "right",
-						width = 30,
-						win_opts = {},
-					},
-				},
+			require("difftastic-nvim").setup({
+				download = true, -- Auto-download pre-built binary
+				vcs = "git",
 			})
 		end,
 	},
-
 	{
 		"lewis6991/gitsigns.nvim",
 		config = true,

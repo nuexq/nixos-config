@@ -1,7 +1,7 @@
 require("catppuccin").setup({
 	flavour = "mocha",
 	integrations = {
-		diffview = true,
+		-- diffview = true,
 		mason = true,
 		noice = true,
 		notifier = true,
