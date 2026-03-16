@@ -453,10 +453,12 @@ return {
 			vim.g.vimtex_quickfix_open_on_error = 0
 			vim.g.vimtex_compiler_latexmk = {
 				options = {
-					"-pdf",
 					"-shell-escape",
-					"-interaction=nonstopmode",
+					"-verbose",
+					"-file-line-error",
 					"-synctex=1",
+					"-interaction=nonstopmode",
+					"-pdflua",
 					"-auxdir=../build",
 					"-outdir=.",
 				},

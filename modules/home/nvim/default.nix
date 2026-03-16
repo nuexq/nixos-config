@@ -1,10 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     tree-sitter
     python313Packages.pylatexenc
 
-    (texlive.withPackages (ps:
-      with ps; [
+    (texlive.withPackages (
+      ps: with ps; [
         scheme-medium
         enumitem
         titlesec
@@ -12,7 +13,11 @@
         tikzfill
         pdfcol
         lipsum
-      ]))
+        fontspec
+        arabluatex
+        amiri
+      ]
+    ))
   ];
 
   programs.neovim.enable = true;
