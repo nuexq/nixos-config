@@ -1,11 +1,11 @@
 { inputs, ... }:
 {
-  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak  ];
+  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
 
   services.flatpak = {
     enable = true;
     packages = [
-      "org.vinegarhq.Sober"
+      "org.gnome.design.Contrast"
     ];
     overrides = {
       global = {
