@@ -80,6 +80,13 @@
     };
   };
 
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50;
+    algorithm = "zstd";
+    priority = 100;
+  };
+
   powerManagement.powertop.enable = true;
 
   boot = {
