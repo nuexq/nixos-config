@@ -48,9 +48,15 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
     vicinae.url = "github:vicinaehq/vicinae";
     vicinae-extensions = {
       url = "github:vicinaehq/extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

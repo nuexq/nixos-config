@@ -16,5 +16,6 @@
     ./wayland.nix
     ./spicetify.nix
     ./keyd.nix
+    ./sddm.nix
   ];
 }

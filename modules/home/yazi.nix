@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{  ... }:
 {
   programs.yazi = {
     enable = true;
   };
+
 
   xdg.configFile."yazi/config.toml".text = ''
     [open]

@@ -27,7 +27,7 @@
     ./waypaper.nix                    # GUI wallpaper picker
     ./xdg-mimes.nix                   # xdg config
     ./direnv.nix                      # direnv
-    ./shell                             # shell
+    ./shell                           # shell
     ./yazi.nix                        # tui file-manager
     ./starship.nix                    # shell prompt
     ./tmux.nix                        # terminal multiplexer
