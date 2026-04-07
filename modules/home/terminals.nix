@@ -3,7 +3,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Ioskeley Mono";
+      name = "IoskeleyMono Nerd Font";
       size = 9;
     };
     extraConfig = ''
@@ -16,9 +16,8 @@
 
     settings = {
       theme = "catppuccin-${config.catppuccin.flavor}";
-      font-family = "Ioskeley Mono";
+      font-family = "IoskeleyMono Nerd Font";
       font-size = 9;
-      font-thicken = true;
 
       cursor-style = "block";
       cursor-style-blink = false;

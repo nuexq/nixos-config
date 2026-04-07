@@ -4,7 +4,7 @@
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
     inter-nerdfont
-    self.packages.${pkgs.system}.ioskeley-mono.hinted
+    self.packages.${pkgs.system}.ioskeley-mono.normal-NF
   ];
 
   gtk = {

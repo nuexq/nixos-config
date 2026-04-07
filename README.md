@@ -24,7 +24,7 @@ Hosts:
 - **Shell:** [zsh][zsh] + [starship][starship]  
 - **Text Editor:** [Neovim][Neovim]  
 - **File Manager:** [nemo][nemo] + [yazi][yazi]  
-- **Fonts:** [Ioskeley Mono][Ioskeley Mono] + [Inter NF][Inter]  
+- **Fonts:** [Ioskeley Mono NF][Ioskeley Mono] + [Inter NF][Inter]  
 - **Color Scheme:** [Catppuccin][Catppuccin]  
 - **Lockscreen:** [Hyprlock][Hyprlock]  
 - **Image Viewer:** [imv][imv]  
