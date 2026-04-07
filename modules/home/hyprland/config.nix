@@ -285,18 +285,10 @@ in
         "match:class xwaylandvideobridge, opacity 0.0 override"
         "match:class dev.zed.Zed, opacity 0.90"
 
-        "match:class vesktop|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
+        "match:class vesktop|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
 
         "match:title .*imv.*|.*mpv.*|Picture-in-Picture, opacity 1.0 override 1.0 override"
         "match:class Aseprite|zen|evince, opacity 1.0 override 1.0 override"
-
-        "match:class xwaylandvideobridge, opacity 0.0 override"
-        "match:class dev.zed.Zed, opacity 0.90"
-        "match:class vesktop|Steam|steam|steamwebhelper|Spotify|Code|code-url-handler|com.mitchellh.ghostty|nemo|qt5ct|qt6ct|obsidian, opacity 0.95"
-        "match:title .*imv.*, opacity 1.0 override 1.0 override"
-        "match:title .*mpv.*, opacity 1.0 override 1.0 override"
-        "match:class Aseprite|zen|evince, opacity 1.0 override 1.0 override"
-        "match:title Picture-in-Picture, opacity 1.0 override 1.0 override"
 
         # Other effects
         "match:class mpv, idle_inhibit focus"
