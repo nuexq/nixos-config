@@ -9,10 +9,10 @@
 
     undervolt = {
       enable = true;
-      coreOffset = -85;
-      uncoreOffset = -85;
+      coreOffset = -80;
+      uncoreOffset = -80;
 
-      gpuOffset = -40;
+      gpuOffset = -20;
 
       analogioOffset = -20;
 
