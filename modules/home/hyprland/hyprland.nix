@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    swww
+    awww
     mpvpaper
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     slurp

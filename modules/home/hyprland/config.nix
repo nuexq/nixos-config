@@ -18,7 +18,7 @@ in
         "waybar &"
         "swaync &"
         "hyprctl setcursor Bibata-Modern-Ice 20 &"
-        "swww-daemon &"
+        "awww-daemon &"
         "hypridle &"
 
         "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"

@@ -37,6 +37,7 @@
     sl                                # Steam locomotive animation (for mistyped 'ls')
     tty-clock                         # CLI clock
     radare2                           # reverse engineering
+    cliamp                            # music player
   ];
 }
 
