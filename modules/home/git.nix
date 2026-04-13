@@ -13,7 +13,6 @@
       pull.ff = "only";
       color.ui = true;
       url = {
-        "git@github.com:".insteadOf = [ "gh:" "https://github.com/" ];
         "git@github.com:nuexq/".insteadOf = "fp:";
       };
 

@@ -201,8 +201,15 @@ return {
 		"kylechui/nvim-surround",
 		version = "*",
 		event = "VeryLazy",
+		init = function()
+			vim.g.nvim_surround_no_visual_mappings = true
+		end,
 		config = function()
-			require("nvim-surround").setup({ keymaps = { visual = "s" } }) -- NOTE: Keymaps here
+			require("nvim-surround").setup()
+
+			vim.keymap.set("x", "s", "<Plug>(nvim-surround-visual)", {
+				desc = "Add surrounding pair around selection",
+			})
 		end,
 	},
 	{
