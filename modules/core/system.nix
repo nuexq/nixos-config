@@ -1,8 +1,12 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       substituters = [
         "https://nix-community.cachix.org"
         "https://nix-gaming.cachix.org"
@@ -18,16 +22,24 @@
         "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
       ];
     };
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
   nixpkgs = {
-    overlays =
-      [ inputs.nur.overlays.default inputs.rust-overlay.overlays.default ];
+    overlays = [
+      inputs.nur.overlays.default
+      inputs.rust-overlay.overlays.default
+    ];
   };
 
-  environment.systemPackages = with pkgs; [ wget git sshfs comma ];
+  environment.systemPackages = with pkgs; [
+    wget
+    git
+    sshfs
+    comma
+  ];
 
   time.timeZone = "Africa/Casablanca";
   i18n.defaultLocale = "en_US.UTF-8";
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "24.05";
+  system.stateVersion = "26.05";
 }
