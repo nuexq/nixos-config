@@ -85,4 +85,28 @@ for _, server in ipairs(servers) do
 end
 
 -- Manual setup
-vim.lsp.enable("nil_ls")
+local flake = vim.env.NH_FLAKE or (vim.fn.expand("~") .. "/nixos-config")
+
+vim.lsp.config.nixd = {
+	cmd = { "nixd" },
+	filetypes = { "nix" },
+	settings = {
+		nixd = {
+			nixpkgs = {
+				expr = 'import (builtins.getFlake "' .. flake .. '").inputs.nixpkgs { }',
+			},
+			formatting = {
+				command = { "nixfmt" },
+			},
+			options = {
+				nixos = {
+					expr = '(builtins.getFlake "' .. flake .. '").nixosConfigurations.NoPC.options',
+				},
+				home_manager = {
+					expr = '(builtins.getFlake "' .. flake .. '").nixosConfigurations.NoPC.options.home-manager',
+				},
+			},
+		},
+	},
+}
+vim.lsp.enable("nixd")
