@@ -1,4 +1,5 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, ... }:
+{
   programs.git = {
     enable = true;
 
@@ -6,14 +7,14 @@
       user = {
         name = "nuexq";
         email = "nuexqq@gmail.com";
-
       };
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
       pull.ff = "only";
       color.ui = true;
       url = {
-        "git@github.com:nuexq/".insteadOf = "fp:";
+        "git@github.com:nuexq/".insteadOf = "https://github.com/nuexq/";
+        "git@github.com:".insteadOf = "gh:";
       };
 
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
@@ -29,5 +30,8 @@
     };
   };
 
-  home.packages = with pkgs; [ gh difftastic ];
+  home.packages = with pkgs; [
+    gh
+    difftastic
+  ];
 }
