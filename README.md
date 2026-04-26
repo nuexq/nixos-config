@@ -36,6 +36,7 @@ Hosts:
 
 # Credits
  - [Frost-Phoenix/nixos-config](https://github.com/Frost-Phoenix/nixos-config/): the starting point, and the base of this dotfiles.
+ - [IsabelRoses](https://github.com/isabelroses/dotfiles/) 
 
 <!-- Links -->
 [Hyprland]: https://github.com/hyprwm/Hyprland
