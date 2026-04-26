@@ -1,10 +1,4 @@
-{ pkgs, lib }:
-
-let
-  ioskeley = pkgs.callPackage ./ioskeley-mono { };
-in
+{ pkgs }:
 {
   sklauncher = pkgs.callPackage ./sklauncher { };
-
-  ioskeley-mono = lib.recurseIntoAttrs ioskeley;
 }

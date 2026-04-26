@@ -73,7 +73,6 @@
 
       myPkgs = import ./pkgs {
         inherit pkgs;
-        inherit (pkgs) lib;
       };
     in {
       packages.${system} = myPkgs;

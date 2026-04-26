@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1;
     __GL_GSYNC_ALLOWED = 0;
@@ -18,9 +19,11 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     EDITOR = "nvim";
+    VISUAL = "nvim";
     # GTK
-    GTK_THEME =
-      "Catppuccin-GTK-Mauve-Dark";
+    GTK_THEME = "catppuccin-mocha-mauve-standard";
+    GTK_USE_PORTAL = "1";
+    _JAVA_AWT_WM_NONREPARENTING = "1";
     XCURSOR_THEME = "phinger-cursors-dark";
     XCURSOR_SIZE = "22";
     # QT
