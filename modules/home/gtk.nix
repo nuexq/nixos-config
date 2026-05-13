@@ -6,7 +6,7 @@
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
     inter-nerdfont
-    ioskeley-mono.normal-NF
+    ioskeley-mono.normal-term-NF
   ];
 
   xdg.configFile =
