@@ -1,34 +1,21 @@
-{ pkgs, config, ... }: {
-  imports = [ ./hardware-configuration.nix ./../../modules/core ];
+{ pkgs, ... }:
+{
+  imports = [
+    ./hardware-configuration.nix
+    ./../../modules/core
+  ];
 
-  environment.systemPackages = with pkgs; [ acpi xclip lm_sensors bc ];
+  environment.systemPackages = with pkgs; [
+    acpi
+    xclip
+    lm_sensors
+    bc
+  ];
+
+  services.fwupd.enable = true;
 
   services = {
     power-profiles-daemon.enable = false;
-    # cpupower-gui.enable = true;
-
-    undervolt = {
-      enable = true;
-      coreOffset = -80;
-      uncoreOffset = -80;
-
-      gpuOffset = -20;
-
-      analogioOffset = -20;
-
-      temp = 90;
-      turbo = 0;
-      p1 = {
-        limit = 25;
-        window = 1;
-      };
-      p2 = {
-        limit = 25;
-        window = 1;
-      };
-      useTimer = true;
-      verbose = true;
-    };
 
     upower = {
       enable = true;
@@ -41,57 +28,44 @@
     tlp = {
       enable = true;
       settings = {
-        # CPU prefrences
-        CPU_ENERGY_PERF_POLICY_ON_AC = "power";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+        # EPP (Active mode) uses 'powersave' as a generic pass-through driver.
+        # The actual performance bias is determined by the ENERGY_PERF_POLICY lines below.
+        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-        # No CPU turbo boost
-        CPU_BOOST_ON_AC = 1;
-        CPU_BOOST_ON_BAT = 0;
-        CPU_BOOST_ON_SAV = 0;
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
 
-        # Disable HWP dyanic boost
-        CPU_HWP_DYN_BOOST_ON_AC = 1;
-        CPU_HWP_DYN_BOOST_ON_BAT = 0;
-        CPU_HWP_DYN_BOOST_ON_SAV = 0;
-
-        # System profiles
+        # Hardware-level thermal and fan profiles via thinkpad_acpi
         PLATFORM_PROFILE_ON_AC = "performance";
         PLATFORM_PROFILE_ON_BAT = "low-power";
 
-        # Intel GPU min freq: allowing lowest on AC/battery
-        INTEL_GPU_MIN_FREQ_ON_AC = 0;
-        INTEL_GPU_MIN_FREQ_ON_BAT = 0;
-
-        # PCIe power saving
+        # Squeeze extra battery life out of the NVMe drive and PCIe bus
         PCIE_ASPM_ON_AC = "performance";
         PCIE_ASPM_ON_BAT = "powersupersave";
 
-        # STOP charging at 80%
+        # Optional: Disable CPU turbo boost on battery to keep it dead silent and cool
+        CPU_BOOST_ON_AC = 1;
+        CPU_BOOST_ON_BAT = 0;
 
+        # Charge thresholds to protect the battery chemistry
         STOP_CHARGE_THRESH_BAT1 = 80;
-        # START charging when battery drops below, say, 75%.
         START_CHARGE_THRESH_BAT1 = 75;
-
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
       };
     };
   };
 
-  zramSwap = {
-    enable = true;
-    memoryPercent = 50;
-    algorithm = "zstd";
-    priority = 100;
-  };
-
-  powerManagement.powertop.enable = true;
+  # zramSwap = {
+  #   enable = true;
+  #   memoryPercent = 50;
+  #   algorithm = "zstd";
+  #   priority = 100;
+  # };
 
   boot = {
-    kernelModules =
-      [ "acpi_call" "coretemp" "thinkpad_acpi" "i915.enable_psr=1" ];
-    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+    kernelModules = [
+      "thinkpad_acpi"
+    ];
+    kernelParams = [ "amd_pstate=active" ];
   };
 }
