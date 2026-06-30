@@ -16,12 +16,12 @@
         ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume +2 --max-volume=100"
         ",XF86AudioLowerVolume, exec, swayosd-client --output-volume -2"
 
-	# volume
+        # volume
         "ALT, F1, exec, swayosd-client --output-volume mute-toggle"
         "ALT, F3, exec, swayosd-client --output-volume +2 --max-volume=100"
         "ALT, F2, exec, swayosd-client --output-volume -2"
 
-	# mic
+        # mic
         "ALT, F4, exec, swayosd-client --input-volume mute-toggle"
       ];
       bindr = [

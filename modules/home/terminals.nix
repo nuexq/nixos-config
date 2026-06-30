@@ -1,16 +1,5 @@
 { config, ... }: {
 
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "IoskeleyMono Nerd Font";
-      size = 9;
-    };
-    extraConfig = ''
-      window_padding_width 6.0
-    '';
-  };
-
   programs.ghostty = {
     enable = true;
 

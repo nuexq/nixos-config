@@ -4,7 +4,6 @@
     ./bat.nix                         # better cat command
     ./browser.nix                     # firefox based browser
     ./btop.nix                        # resouces monitor 
-    ./cava.nix                        # audio visualizer
     ./discord.nix                     # discord
     ./fastfetch.nix                   # fetch tool
     ./fzf.nix                         # fuzzy finder
