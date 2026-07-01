@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     awww
     mpvpaper
-    inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+    inputs.hyprpicker.packages.${pkgs.stdenv.hostPlatform.system}.hyprpicker
     slurp
     hyprshot
     wl-clip-persist

@@ -4,6 +4,6 @@
   home.packages = with pkgs; [
     mangohud
     osu-lazer-bin
-    self.packages.${pkgs.system}.sklauncher
+    self.packages.${pkgs.stdenv.hostPlatform.system}.sklauncher
   ];
 }
