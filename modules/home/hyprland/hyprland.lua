@@ -1,4 +1,4 @@
-local browser = "zen-beta"
+local browser = "helium"
 local terminal = "ghostty"
 
 hl.on("hyprland.start", function()

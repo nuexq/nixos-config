@@ -78,7 +78,7 @@
     };
 
     "custom/cpu_temp" = {
-      format = "{}°C";
+      format = "{}";
       exec = "get-cpu-temp";
       interval = 2;
       return-type = "json";

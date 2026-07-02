@@ -38,12 +38,11 @@
     };
 
     nix-gaming.url = "github:fufexan/nix-gaming";
-
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     catppuccin.url = "github:catppuccin/nix";
-
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
@@ -57,6 +56,7 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs = { nixpkgs, self, ... }@inputs:

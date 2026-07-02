@@ -49,23 +49,33 @@
         CPU_BOOST_ON_BAT = 0;
 
         # Charge thresholds to protect the battery chemistry
-        STOP_CHARGE_THRESH_BAT1 = 80;
-        START_CHARGE_THRESH_BAT1 = 75;
+        STOP_CHARGE_THRESH_BAT0 = 80;
+        START_CHARGE_THRESH_BAT0 = 75;
       };
     };
   };
 
-  # zramSwap = {
-  #   enable = true;
-  #   memoryPercent = 50;
-  #   algorithm = "zstd";
-  #   priority = 100;
-  # };
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50;
+    algorithm = "zstd";
+    priority = 100;
+  };
 
   boot = {
     kernelModules = [
       "thinkpad_acpi"
+      "snd_pci_acp6x"
     ];
     kernelParams = [ "amd_pstate=active" ];
+    kernel.sysctl = {
+      "vm.swappiness" = 180;
+      "vm.page-cluster" = 0;
+      "vm.watermark_boost_factor" = 0;
+      "vm.watermark_scale_factor" = 125;
+
+      "net.core.default_qdisc" = "fq";
+      "net.ipv4.tcp_congestion_control" = "bbr";
+    };
   };
 }
