@@ -67,7 +67,10 @@
       "thinkpad_acpi"
       "snd_pci_acp6x"
     ];
-    kernelParams = [ "amd_pstate=active" ];
+    kernelParams = [
+      "amd_pstate=active"
+      "thinkpad_acpi.fan_control=1"
+    ];
     kernel.sysctl = {
       "vm.swappiness" = 180;
       "vm.page-cluster" = 0;
