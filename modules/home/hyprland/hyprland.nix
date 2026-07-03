@@ -11,6 +11,7 @@
     wf-recorder
     glib
     wayland
+    swayosd
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [
     "xdg-desktop-autostart.target"
@@ -19,10 +20,12 @@
     enable = true;
     package = null;
     portalPackage = null;
-
     xwayland = {
       enable = true;
     };
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+    };
+
   };
 }

@@ -20,7 +20,6 @@
     ./packages                        # other packages
     ./scripts/scripts.nix             # personal scripts
     ./ssh.nix                         # ssh config
-    ./swayosd.nix                     # brightness / volume wiget
     ./swaync.nix                      # notification deamon
     ./waybar                          # status bar
     ./waypaper.nix                    # GUI wallpaper picker
@@ -32,5 +31,6 @@
     ./tmux.nix                        # terminal multiplexer
     ./theme.nix                       # theme
     ./vicinae.nix                     # launcher
+    ./wluma.nix                       # wluma
   ];
 }

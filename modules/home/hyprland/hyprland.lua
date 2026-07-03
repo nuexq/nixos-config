@@ -2,9 +2,7 @@ local browser = "helium"
 local terminal = "ghostty"
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd(
-		"setpriv --ambient-caps '-all' dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-	)
+  hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("poweralertd")
@@ -233,35 +231,28 @@ hl.bind("XF86AudioStop", hl.dsp.exec_cmd("playerctl stop"))
 hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("vicinae vicinae://extensions/vicinae/clipboard/history"))
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"))
-
--- Long Press / Locked Keybinds
-hl.bind("ALT + F5", hl.dsp.exec_cmd("swayosd-client --brightness lower 5%-"), { locked = true })
-hl.bind("ALT + F6", hl.dsp.exec_cmd("swayosd-client --brightness raise 5%+"), { locked = true })
-hl.bind(
-	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("swayosd-client --output-volume +2 --max-volume=100"),
-	{ repeating = true, locked = true }
-)
-hl.bind(
-	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("swayosd-client --output-volume -2"),
-	{ repeating = true, locked = true }
-)
-hl.bind("ALT + F1", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { repeating = true, locked = true })
-hl.bind(
-	"ALT + F3",
-	hl.dsp.exec_cmd("swayosd-client --output-volume +2 --max-volume=100"),
-	{ repeating = true, locked = true }
-)
-hl.bind("ALT + F2", hl.dsp.exec_cmd("swayosd-client --output-volume -2"), { repeating = true, locked = true })
-hl.bind("ALT + F4", hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"), { repeating = true, locked = true })
 
 -- Mouse Interactivity
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Key Release Operations
+-- ==========================================
+-- SWAYOSD KEYBINDINGS
+-- ==========================================
+
+-- Standard Bindings (bind)
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"))
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"))
+
+-- Locked Bindings (bindl)
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("swayosd-client --brightness lower"), { locked = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("swayosd-client --brightness raise"), { locked = true })
+
+-- Locked & Repeating Bindings (bindle)
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("swayosd-client --output-volume raise"), { repeating = true, locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("swayosd-client --output-volume lower"), { repeating = true, locked = true })
+
+-- Key Release Bindings (bindr)
 hl.bind("Caps_Lock", hl.dsp.exec_cmd("swayosd-client --caps-lock"), { release = true })
 hl.bind("Scroll_Lock", hl.dsp.exec_cmd("swayosd-client --scroll-lock"), { release = true })
 hl.bind("Num_Lock", hl.dsp.exec_cmd("swayosd-client --num-lock"), { release = true })
