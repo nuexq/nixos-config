@@ -1,8 +1,5 @@
 { inputs, pkgs, ... }:
 
-let
-  hyprland-pkgs = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in
 {
   imports = [
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen5
@@ -12,11 +9,9 @@ in
     graphics = {
       enable = true;
       enable32Bit = true;
-      package = hyprland-pkgs.mesa;
       extraPackages = with pkgs; [
         vulkan-loader
         vulkan-tools
-        hyprland-pkgs.mesa
         libva-vdpau-driver
         libvdpau-va-gl
       ];
