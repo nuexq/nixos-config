@@ -5,7 +5,7 @@
       ids = [ "*" ];
       settings = {
         main = {
-          capslock = "overload(hyper, esc)";
+          capslock = "overloadt(hyper, esc, 150)";
           esc = "capslock";
         };
         "hyper:C-M-S-A" = {
