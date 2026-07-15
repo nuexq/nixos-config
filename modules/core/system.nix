@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }:
 {
   nix = {
+    package = pkgs.lixPackageSets.stable.lix;
     settings = {
       cores = 12;
       max-jobs = "auto";

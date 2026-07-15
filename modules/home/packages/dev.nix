@@ -4,6 +4,7 @@
     # Nix
     nixd # nix lsp
     nixfmt # nix formatter
+    nixpkgs-review
 
     # C / C++
     gcc
