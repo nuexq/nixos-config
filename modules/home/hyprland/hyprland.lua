@@ -220,8 +220,8 @@ hl.bind("SUPER + ALT + k", hl.dsp.exec_cmd("hyprctl dispatch moveactive 0 -40"))
 hl.bind("SUPER + ALT + l", hl.dsp.exec_cmd("hyprctl dispatch moveactive 40 0"))
 
 -- Scratchpads / Special Workspaces (FIXED: follow = false)
-hl.bind("SUPER + ALT + S", hl.dsp.window.move({ workspace = "special", follow = false }))
-hl.bind("SUPER + S", hl.dsp.exec_cmd("hyprctl dispatch togglespecialworkspace"))
+hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind("SUPER + ALT + S", hl.dsp.window.move({ workspace = "special:magic", follow = false }))
 
 -- Multimedia Keys
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
