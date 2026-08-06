@@ -19,14 +19,14 @@
       "clock"
       "custom/r_end"
       "custom/l_end"
-      "hyprland/workspaces"
+      "niri/workspaces"
       "custom/r_end"
       "custom/padd"
     ];
     modules-center = [
       "custom/padd"
       "custom/l_end"
-      "hyprland/window"
+      "niri/window"
       "custom/r_end"
       "custom/padd"
     ];
@@ -118,7 +118,7 @@
       };
     };
 
-    "hyprland/workspaces" = {
+    "niri/workspaces" = {
       disable-scroll = true;
       rotate = 0;
       all-outputs = true;
@@ -127,7 +127,7 @@
       persistent-workspaces = { };
     };
 
-    "hyprland/window" = {
+    "niri/window" = {
       format = " 󱄅  {}";
       rotate = 0;
       separate-outputs = true;

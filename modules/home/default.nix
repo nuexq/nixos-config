@@ -13,6 +13,7 @@
     ./gtk.nix                         # gtk theme
     ./qt.nix                          # qt theme
     ./hyprland                        # window manager
+    ./niri                             # window manager
     ./lazygit.nix                     # git ui
     ./nemo.nix                        # file manager
     ./nvim                            # neovim editor

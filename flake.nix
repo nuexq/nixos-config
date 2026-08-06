@@ -19,22 +19,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
-      inputs.nixpkgs.follows = "hyprland/nixpkgs";
-    };
-
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs = {
-        hyprgraphics.follows = "hyprland/hyprgraphics";
-        hyprlang.follows = "hyprland/hyprlang";
-        hyprutils.follows = "hyprland/hyprutils";
-        nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "hyprland/systems";
-      };
+    # hyprland.url = "github:hyprwm/Hyprland";
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-gaming.url = "github:fufexan/nix-gaming";
@@ -59,7 +47,8 @@
 
   };
 
-  outputs = { nixpkgs, self, ... }@inputs:
+  outputs =
+    { nixpkgs, self, ... }@inputs:
     let
       username = "nuexq";
       system = "x86_64-linux";
@@ -72,7 +61,8 @@
       myPkgs = import ./pkgs {
         inherit pkgs;
       };
-    in {
+    in
+    {
       packages.${system} = myPkgs;
 
       nixosConfigurations = {

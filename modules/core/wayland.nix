@@ -1,10 +1,12 @@
 { inputs, pkgs, ... }:
 {
-  programs.hyprland = {
+  imports = [
+    inputs.niri.nixosModules.niri
+  ];
+
+  programs.niri = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    package = pkgs.niri-unstable;
   };
 
   xdg.portal = {
@@ -12,9 +14,8 @@
     xdgOpenUsePortal = true;
     config = {
       common.default = [ "gtk" ];
-      hyprland.default = [
+      niri.default = [
         "gtk"
-        "hyprland"
       ];
     };
 
