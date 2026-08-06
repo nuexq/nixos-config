@@ -25,6 +25,15 @@
       criticalPowerAction = "PowerOff";
     };
 
+    udev.extraRules = ''
+      # Disable wakeup from internal keyboard/trackpoint (serio0)
+      ACTION=="add", SUBSYSTEM=="serio", DRIVER=="atkbd", ATTR{power/wakeup}="disabled"
+      
+      # Disable wakeup from USB and USB-C PD controllers
+      ACTION=="add", SUBSYSTEM=="usb", ATTR{power/wakeup}="disabled"
+      ACTION=="add", SUBSYSTEM=="pci", ATTR{power/wakeup}="disabled"
+    '';
+
     # tlp = {
     #   enable = true;
     #   settings = {
