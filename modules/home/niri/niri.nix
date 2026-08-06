@@ -27,8 +27,8 @@
       input = {
         keyboard = {
           xkb = {
-            layout = "ar,us";
-            options = "grp:alt_shift_toggle";
+            layout = "us,ara";
+            options = "grp:win_space_toggle";
           };
           repeat-delay = 300;
         };
@@ -69,7 +69,7 @@
           { proportion = 1.0; }
         ];
         default-column-width = {
-          proportion = 0.66667;
+          proportion = 0.5;
         };
 
         focus-ring = {
@@ -107,6 +107,10 @@
 
       overview = {
         workspace-shadow.enable = false;
+      };
+
+      hotkey-overlay = {
+        skip-at-startup = true;
       };
 
       screenshot-path = "~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png";
