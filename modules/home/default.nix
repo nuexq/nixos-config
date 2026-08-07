@@ -12,8 +12,8 @@
     ./git.nix                         # version control
     ./gtk.nix                         # gtk theme
     ./qt.nix                          # qt theme
-    ./hyprland                        # window manager
-    ./niri                             # window manager
+    ./hypr                            # hypr related 
+    ./niri                            # window manager
     ./lazygit.nix                     # git ui
     ./nemo.nix                        # file manager
     ./nvim                            # neovim editor
