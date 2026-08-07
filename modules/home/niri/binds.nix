@@ -29,6 +29,7 @@
       "Mod+W".action = toggle-column-tabbed-display; # Stack column windows vertically into tabs
       "Mod+C".action = center-column; # Re-center active column on ribbon
       "Mod+R".action = switch-preset-column-width; # Cycle column widths (e.g. 50% -> 66% -> 100%)
+      "Mod+O".action = toggle-overview;
 
       ## Workspace Focus
       "Mod+1".action = focus-workspace 1;
@@ -63,7 +64,7 @@
       ## Fullscreen & Session
       "Alt+Return".action = fullscreen-window;
       "Mod+Shift+Q".action = quit;
-      "Mod+Shift+Slash".action = show-hotkey-overlay;
+      # "Mod+Shift+Slash".action = show-hotkey-overlay;
 
       ## Column Consumption & Expulsion (Unique to Niri)
       "Mod+Alt+H".action = consume-window-into-column; # Pull left window into vertical stack

@@ -1,0 +1,192 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,ara"
+            model ""
+            rules ""
+            variant ""
+            options "grp:win_space_toggle"
+        }
+        repeat-delay 300
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        natural-scroll
+        accel-profile "flat"
+    }
+    mouse { accel-profile "flat"; }
+}
+output "eDP-1" {
+    scale 1.000000
+    transform "normal"
+    position x=0 y=0
+}
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png"
+prefer-no-csd
+overview { 
+  workspace-shadow { off; };
+  zoom 0.375;
+  backdrop-color "#181825"
+}
+layout {
+    gaps 8
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
+    focus-ring {
+        width 1
+        active-color "#585b70"
+        inactive-color "#181825"
+    }
+    border { off; }
+    background-color "transparent"
+    tab-indicator {
+        gap 5.000000
+        width 4
+        length total-proportion=0.25
+        position "left"
+        gaps-between-tabs 0.000000
+        corner-radius 0.000000
+        active-color "#cdd6f4"
+        inactive-color "#585b70"
+    }
+    insert-hint { color "#cba6f780"; }
+    default-column-width { proportion 0.500000; }
+    preset-column-widths {
+        proportion 0.500000
+        proportion 0.666670
+        proportion 1.000000
+    }
+    center-focused-column "never"
+}
+cursor {
+    xcursor-theme "phinger-cursors-dark"
+    xcursor-size 15
+    hide-when-typing
+}
+hotkey-overlay { skip-at-startup; }
+binds {
+    Mod+O { toggle-overview; } // new
+    Alt+Return { fullscreen-window; }
+    Alt+Space { spawn "vicinae" "toggle"; }
+    "Caps_Lock" { spawn "swayosd-client" "--caps-lock"; }
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+Alt+Equal { set-column-width "+10%"; }
+    Mod+Alt+Escape { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Alt+H { consume-window-into-column; }
+    Mod+Alt+L { expel-window-from-column; }
+    Mod+Alt+Minus { set-column-width "-10%"; }
+    Mod+Alt+R { reset-window-height; }
+    Mod+B { spawn "helium"; }
+    Mod+BracketLeft { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+C { center-column; }
+    Mod+E { spawn "nemo"; }
+    Mod+Escape { spawn "hyprlock"; }
+    Mod+F { maximize-column; }
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
+    Mod+Q { close-window; }
+    Mod+R { switch-preset-column-width; }
+    Mod+Return { spawn "ghostty"; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+Alt+Ctrl+A { screenshot-window show-pointer=false write-to-disk=false; }
+    Mod+Shift+Alt+Ctrl+B { spawn "toggle-waybar"; }
+    Mod+Shift+Alt+Ctrl+C { spawn "hyprpicker" "-a"; }
+    Mod+Shift+Alt+Ctrl+Equal { spawn "woomer"; }
+    Mod+Shift+Alt+Ctrl+F { screenshot-screen show-pointer=false; }
+    Mod+Shift+Alt+Ctrl+S { screenshot show-pointer=false; }
+    Mod+Shift+Alt+Ctrl+V { spawn "vicinae" "vicinae://launch/clipboard/history"; }
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+J { move-window-down; }
+    Mod+Shift+K { move-window-up; }
+    Mod+Shift+L { move-column-right; }
+    Mod+Shift+Q { quit; }
+    Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+V { toggle-window-floating; }
+    Mod+W { toggle-column-tabbed-display; }
+    "Num_Lock" { spawn "swayosd-client" "--num-lock"; }
+    XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume" "lower"; }
+    XF86AudioMicMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioMute { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume" "raise"; }
+    XF86MonBrightnessDown { spawn "swayosd-client" "--brightness" "lower"; }
+    XF86MonBrightnessUp { spawn "swayosd-client" "--brightness" "raise"; }
+}
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "nm-applet"
+spawn-at-startup "poweralertd"
+spawn-at-startup "wl-clip-persist" "--clipboard" "both"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "waybar"
+spawn-at-startup "swaync"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "hypridle"
+spawn-at-startup "swayosd-server"
+spawn-at-startup "vicinae" "server"
+spawn-at-startup "ghostty" "--gtk-single-instance=true" "--quit-after-last-window-closed=false" "--initial-window=false"
+spawn-at-startup "niri" "msg" "action" "spawn" "--workspace" "1" "helium"
+spawn-at-startup "niri" "msg" "action" "spawn" "--workspace" "2" "ghostty"
+spawn-at-startup "niri" "msg" "action" "spawn" "--workspace" "3" "vesktop"
+window-rule {
+    match app-id="^(imv|org\\.gnome\\.Calculator|org\\.gnome\\.FileRoller|org\\.pulseaudio\\.pavucontrol|waypaper|zenity|SoundWireServer|file_progress|confirm|dialog|download|notification|error|confirmreset)$"
+    match title="^(Volume Control|Picture-in-Picture|Open File|Open Files|File Upload|All Files|branchdialog|Confirm to replace files|File Operation Progress)$"
+    open-floating true
+}
+window-rule {
+    match title="^Volume Control$"
+    default-column-width { fixed 700; }
+    default-window-height { fixed 450; }
+    open-floating true
+}
+window-rule {
+    match title="^Vicinae Launcher$"
+    open-floating true
+}
+
+animations { slowdown 0.666670; }
+
+// unsupported in niri-flake
+recent-windows {
+  highlight {
+        active-color "#cdd6f4ff"
+        urgent-color "#f38ba8ff"
+        padding 5
+        corner-radius 0
+    }
+
+    previews {
+        max-height 200
+        max-scale 0.375 
+    }
+
+  binds {
+    Alt+Tab { next-window scope="workspace"; }
+    Alt+Shift+Tab { previous-window scope="workspace"; }
+    Alt+Grave { next-window scope="all"; }
+    Alt+Shift+Grave { previous-window scope="all"; }
+  }
+}
+
+// unsupported in niri-flake
+gestures {
+    hot-corners {
+        off
+    }
+}
