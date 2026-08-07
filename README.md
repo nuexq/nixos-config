@@ -13,7 +13,6 @@
 Hosts:
 
 - NoPC: My main laptop.
-- tokita: A simple home server
 
 ## Components
 
