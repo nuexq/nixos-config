@@ -1,37 +1,37 @@
 { ... }:
 {
   imports = [
-    ./bat.nix                         # better cat command
-    ./browser.nix                     # firefox based browser
-    ./btop.nix                        # resouces monitor 
-    ./discord.nix                     # discord
-    ./fastfetch.nix                   # fetch tool
-    ./fzf.nix                         # fuzzy finder
-    ./gaming.nix                      # packages related to gaming
-    ./terminals.nix                   # terminal
-    ./git.nix                         # version control
-    ./gtk.nix                         # gtk theme
-    ./qt.nix                          # qt theme
-    ./hypr                            # hypr related 
-    ./niri                            # window manager
-    ./lazygit.nix                     # git ui
-    ./nemo.nix                        # file manager
-    ./nvim                            # neovim editor
-    ./obsidian.nix                    # obsidian notes
-    ./packages                        # other packages
-    ./scripts/scripts.nix             # personal scripts
-    ./ssh.nix                         # ssh config
-    ./swaync.nix                      # notification deamon
-    ./waybar                          # status bar
-    ./waypaper.nix                    # GUI wallpaper picker
-    ./xdg-mimes.nix                   # xdg config
-    ./direnv.nix                      # direnv
-    ./shell                           # shell
-    ./yazi.nix                        # tui file-manager
-    ./starship.nix                    # shell prompt
-    ./tmux.nix                        # terminal multiplexer
-    ./theme.nix                       # theme
-    ./vicinae.nix                     # launcher
-    ./wluma.nix                       # wluma
+    ./bat.nix
+    ./browser.nix
+    ./btop.nix
+    ./discord.nix
+    ./fastfetch.nix
+    ./fzf.nix
+    ./terminals.nix
+    ./git.nix
+    ./gtk.nix
+    ./qt.nix
+    ./hypr
+    ./niri
+    ./lazygit.nix
+    ./nemo.nix
+    ./nvim
+    ./obsidian.nix
+    ./packages
+    ./scripts/default.nix
+    ./ssh.nix
+    ./swaync.nix
+    ./waybar
+    ./waypaper.nix
+    ./xdg-mimes.nix
+    ./direnv.nix
+    ./shell
+    ./yazi.nix
+    ./starship.nix
+    ./tmux.nix
+    ./theme.nix
+    ./vicinae.nix
+    ./fonts.nix
+    ./wluma.nix
   ];
 }

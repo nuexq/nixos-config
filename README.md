@@ -21,7 +21,7 @@ Hosts:
 - **Application Launcher:** [vicinae][vicinae]
 - **Notification Daemon:** [swaync][swaync]
 - **Terminal Emulator:** [Ghostty][Ghostty]
-- **Shell:** [zsh][zsh] + [starship][starship]
+- **Shell:** [fish][fish] + [starship][starship]
 - **Text Editor:** [Neovim][Neovim]
 - **File Manager:** [nemo][nemo] + [yazi][yazi]
 - **Fonts:** [Ioskeley Mono NF][Ioskeley Mono] + [Inter NF][Inter]
@@ -47,7 +47,7 @@ Hosts:
 [vicinae]: https://github.com/vicinaehq/vicinae
 [nemo]: https://github.com/linuxmint/nemo/
 [yazi]: https://github.com/sxyazi/yazi
-[zsh]: https://ohmyz.sh/
+[fish]: https://fishshell.com/ 
 [Hyprlock]: https://github.com/hyprwm/hyprlock
 [audacious]: https://audacious-media-player.org/
 [mpv]: https://github.com/mpv-player/mpv

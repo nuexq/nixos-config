@@ -1,10 +1,27 @@
-{ pkgs, inputs, username, host, self, ... }: {
+{
+  pkgs,
+  inputs,
+  username,
+  host,
+  self,
+  ...
+}:
+{
   imports = [ inputs.home-manager.nixosModules.home-manager ];
+
+  programs.fish.enable = true;
 
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username host self; };
+    extraSpecialArgs = {
+      inherit
+        inputs
+        username
+        host
+        self
+        ;
+    };
     users.${username} = {
       imports = [ ./../home ];
 
@@ -20,10 +37,12 @@
   users.users."${username}" = {
     isNormalUser = true;
     description = username;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.fish;
   };
 
   nix.settings.allowed-users = [ username ];
 }
-

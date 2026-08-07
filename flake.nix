@@ -19,7 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprland.url = "github:hyprwm/Hyprland";
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +26,6 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     catppuccin.url = "github:catppuccin/nix";

@@ -27,23 +27,17 @@
     };
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
-  nixpkgs = {
-    overlays = [
-      inputs.nur.overlays.default
-      inputs.rust-overlay.overlays.default
-      inputs.niri.overlays.niri
-    ];
-  };
 
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-    sshfs
-    comma
+  nixpkgs.overlays = [
+    inputs.nur.overlays.default
+    inputs.rust-overlay.overlays.default
+    inputs.niri.overlays.niri
   ];
 
-  time.timeZone = "Africa/Casablanca";
-  i18n.defaultLocale = "en_US.UTF-8";
+  programs = {
+    nix-ld.enable = true;
+    nix-ld.libraries = [ ];
+  };
+
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "26.05";
 }

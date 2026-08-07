@@ -1,4 +1,10 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
+{
   imports = [ inputs.vicinae.homeManagerModules.default ];
 
   services.vicinae = {
@@ -12,6 +18,7 @@
       theme.dark.name = "catppuccin-mocha";
       rootSearch.searchFiles = false;
       closeOnFocusLoss = false;
+      pop_to_root_on_close = true;
       launcher_window = {
         opacity = 1.0;
         client_side_decorations.rounding = 0;
@@ -20,16 +27,15 @@
       providers = {
         "@sovereign/vicinae-extension-awww-switcher-0" = {
           preferences = {
-            wallpaperPath = "/home/nuexq/Pictures/wallpapers";
+            wallpaperPath = "${config.home.homeDirectory}/Pictures/wallpapers";
             postCommand = "ln -sf \${wallpaper} ~/Pictures/current-wallpaper";
           };
         };
       };
     };
-    extensions =
-      with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
-        nix
-        awww-switcher
-      ];
+    extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
+      nix
+      awww-switcher
+    ];
   };
 }
