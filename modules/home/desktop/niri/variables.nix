@@ -13,9 +13,6 @@
     WLR_BACKEND = "vulkan";
     WLR_RENDERER = "vulkan";
     WLR_NO_HARDWARE_CURSORS = 1;
-    XDG_CURRENT_DESKTOP = "niri";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "niri";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     EDITOR = "nvim";
@@ -24,8 +21,6 @@
     GTK_THEME = "catppuccin-mocha-mauve-standard";
     GTK_USE_PORTAL = "1";
     _JAVA_AWT_WM_NONREPARENTING = "1";
-    # XCURSOR_THEME = "phinger-cursors-dark";
-    # XCURSOR_SIZE = "15";
     # QT
     QT_AUTO_SCREEN_SCALE_FACTOR = 1;
     QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;

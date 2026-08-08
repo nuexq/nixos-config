@@ -7,7 +7,7 @@
 {
   imports = [ inputs.vicinae.homeManagerModules.default ];
 
-  services.vicinae = {
+  programs.vicinae = {
     enable = true;
     settings = {
       faviconService = "twenty";

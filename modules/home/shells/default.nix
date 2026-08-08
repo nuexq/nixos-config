@@ -2,7 +2,7 @@
 {
   imports = [
     ./fish.nix
-    ./shell_aliases.nix
+    ./aliases.nix
     ./zsh.nix
   ];
 }

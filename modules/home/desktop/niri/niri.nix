@@ -101,8 +101,6 @@
       };
 
       cursor = {
-        theme = "phinger-cursors-dark";
-        size = 15;
         hide-when-typing = true;
       };
 

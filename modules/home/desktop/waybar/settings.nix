@@ -54,7 +54,16 @@
       format = "󰍛 {usage}%";
       rotate = 0;
       format-alt = "{icon0}{icon1}{icon2}{icon3}";
-      format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+      format-icons = [
+        "▁"
+        "▂"
+        "▃"
+        "▄"
+        "▅"
+        "▆"
+        "▇"
+        "█"
+      ];
     };
 
     memory = {
@@ -148,7 +157,17 @@
       device = "intel_backlight";
       rotate = 0;
       format = "{icon} {percent}%";
-      format-icons = [ "" "" "" "" "" "" "" "" "" ];
+      format-icons = [
+        ""
+        ""
+        ""
+        ""
+        ""
+        ""
+        ""
+        ""
+        ""
+      ];
       on-scroll-up = "swayosd-client --brightness raise 1%+";
       on-scroll-down = "swayosd-client --brightness lower 1%-";
       min-length = 6;
@@ -170,8 +189,7 @@
       format-linked = "󰈀 {ifname} (No IP)";
       format-disconnected = "󰖪 ";
       tooltip-format-disconnected = "Disconnected";
-      format-alt =
-        "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>";
+      format-alt = "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>";
       interval = 2;
     };
 
@@ -191,7 +209,11 @@
         phone = "";
         portable = "";
         car = "";
-        default = [ "" "" "" ];
+        default = [
+          ""
+          ""
+          ""
+        ];
       };
     };
 
@@ -211,17 +233,13 @@
       tooltip = false;
       format = "{icon}";
       format-icons = {
-        notification =
-          "<span foreground='#f38ba8'><small><sup>⬤</sup></small></span>";
+        notification = "<span foreground='#f38ba8'><small><sup>⬤</sup></small></span>";
         none = " ";
-        dnd-notification =
-          "<span foreground='#f38ba8'><small><sup>⬤</sup></small></span>";
+        dnd-notification = "<span foreground='#f38ba8'><small><sup>⬤</sup></small></span>";
         dn-none = " ";
-        inhibited-notification =
-          "<span foreground='#f38ba8'><sup></sup></span>  <span foreground='#f38ba8'></span>";
+        inhibited-notification = "<span foreground='#f38ba8'><sup></sup></span>  <span foreground='#f38ba8'></span>";
         inhibited-none = "  <span foreground='#f38ba8'></span>";
-        dnd-inhibited-notification =
-          "<span foreground='#f38ba8'><sup></sup></span>  <span foreground='#f38ba8'></span>";
+        dnd-inhibited-notification = "<span foreground='#f38ba8'><sup></sup></span>  <span foreground='#f38ba8'></span>";
         dnd-inhibited-none = "  <span foreground='#f38ba8'></span>";
       };
       return-type = "json";
@@ -249,7 +267,19 @@
       format-charging = " {capacity}%";
       format-plugged = " {capacity}%";
       format-alt = "{time} {icon}";
-      format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+      format-icons = [
+        "󰂎"
+        "󰁺"
+        "󰁻"
+        "󰁼"
+        "󰁽"
+        "󰁾"
+        "󰁿"
+        "󰂀"
+        "󰂁"
+        "󰂂"
+        "󰁹"
+      ];
     };
 
     "custom/power" = {
@@ -307,4 +337,3 @@
 
   };
 }
-

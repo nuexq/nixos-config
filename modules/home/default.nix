@@ -1,37 +1,15 @@
 { ... }:
+
 {
   imports = [
-    ./bat.nix
-    ./browser.nix
-    ./btop.nix
-    ./discord.nix
-    ./fastfetch.nix
-    ./fzf.nix
-    ./terminals.nix
-    ./git.nix
-    ./gtk.nix
-    ./qt.nix
-    ./hypr
-    ./niri
-    ./lazygit.nix
-    ./nemo.nix
+    ./apps
+    ./desktop
     ./nvim
-    ./obsidian.nix
     ./packages
-    ./scripts/default.nix
-    ./ssh.nix
-    ./swaync.nix
-    ./waybar
-    ./waypaper.nix
-    ./xdg-mimes.nix
-    ./direnv.nix
-    ./shell
-    ./yazi.nix
-    ./starship.nix
-    ./tmux.nix
+    ./programs
+    ./scripts
+    ./shells
+    ./system
     ./theme.nix
-    ./vicinae.nix
-    ./fonts.nix
-    ./wluma.nix
   ];
 }
