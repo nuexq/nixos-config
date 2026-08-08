@@ -75,6 +75,12 @@
 
       ## Window State & Height Controls
       "Mod+V".action = toggle-window-floating;
+      "Mod+Alt+V".action = config.lib.niri.actions.spawn "sh" "-c" ''
+        niri msg action toggle-window-floating && \
+        niri msg action set-window-width "37.5%" && \
+        niri msg action set-window-height "50%" && \
+        niri msg action center-column
+      '';
       "Mod+Alt+R".action = reset-window-height;
       "Mod+Alt+Minus".action = set-column-width "-10%";
       "Mod+Alt+Equal".action = set-column-width "+10%";
