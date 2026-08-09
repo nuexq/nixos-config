@@ -85,6 +85,7 @@ for _, server in ipairs(servers) do
 end
 
 -- Manual setup
+-- nix LSP
 local flake = vim.env.NH_FLAKE or (vim.fn.expand("~") .. "/nixos-config")
 
 vim.lsp.config.nixd = {
@@ -110,3 +111,26 @@ vim.lsp.config.nixd = {
 	},
 }
 vim.lsp.enable("nixd")
+
+-- QML LSP
+
+local system_qml_path = "/run/current-system/sw/lib/qt-6/qml"
+local home_manager_qml_path = vim.fn.expand("~/.local/state/nix/profiles/home-manager/home-path/lib/qt-6/qml")
+local user_qml_path = vim.fn.expand("~/.nix-profile/lib/qt-6/qml")
+
+local import_paths = table.concat({
+	system_qml_path,
+	user_qml_path,
+	home_manager_qml_path,
+}, ":")
+
+vim.lsp.config.qmlls = {
+	cmd = { "qmlls" },
+	cmd_env = {
+		QML2_IMPORT_PATH = import_paths,
+		QML_IMPORT_PATH = import_paths,
+	},
+	filetypes = { "qml", "qmljs" },
+	root_markers = { "qmldir", "CMakeLists.txt", "qmlls.ini", ".git" },
+}
+vim.lsp.enable("qmlls")

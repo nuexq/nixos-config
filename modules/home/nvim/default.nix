@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     tree-sitter
+    qt6.qtdeclarative # QML LSP
     python313Packages.pylatexenc
 
     (texlive.withPackages (
