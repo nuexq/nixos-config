@@ -4,7 +4,7 @@ let
 
   appsToAssoc = {
     browser = {
-      app = "zen-beta";
+      app = "helium";
       mimeTypes = [
         "text/html"
         "x-scheme-handler/about"
