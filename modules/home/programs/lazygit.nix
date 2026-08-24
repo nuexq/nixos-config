@@ -1,16 +1,15 @@
-{ pkgs, ... }:
+{ ... }:
 {
-
   programs.lazygit = {
     enable = true;
 
     settings = {
       gui.border = "single";
       git = {
-        pagers = [
+        diffRenderers = [
           {
             command = "difft --color=always";
-            externalDiffCommand = "difft";
+            type = "extDiff";
           }
         ];
       };
