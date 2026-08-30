@@ -34,6 +34,9 @@
       enable = true;
       powerOnBoot = false;
     };
+
+    opentabletdriver.enable = true;
+    uinput.enable = true;
   };
 
   services = {
@@ -48,6 +51,7 @@
       "amdgpu"
       "thinkpad_acpi"
       "snd_pci_acp6x"
+      "uinput"
     ];
     kernelParams = [
       "amdgpu.sg_display=0"
