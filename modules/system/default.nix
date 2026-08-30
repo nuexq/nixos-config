@@ -4,6 +4,7 @@
   imports = [
     ./bootloader.nix
     ./flatpak.nix
+    ./fonts.nix
     ./keyd.nix
     ./networking.nix
     ./nh.nix
