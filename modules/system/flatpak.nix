@@ -6,6 +6,7 @@
     enable = true;
     packages = [
       "org.vinegarhq.Sober"
+      "com.github.flxzt.rnote"
     ];
     overrides = {
       global = {
