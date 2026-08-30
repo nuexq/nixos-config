@@ -5,8 +5,8 @@
 
     settings = {
       theme = "catppuccin-${config.catppuccin.flavor}";
-      font-family = "IoskeleyMono Nerd Font";
-      font-size = 9;
+      font-family = "IoskeleyMonoTerm Nerd Font";
+      font-size = 10;
 
       cursor-style = "block";
       cursor-style-blink = false;

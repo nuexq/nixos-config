@@ -3,7 +3,7 @@
         * {
       border: none;
       border-radius: 0px;
-      font-family: "IoskeleyMono Nerd Font";
+      font-family: "IoskeleyMonoTerm Nerd Font";
       font-size: 10px;
       min-height: 10px;
     }
