@@ -8,6 +8,7 @@
         name = "nuexq";
         email = "nuexqq@gmail.com";
       };
+      log.showSignature = false;
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
       pull.ff = "only";
