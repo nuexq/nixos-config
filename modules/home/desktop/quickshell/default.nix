@@ -14,5 +14,10 @@
 
     systemd.enable = true;
   };
-}
 
+  # cli tools that used in the components
+  home.packages = with pkgs; [
+    brightnessctl
+    inotify-tools
+  ];
+}
