@@ -1,44 +1,71 @@
-{ config, ... }: {
+{ ... }: {
 
-  programs.ghostty = {
+  # programs.ghostty = {
+  #   enable = true;
+  #
+  #   settings = {
+  #     theme = "catppuccin-${config.catppuccin.flavor}";
+  #     font-family = "IoskeleyMonoTerm Nerd Font";
+  #     font-size = 10;
+  #
+  #     cursor-style = "block";
+  #     cursor-style-blink = false;
+  #     mouse-hide-while-typing = true;
+  #
+  #     shell-integration = "fish";
+  #     shell-integration-features = "no-cursor";
+  #
+  #     window-width = 120;
+  #     window-height = 45;
+  #     window-padding-x = 10;
+  #     window-padding-y = 8;
+  #     window-padding-color = "background";
+  #
+  #     confirm-close-surface = false;
+  #     clipboard-read = "allow";
+  #     clipboard-paste-protection = false;
+  #
+  #     gtk-tabs-location = "hidden";
+  #     window-decoration = false;
+  #
+  #     keybind = [
+  #       "alt+1=unbind"
+  #       "alt+2=unbind"
+  #       "alt+3=unbind"
+  #       "alt+4=unbind"
+  #       "alt+5=unbind"
+  #       "alt+6=unbind"
+  #       "alt+7=unbind"
+  #       "alt+8=unbind"
+  #       "alt+9=unbind"
+  #     ];
+  #   };
+  # };
+
+  programs.foot = {
     enable = true;
+    server.enable = true;
 
     settings = {
-      theme = "catppuccin-${config.catppuccin.flavor}";
-      font-family = "IoskeleyMonoTerm Nerd Font";
-      font-size = 10;
+      main = {
+        font = "IoskeleyMonoTerm Nerd Font:size=10";
 
-      cursor-style = "block";
-      cursor-style-blink = false;
-      mouse-hide-while-typing = true;
+        line-height = "12";
+        vertical-letter-offset = "0";
 
-      shell-integration = "fish";
-      shell-integration-features = "no-cursor";
+        initial-window-size-chars = "120x45";
+        pad = "10x8";
+        dpi-aware = "no";
+      };
 
-      window-width = 120;
-      window-height = 45;
-      window-padding-x = 10;
-      window-padding-y = 8;
-      window-padding-color = "background";
+      cursor = {
+        style = "block";
+        blink = "no";
+      };
 
-      confirm-close-surface = false;
-      clipboard-read = "allow";
-      clipboard-paste-protection = false;
-
-      gtk-tabs-location = "hidden";
-      window-decoration = false;
-
-      keybind = [
-        "alt+1=unbind"
-        "alt+2=unbind"
-        "alt+3=unbind"
-        "alt+4=unbind"
-        "alt+5=unbind"
-        "alt+6=unbind"
-        "alt+7=unbind"
-        "alt+8=unbind"
-        "alt+9=unbind"
-      ];
+      mouse = {
+        hide-when-typing = "yes";
+      };
     };
   };
 }
