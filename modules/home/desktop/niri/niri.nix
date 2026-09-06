@@ -13,7 +13,6 @@
     wf-recorder
     glib
     wayland
-    swayosd
   ];
 
   systemd.user.targets.niri-session.Unit.Wants = [
@@ -155,25 +154,20 @@
             "store"
           ];
         }
-        { command = [ "waybar" ]; }
-        { command = [ "swaync" ]; }
         { command = [ "awww-daemon" ]; }
         { command = [ "hypridle" ]; }
-        { command = [ "swayosd-server" ]; }
         {
           command = [
             "vicinae"
             "server"
           ];
         }
-        {
-          command = [
-            "ghostty"
-            "--gtk-single-instance=true"
-            "--quit-after-last-window-closed=false"
-            "--initial-window=false"
-          ];
-        }
+        # {
+        #   command = [
+        #     "foot"
+        #     "--server"
+        #   ];
+        # }
       ];
 
       window-rules = [
