@@ -13,7 +13,7 @@
       # Hyper + <letter> -> Systems overlay / Utilities action...
 
       ## Core Applications & Launchers
-      "Mod+Return".action = spawn "ghostty";
+      "Mod+Return".action = spawn "foot";
       "Mod+B".action = spawn "helium";
       "Mod+E".action = spawn "nemo";
 
@@ -110,14 +110,15 @@
       };
 
       ## Media Keys
-      "XF86AudioRaiseVolume".action = spawn "swayosd-client" "--output-volume" "raise";
-      "XF86AudioLowerVolume".action = spawn "swayosd-client" "--output-volume" "lower";
-      "XF86AudioMute".action = spawn "swayosd-client" "--output-volume" "mute-toggle";
-      "XF86AudioMicMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle";
-      "XF86MonBrightnessUp".action = spawn "swayosd-client" "--brightness" "raise";
-      "XF86MonBrightnessDown".action = spawn "swayosd-client" "--brightness" "lower";
+      "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "5%+";
+      "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-";
+      "XF86AudioMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
 
-      "Caps_Lock".action = spawn "swayosd-client" "--caps-lock";
-      "Num_Lock".action = spawn "swayosd-client" "--num-lock";
+      "XF86AudioMicMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle";
+
+      "XF86MonBrightnessUp".action = spawn "brightnessctl" "set" "5%+";
+      "XF86MonBrightnessDown".action = spawn "brightnessctl" "set" "5%-";
+
+      "Caps_Lock".action = spawn "qs" "ipc" "call" "osd" "showCaps";
     };
 }
