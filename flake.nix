@@ -42,6 +42,8 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcord.url = "github:4evy/nixcord";
   };
 
   outputs =
