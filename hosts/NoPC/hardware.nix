@@ -30,17 +30,8 @@
       linux-firmware
     ];
 
-    bluetooth = {
-      enable = true;
-      powerOnBoot = false;
-    };
-
     opentabletdriver.enable = true;
     uinput.enable = true;
-  };
-
-  services = {
-    blueman.enable = true;
   };
 
   boot = {
