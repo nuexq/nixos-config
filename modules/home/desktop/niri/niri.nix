@@ -197,6 +197,8 @@
           open-floating = true;
         }
       ];
+
+      debug.honor-xdg-activation-with-invalid-serial = true;
     };
   };
 }

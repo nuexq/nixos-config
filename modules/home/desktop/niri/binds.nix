@@ -96,6 +96,7 @@
       "${hyper}+Equal".action = spawn "woomer";
       "Mod+Escape".action = spawn "hyprlock";
       "${hyper}+B".action = spawn "toggle-waybar";
+      "Mod+N".action = spawn "qs" "ipc" "call" "notifications" "toggle";
 
       ## Screen Capture
       "${hyper}+S".action.screenshot = {
