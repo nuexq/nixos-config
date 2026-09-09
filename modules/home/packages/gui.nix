@@ -10,8 +10,11 @@
     anki
 
     file-roller # archive
+
+    thunderbird # email
+
+    gammaray
   ];
 
   programs.zathura.enable = true;
 }
-
