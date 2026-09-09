@@ -3,6 +3,19 @@ let
   inherit (lib) nameValuePair;
 
   appsToAssoc = {
+    email = {
+      app = "thunderbird"; # Use "org.mozilla.Thunderbird" if installed via Flatpak
+      mimeTypes = [
+        "x-scheme-handler/mailto"
+        "x-scheme-handler/mid"
+        "x-scheme-handler/webcal"
+        "x-scheme-handler/webcals"
+        "x-scheme-handler/net.thunderbird"
+        "message/rfc822"
+        "text/calendar"
+        "application/x-xpinstall"
+      ];
+    };
     browser = {
       app = "helium";
       mimeTypes = [
@@ -34,7 +47,7 @@ let
     };
 
     media = {
-      app = "mpv";
+      app = "vlc";
       mimeTypes = [
         "video/*"
         "audio/*"
@@ -69,6 +82,18 @@ let
         "application/rar"
         "application/7z"
         "application/x-tar"
+      ];
+    };
+    osu = {
+      app = "osu!";
+      mimeTypes = [
+        "application/x-osu-beatmap"
+        "application/x-osu-beatmap-package"
+        "application/x-osu-skin"
+        "application/x-osu-skin-package"
+        "application/x-osu-replay"
+        "x-scheme-handler/osu"
+        "x-scheme-handler/osump"
       ];
     };
   };
