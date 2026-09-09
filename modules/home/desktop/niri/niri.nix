@@ -10,7 +10,7 @@
     slurp
     wl-clip-persist
     cliphist
-    wf-recorder
+    wl-screenrec
     glib
     wayland
   ];
