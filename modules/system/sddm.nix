@@ -1,6 +1,10 @@
-{ inputs, config, ... }:
+{
+  inputs,
+  username,
+  ...
+}:
+
 let
-  userName = builtins.head (builtins.attrNames config.users.users);
   txt = "#2c2520";
 in
 {
@@ -15,7 +19,7 @@ in
     };
 
     profileIcons = {
-      "${userName}" = ../../assets/pfp.jpg;
+      "${username}" = ../../assets/pfp.jpg;
     };
 
     settings = {
