@@ -4,7 +4,7 @@
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
     inter-nerdfont
-    ioskeley-mono.normal-term-NF
+    ioskeley-mono.term-nf
     self.packages.${pkgs.stdenv.hostPlatform.system}.deserted-font
   ];
 

@@ -48,7 +48,7 @@
 
     settings = {
       main = {
-        font = "IoskeleyMonoTerm Nerd Font:size=10";
+        font = "IoskeleyMonoTerm Nerd Font Mono:size=10";
 
         line-height = "12";
         vertical-letter-offset = "0";
