@@ -1,17 +1,14 @@
-{ inputs, ... }:
 {
-  imports = [ inputs.nixcord.homeModules.nixcord ];
-
-  programs.nixcord = {
+  programs.vesktop = {
     enable = true;
 
-    discord.enable = false;
-    vesktop.enable = true;
-
-    config = {
+    vencord.settings = {
       themeLinks = [
-        "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
+        ''
+          https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css
+        ''
       ];
+
       autoUpdate = false;
       autoUpdateNotification = false;
       notifyAboutUpdates = false;
@@ -19,18 +16,19 @@
       disableMinSize = true;
 
       plugins = {
-        shikiCodeblocks = {
-          enable = true;
+        ShikiCodeblocks = {
+          enabled = true;
           theme = "https://cdn.jsdelivr.net/gh/shikijs/textmate-grammars-themes@bc5436518111d87ea58eb56d97b3f9bec30e6b83/packages/tm-themes/themes/catppuccin-mocha.json";
         };
-        youtubeAdblock.enable = true;
-        clearUrls.enable = true;
-        onePingPerDm.enable = true;
-        gifPaste.enable = true;
-        volumeBooster.enable = true;
 
-        textReplace = {
-          enable = true;
+        YoutubeAdblock.enabled = true;
+        ClearUrls.enabled = true;
+        OnePingPerDM.enabled = true;
+        GifPaste.enabled = true;
+        VolumeBooster.enabled = true;
+
+        TextReplace = {
+          enabled = true;
           regexRules = [
             {
               find = "instagram\\.com";
