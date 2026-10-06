@@ -13,7 +13,6 @@
       substituters = [
         "https://nix-community.cachix.org"
         "https://nix-gaming.cachix.org"
-        "https://ghostty.cachix.org"
         "https://vicinae.cachix.org"
         "https://niri.cachix.org"
       ];
