@@ -1,5 +1,9 @@
 { pkgs, ... }: {
-  home.packages = (with pkgs; [
-    nur.repos.trev.helium
-  ]);
+  home.packages = (
+    with pkgs;
+    [
+      nur.repos.trev.helium
+      qutebrowser
+    ]
+  );
 }
