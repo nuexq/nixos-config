@@ -9,7 +9,7 @@
   ];
 
   networking.hostName = "NoPC";
- 
+
   services.fwupd.enable = true;
 
   zramSwap = {
@@ -24,6 +24,7 @@
     "vm.page-cluster" = 0;
     "vm.watermark_boost_factor" = 0;
     "vm.watermark_scale_factor" = 125;
+    "vm.vfs_cache_pressure" = 150;
 
     "net.core.default_qdisc" = "fq";
     "net.ipv4.tcp_congestion_control" = "bbr";
