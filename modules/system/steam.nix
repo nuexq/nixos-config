@@ -32,4 +32,8 @@
       ];
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    steam-art-manager
+  ];
 }
