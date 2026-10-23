@@ -22,6 +22,9 @@
     niri = {
       url = "github:bugeats/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+
+      inputs.niri-unstable.url = "github:YaLTeR/niri";
+      inputs.niri-unstable.flake = false;
     };
 
     nix-gaming.url = "github:fufexan/nix-gaming";

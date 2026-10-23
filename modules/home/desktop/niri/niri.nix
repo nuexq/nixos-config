@@ -196,7 +196,7 @@
               app-id = "^(imv|org\\.gnome\\.Calculator|org\\.gnome\\.FileRoller|org\\.pulseaudio\\.pavucontrol|waypaper|zenity|SoundWireServer|file_progress|confirm|dialog|download|notification|error|confirmreset)$";
             }
             {
-              title = "^(Volume Control|Picture-in-Picture|Open File|Open Files|File Upload|All Files|branchdialog|Confirm to replace files|File Operation Progress)$";
+              title = "^(Volume Control|Picture-in-Picture|Picture in Picture|Open File|Open Files|File Upload|All Files|branchdialog|Confirm to replace files|File Operation Progress)$";
             }
           ];
           open-floating = true;
