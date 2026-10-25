@@ -11,6 +11,6 @@
     image = "imv"
 
     pdf = "zathura"
-    video = "mpv"
+    video = "vlc"
   '';
 }

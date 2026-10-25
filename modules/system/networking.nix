@@ -1,11 +1,17 @@
 { pkgs, ... }: {
   networking = {
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      dns = "systemd-resolved";
+    };
+
     nameservers = [
-      "8.8.8.8" # Google Public DNS
-      "8.8.4.4" # Google Public DNS
-      "1.1.1.1" # Cloudflare DNS
+      "1.1.1.1#one.one.one.one"
+      "1.0.0.1#one.one.one.one"
+      "8.8.8.8#dns.google"
+      "8.8.4.4#dns.google"
     ];
+
     firewall = {
       enable = true;
       allowedTCPPorts = [
@@ -14,6 +20,16 @@
         443 # HTTPS
       ];
     };
+  };
+
+  services.resolved = {
+    enable = true;
+    dnsovertls = "opportunistic";
+    domains = [ "~." ];
+    fallbackDns = [
+      "1.1.1.1#one.one.one.one"
+      "8.8.8.8#dns.google"
+    ];
   };
 
   environment.systemPackages = with pkgs; [ networkmanagerapplet ];

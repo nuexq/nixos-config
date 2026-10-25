@@ -261,7 +261,7 @@ wk.add({
 				icon = { icon = "", color = "red" },
 			},
 			{
-				"<leader>dl",
+				"<leader>dp",
 				function()
 					require("persistence").load({ last = true })
 				end,

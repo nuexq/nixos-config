@@ -316,8 +316,7 @@ return {
 		"clabby/difftastic.nvim",
 		config = function()
 			require("difftastic-nvim").setup({
-				download = true, -- Auto-download pre-built binary
-				vcs = "git",
+				download = false, -- Auto-download pre-built binary
 			})
 		end,
 	},
@@ -455,12 +454,19 @@ return {
 		"mrcjkb/rustaceanvim",
 		version = "^6",
 		lazy = false,
-		ft = "rust",
-		["rust-analaysis"] = {
-			cargo = {
-				allFeatures = true,
-			},
-		},
+		init = function()
+			vim.g.rustaceanvim = {
+				server = {
+					default_settings = {
+						["rust-analyzer"] = {
+							cargo = {
+								allFeatures = true,
+							},
+						},
+					},
+				},
+			}
+		end,
 	},
 	{
 		"lervag/vimtex",

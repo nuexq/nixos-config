@@ -2,9 +2,8 @@
 
   home.shellAliases = {
     # Utilities
-    cd = "z";
     cat = "bat";
-    diff = "delta --diff-so-fancy --side-by-side";
+    diff = "difft";
     less = "bat";
     pdf = "tdf";
     open = "xdg-open";

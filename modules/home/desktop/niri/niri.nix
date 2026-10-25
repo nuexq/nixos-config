@@ -174,7 +174,6 @@
           ];
         }
         { command = [ "awww-daemon" ]; }
-        { command = [ "hypridle" ]; }
         {
           command = [
             "vicinae"

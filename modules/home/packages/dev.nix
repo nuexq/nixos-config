@@ -22,7 +22,12 @@
     bun
 
     # Rust
-    (rust-bin.stable.latest.default.override { extensions = [ "rust-src" ]; })
-    cargo-watch
+    (rust-bin.stable.latest.default.override {
+      extensions = [
+        "rust-src"
+        "rust-analyzer"
+      ];
+    })
+    bacon
   ];
 }

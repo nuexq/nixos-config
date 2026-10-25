@@ -2,10 +2,11 @@
 {
   nix = {
     package = pkgs.lixPackageSets.stable.lix;
+    optimise.automatic = true;
+
     settings = {
       cores = 12;
       max-jobs = "auto";
-      auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"

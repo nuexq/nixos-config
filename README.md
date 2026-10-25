@@ -17,9 +17,9 @@ Hosts:
 ## Components
 
 - **Window Manager:** [niri][niri]
-- **Bar:** [Waybar][Waybar]
+<!-- - **Bar:** [Waybar][Waybar] -->
 - **Application Launcher:** [vicinae][vicinae]
-- **Notification Daemon:** [swaync][swaync]
+<!-- - **Notification Daemon:** [swaync][swaync] -->
 - **Terminal Emulator:** [Ghostty][Ghostty]
 - **Shell:** [fish][fish] + [starship][starship]
 - **Text Editor:** [Neovim][Neovim]
@@ -28,7 +28,7 @@ Hosts:
 - **Color Scheme:** [Catppuccin][Catppuccin]
 - **Lockscreen:** [Hyprlock][Hyprlock]
 - **Image Viewer:** [imv][imv]
-- **Media Player:** [mpv][mpv]
+- **Media Player:** [vlc][vlc]
 - **Screen Recording:** [wf-recorder][wf-recorder]
 - **Clipboard:** [wl-clip-persist][wl-clip-persist]
 - **Color Picker:** [hyprpicker][hyprpicker]
@@ -43,14 +43,13 @@ Hosts:
 [niri]: https://github.com/niri-wm/niri
 [Ghostty]: https://ghostty.org/
 [starship]: https://starship.rs
-[Waybar]: https://github.com/Alexays/Waybar
 [vicinae]: https://github.com/vicinaehq/vicinae
 [nemo]: https://github.com/linuxmint/nemo/
 [yazi]: https://github.com/sxyazi/yazi
 [fish]: https://fishshell.com/ 
 [Hyprlock]: https://github.com/hyprwm/hyprlock
 [audacious]: https://audacious-media-player.org/
-[mpv]: https://github.com/mpv-player/mpv
+[vlc]: https://github.com/videolan/vlc
 [Neovim]: https://github.com/neovim/neovim
 [imv]: https://sr.ht/~exec64/imv/
 [swaync]: https://github.com/ErikReider/SwayNotificationCenter

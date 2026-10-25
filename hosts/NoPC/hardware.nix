@@ -13,13 +13,6 @@
       extraPackages = with pkgs; [
         vulkan-loader
         vulkan-tools
-        libva-vdpau-driver
-        libvdpau-va-gl
-      ];
-
-      extraPackages32 = with pkgs.pkgsi686Linux; [
-        libva-vdpau-driver
-        libvdpau-va-gl
       ];
     };
 
@@ -35,7 +28,7 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ntfs" ];
 
     kernelModules = [
@@ -48,6 +41,7 @@
       "amdgpu.sg_display=0"
       "amd_pstate=active"
       "thinkpad_acpi.fan_control=1"
+      "amdgpu.dcdebugmask=0x10"
     ];
   };
 

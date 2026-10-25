@@ -6,11 +6,13 @@
     historySubstringSearch.enable = true;
     syntaxHighlighting.enable = true;
 
-    plugins = [{
-      # Must be before plugins that wrap widgets, such as zsh-autosuggestions or fast-syntax-highlighting
-      name = "fzf-tab";
-      src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
-    }];
+    plugins = [
+      {
+        # Must be before plugins that wrap widgets, such as zsh-autosuggestions or fast-syntax-highlighting
+        name = "fzf-tab";
+        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+      }
+    ];
 
     completionInit = ''
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -57,10 +59,5 @@
       bindkey '^p' history-search-backward
       bindkey '^n' history-search-forward
     '';
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
   };
 }

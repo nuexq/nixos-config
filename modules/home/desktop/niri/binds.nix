@@ -13,7 +13,7 @@
       # Hyper + <letter> -> Systems overlay / Utilities action...
 
       ## Core Applications & Launchers
-      "Mod+Return".action = spawn "foot";
+      "Mod+Return".action = spawn "footclient";
       "Mod+B".action = spawn "helium";
       "Mod+E".action = spawn "nemo";
 
@@ -95,7 +95,7 @@
       "${hyper}+C".action = spawn "hyprpicker" "-a";
       "${hyper}+Equal".action = spawn "woomer";
       "Mod+Escape".action = spawn "hyprlock";
-      "${hyper}+B".action = spawn "toggle-waybar";
+      # "${hyper}+B".action = spawn "toggle-waybar";
       "Mod+N".action = spawn "qs" "ipc" "call" "notifications" "toggle";
 
       ## Screen Capture
