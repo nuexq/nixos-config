@@ -10,11 +10,7 @@
       timeout = 0;
     };
 
-    initrd = {
-      compressor = "zstd";
-      verbose = false;
-      systemd.enable = true;
-    };
+    initrd.compressor = "zstd";
 
     consoleLogLevel = 0;
     kernelParams = [
