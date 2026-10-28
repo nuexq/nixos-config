@@ -47,10 +47,10 @@ wk.add({
 			"<leader>h",
 			"<cmd>nohlsearch<cr>",
 			desc = "clear search highlights",
-			icon = { icon = "", color = "orange" },
+			icon = { icon = "", color = "orange" },
 		},
 
-		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree", icon = { icon = "", color = "azure" } },
+		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree", icon = { icon = "", color = "azure" } },
 		{
 			"<leader>E",
 			"<cmd>lua MiniFiles.open()<cr>",
@@ -76,31 +76,31 @@ wk.add({
 					require("fff").find_files()
 				end,
 				desc = "Find files (fff.nvim)",
-				icon = { icon = "", color = "green" },
+				icon = { icon = "", color = "green" },
 			},
 			{
 				"<leader>ft",
 				"<cmd>Telescope oldfiles<cr>",
 				desc = "Find history",
-				icon = { icon = "", color = "blue" },
+				icon = { icon = "", color = "blue" },
 			},
 			{
 				"<leader>fd",
 				"<cmd>Telescope git_files<cr>",
 				desc = "Find git files",
-				icon = { icon = "", color = "orange" },
+				icon = { icon = "", color = "orange" },
 			},
 			{
 				"<leader>fk",
 				"<cmd>Telescope keymaps<cr>",
 				desc = "Find keymaps",
-				icon = { icon = "", color = "purple" },
+				icon = { icon = "", color = "purple" },
 			},
 			{
 				"<leader>fo",
 				"<cmd>Telescope workspaces<cr>",
 				desc = "Open workspace",
-				icon = { icon = "", color = "red" },
+				icon = { icon = "", color = "red" },
 			},
 			{
 				"<leader>f<Tab>",
@@ -108,7 +108,7 @@ wk.add({
 				desc = "Find buffers",
 				icon = { icon = "󱦞", color = "yellow" },
 			},
-			icon = { icon = "", color = "cyan" },
+			icon = { icon = "", color = "cyan" },
 		},
 
 		-- LSP operations
@@ -119,19 +119,19 @@ wk.add({
 				"<leader>ld",
 				"<cmd>Telescope lsp_document_symbols<cr>",
 				desc = "Find document symbols",
-				icon = { icon = "", color = "blue" },
+				icon = { icon = "", color = "blue" },
 			},
 			{
 				"<leader>li",
 				"<cmd>Telescope lsp_references<cr>",
 				desc = "Find references",
-				icon = { icon = "", color = "orange" },
+				icon = { icon = "", color = "orange" },
 			},
 			{
 				"<leader>lh",
 				"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 				desc = "Find workspace symbols",
-				icon = { icon = "", color = "green" },
+				icon = { icon = "", color = "green" },
 			},
 			{
 				"<leader>lr",
@@ -167,21 +167,21 @@ wk.add({
 				"<leader>xx",
 				"<cmd>Trouble diagnostics<cr>",
 				desc = "Open Trouble diagnostics",
-				icon = { icon = "", color = "red" },
+				icon = { icon = "", color = "red" },
 			},
 			{
 				"<leader>xt",
 				"<cmd>Telescope diagnostics<cr>",
 				desc = "Open Telescope diagnostics",
-				icon = { icon = "", color = "cyan" },
+				icon = { icon = "", color = "cyan" },
 			},
 			{
 				"<leader>xX",
 				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 				desc = "Trouble diagnostics for current buffer",
-				icon = { icon = "", color = "orange" },
+				icon = { icon = "", color = "orange" },
 			},
-			icon = { icon = "", color = "red" },
+			icon = { icon = "", color = "red" },
 		},
 
 		-- Git operations
@@ -192,11 +192,40 @@ wk.add({
 				"<leader>gc",
 				"<cmd>Telescope git_commits<cr>",
 				desc = "Git commits",
-				icon = { icon = "", color = "green" },
+				icon = { icon = "", color = "green" },
 			},
 			{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Git branches" },
-			{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "Open LazyGit", icon = { icon = "", color = "purple" } },
-			{ "<leader>gv", "<cmd>Difft<cr>", desc = "Toggle Git Diff", icon = { icon = "", color = "red" } },
+			{
+				"<leader>gg",
+				"<cmd>LazyGit<cr>",
+				desc = "Open LazyGit",
+				icon = { icon = "", color = "purple" },
+			},
+			{
+				"<leader>gv",
+				"<cmd>Difft<cr>",
+				desc = "Toggle Git Diff",
+				icon = { icon = "", color = "red" },
+			},
+		},
+
+		-- Typst
+		{
+			group = "Typst",
+			{ "<leader>t", desc = "Typst" },
+			{
+				"<leader>to",
+				"<cmd>TypstOpen<cr>",
+				desc = "Open PDF in zathura",
+				icon = { icon = "󰈙", color = "red" },
+			},
+			{
+				"<leader>tm",
+				"<cmd>TypstExportMode<cr>",
+				desc = "Toggle PDF export (onType/onSave)",
+				icon = { icon = "󰔡", color = "yellow" },
+			},
+			icon = { icon = "󰈙", color = "azure" },
 		},
 
 		{
@@ -237,7 +266,7 @@ wk.add({
 		{
 			group = "Other",
 			{ "<leader>d", desc = "Other" },
-			{ "<leader>df", "<cmd>enew<cr>", desc = "New file", icon = { icon = "", color = "green" } },
+			{ "<leader>df", "<cmd>enew<cr>", desc = "New file", icon = { icon = "", color = "green" } },
 			{
 				"<leader>dc",
 				"<cmd>HighlightColors Toggle<cr>",
@@ -250,7 +279,7 @@ wk.add({
 					require("persistence").load()
 				end,
 				desc = "load session for current dir",
-				icon = { icon = "", color = "orange" },
+				icon = { icon = "", color = "orange" },
 			},
 			{
 				"<leader>dS",
@@ -258,7 +287,7 @@ wk.add({
 					require("persistence").select()
 				end,
 				desc = "select a sesson to load",
-				icon = { icon = "", color = "red" },
+				icon = { icon = "", color = "red" },
 			},
 			{
 				"<leader>dp",
@@ -274,13 +303,13 @@ wk.add({
 			"<leader>dl",
 			"<cmd>Leet<cr>",
 			desc = "Leetcode",
-			icon = { icon = "", color = "red" },
+			icon = { icon = "", color = "red" },
 		},
 		{
 			"<leader>dlr",
 			"<cmd>Leet run<cr>",
 			desc = "Leetcode run",
-			icon = { icon = "", color = "green" },
+			icon = { icon = "", color = "green" },
 		},
 		{
 			"<leader>dls",
@@ -298,7 +327,7 @@ wk.add({
 			"<leader>dlc",
 			"<cmd>Leet console<cr>",
 			desc = "Leet console",
-			icon = { icon = "", color = "cyan" },
+			icon = { icon = "", color = "cyan" },
 		},
 		icon = { icon = "󰛂", color = "green" },
 	},

@@ -34,6 +34,8 @@ null_ls.setup({
 		null_ls.builtins.formatting.clang_format,
 		null_ls.builtins.formatting.prettier.with({ filetypes = { "astro", "markdown" } }),
 		null_ls.builtins.formatting.nixfmt,
+		null_ls.builtins.formatting.nixfmt,
+		null_ls.builtins.formatting.typstyle,
 		tex_fmt,
 		null_ls.builtins.diagnostics.vale,
 	},

@@ -19,6 +19,10 @@
         amiri
       ]
     ))
+
+    typst
+    tinymist # typst LSP
+    typstyle # typst formatter
   ];
 
   programs.neovim.enable = true;

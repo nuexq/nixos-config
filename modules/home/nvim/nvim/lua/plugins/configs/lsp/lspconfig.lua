@@ -113,7 +113,6 @@ vim.lsp.config.nixd = {
 vim.lsp.enable("nixd")
 
 -- QML LSP
-
 local system_qml_path = "/run/current-system/sw/lib/qt-6/qml"
 local home_manager_qml_path = vim.fn.expand("~/.local/state/nix/profiles/home-manager/home-path/lib/qt-6/qml")
 local user_qml_path = vim.fn.expand("~/.nix-profile/lib/qt-6/qml")
@@ -134,3 +133,50 @@ vim.lsp.config.qmlls = {
 	root_markers = { "qmldir", "CMakeLists.txt", "qmlls.ini", ".git" },
 }
 vim.lsp.enable("qmlls")
+
+-- Typst LSP
+vim.lsp.config.tinymist = {
+	cmd = { "tinymist" },
+	filetypes = { "typst" },
+	root_markers = { "main.typ", ".git" },
+	settings = {
+		rootPath = "/home/nuexq/Documents/notes/",
+		formatterMode = "disable",
+		exportPdf = "onType",
+		outputPath = "$dir/$name",
+		semanticTokens = "disable",
+	},
+}
+vim.lsp.enable("tinymist")
+
+vim.api.nvim_create_user_command("TypstOpen", function()
+	local pdf = vim.fn.expand("%:p:r") .. ".pdf"
+	if vim.fn.filereadable(pdf) == 0 then
+		vim.notify("No PDF yet: " .. pdf, vim.log.levels.WARN)
+		return
+	end
+	vim.system({ "zathura", pdf }, { detach = true })
+end, {})
+
+vim.api.nvim_create_user_command("TypstExportMode", function(opts)
+	local client = vim.lsp.get_clients({ name = "tinymist" })[1]
+	if not client then
+		vim.notify("tinymist is not running", vim.log.levels.WARN)
+		return
+	end
+	local settings = client.settings or client.config.settings
+	local mode = opts.args
+	if mode == "" then
+		mode = (settings.exportPdf == "onType") and "onSave" or "onType"
+	end
+	settings.exportPdf = mode
+	client.settings = settings
+	client.config.settings = settings
+	client:notify("workspace/didChangeConfiguration", { settings = settings })
+	vim.notify("Typst PDF export: " .. mode)
+end, {
+	nargs = "?",
+	complete = function()
+		return { "onType", "onSave", "never" }
+	end,
+})
