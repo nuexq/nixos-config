@@ -91,6 +91,27 @@
         "type": "github"
       }
     },
+    "flake-parts_3": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "serein",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788450739,
+        "narHash": "sha256-glZLQlzIn1fXH6PazR2iUmTo7kzzyYSshrWhLS9TqCU=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "31729ca8cbdb4fa927b34e5f4353e6a83f39e993",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "git-hooks": {
       "inputs": {
         "flake-compat": [
@@ -381,6 +402,7 @@
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
         "rust-overlay": "rust-overlay",
+        "serein": "serein",
         "silentSDDM": "silentSDDM",
         "spicetify-nix": "spicetify-nix",
         "vicinae": "vicinae",
@@ -404,6 +426,27 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "serein": {
+      "inputs": {
+        "flake-parts": "flake-parts_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793984719,
+        "narHash": "sha256-jXaHYexnMFw0zE/RjnKrMzO2W7W43suQI1PJfUhIUYU=",
+        "owner": "ViceVerse-cz",
+        "repo": "Serein",
+        "rev": "354d033b31e89079e50c16684852fd2b039c225a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ViceVerse-cz",
+        "repo": "Serein",
         "type": "github"
       }
     },

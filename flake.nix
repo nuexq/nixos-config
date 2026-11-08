@@ -57,6 +57,11 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    serein = {
+      url = "github:ViceVerse-cz/Serein";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
