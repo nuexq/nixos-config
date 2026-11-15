@@ -180,3 +180,28 @@ end, {
 		return { "onType", "onSave", "never" }
 	end,
 })
+
+-- C / C++ LSP
+local gcc = vim.fn.exepath("gcc")
+local drivers = table.concat({ gcc, vim.fn.resolve(gcc) }, ",")
+
+vim.lsp.config.clangd = {
+	cmd = { "clangd", "--query-driver=" .. drivers },
+	filetypes = {
+		"c",
+		"cpp",
+		"objc",
+		"objcpp",
+		"h",
+		"hpp",
+	},
+	root_markers = {
+		".clangd",
+		".clang-tidy",
+		".clang-format",
+		"compile_commands.json",
+		"compile_flags.txt",
+		"configure.ac",
+		".git",
+	},
+}

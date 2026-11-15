@@ -5,7 +5,6 @@ require("mason-lspconfig").setup({
 		"html", -- html-lsp
 		"cssls", -- css-lsp
 		"lua_ls", -- lua-language-server
-		"clangd", -- clangd
 		"bashls", -- Bash LSP
 		"jsonls", -- JSON LSP
 		"marksman", -- Markdown LSP
