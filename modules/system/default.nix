@@ -13,7 +13,6 @@
     ./security.nix
     ./services.nix
     ./sddm.nix
-    ./spicetify.nix
     ./steam.nix
     ./system.nix
     ./user.nix
