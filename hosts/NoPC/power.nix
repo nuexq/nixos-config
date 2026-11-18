@@ -1,9 +1,16 @@
 { ... }:
 {
-  services.scx = {
+  services.scx-loader = {
     enable = true;
-    scheduler = "scx_lavd";
-    extraArgs = [ "--autopower" ];
+
+    config = {
+      default_sched = "scx_lavd";
+      default_mode = "Auto";
+
+      scheds.scx_lavd.auto_mode = [
+        "--autopower"
+      ];
+    };
   };
 
   boot.extraModprobeConfig = ''
